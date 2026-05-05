@@ -1,0 +1,217 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+  padding: 0 38px;
+  background: white;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.nav-logo img {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #717a3f;
+  font-size: 20px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-icons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-icons img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.hero {
+  position: relative;
+  height: 842px;
+  overflow: hidden;
+}
+
+.hero img {
+  position: absolute;
+  width: 100%;
+  height: 119%;
+  top: -12%;
+  left: 0;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 850px;
+  height: 850px;
+  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0));
+}
+
+.hero-text {
+  position: absolute;
+  left: 56px;
+  bottom: 90px;
+  font-family: 'Square Peg', cursive;
+  font-size: 200px;
+  line-height: 160px;
+  color: white;
+}
+
+.collections {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 56px 60px;
+}
+
+.collections-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 64px;
+  color: #c50034;
+  font-weight: normal;
+}
+
+.collections-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 29px;
+}
+
+.collection-card {
+  position: relative;
+  flex: 1;
+  background: #f4f4f4;
+  aspect-ratio: 309 / 380;
+  overflow: hidden;
+}
+
+.collection-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection-label {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  font-family: 'Short Stack', cursive;
+  font-size: 20px;
+  color: #c50034;
+}
+
+.news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 56px;
+}
+
+.news-heading-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.news-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 64px;
+  color: #c50034;
+  font-weight: normal;
+}
+
+.news-flower {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+
+.news-images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 80px;
+  list-style: none;
+  width: 100%;
+  padding: 40px 0;
+  justify-content: center;
+}
+
+.news-images li {
+  width: 374px;
+  height: 515px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 16px;
+}
+
+.news-images li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: center top;
+}
+
+.news-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 450px;
+}
+
+.news-meta {
+  font-family: 'Square Peg', cursive;
+  font-size: 40px;
+  color: #c50034;
+}
+
+.news-body {
+  font-family: 'Short Stack', cursive;
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.6;
+}
+
+.news-read-more {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #c50034;
+  text-decoration: none;
+  border-bottom: 1px solid #c50034;
+  align-self: center;
+}
