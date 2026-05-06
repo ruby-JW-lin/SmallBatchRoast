@@ -336,3 +336,133 @@ nav {
   color: #000000;
   line-height: 1.32;
 }
+
+.bestsellers {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 40px 56px 60px;
+  margin-top: 60px;
+}
+
+.bestsellers-heading-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.bestsellers-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 64px;
+  color: #c50034;
+  font-weight: normal;
+}
+
+.bestsellers-show-all {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #c50034;
+  text-decoration: none;
+  border-bottom: 1px solid #c50034;
+}
+
+.bestsellers-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  list-style: none;
+}
+
+.product-card {
+  flex: 1;
+  background: #f4f4f4;
+  aspect-ratio: 309 / 380;
+  overflow: hidden;
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.site-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-scene {
+  width: 100%;
+  display: block;
+}
+
+.footer-grass {
+  width: 100%;
+  height: 82px;
+  overflow: hidden;
+}
+
+.footer-grass img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.footer-bottom {
+  background: #521525;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 34px 56px 28px;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #fff;
+  width: 309px;
+}
+
+.footer-contact__heading {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+
+.footer-contact__name {
+  font-weight: 700;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  align-self: flex-end;
+  background: #521525;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+}
+
+.footer-nav__copyright {
+  font-size: 14px;
+  color: #fff;
+}
+
+.footer-nav__link {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+}
