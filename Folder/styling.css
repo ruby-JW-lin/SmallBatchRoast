@@ -215,3 +215,115 @@ nav {
   border-bottom: 1px solid #c50034;
   align-self: center;
 }
+
+.about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 80px 56px 80px 163px;
+  gap: 80px;
+  margin-bottom: 60px;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 511px;
+  flex-shrink: 0;
+}
+
+.about-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 64px;
+  color: #c50034;
+  line-height: 0.91;
+  font-weight: normal;
+}
+
+.about-body {
+  font-family: 'Short Stack', cursive;
+  font-size: 16px;
+  color: #000000;
+  line-height: normal;
+  max-width: 511px;
+}
+
+.about-read-more {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #c50034;
+  text-decoration: none;
+  border-bottom: 1px solid #c50034;
+  width: fit-content;
+}
+
+.about-media {
+  position: relative;
+  flex: 1;
+}
+
+.about-photo {
+  width: 543px;
+  height: 630px;
+  object-fit: cover;
+  object-position: bottom;
+  display: block;
+}
+
+.about-deco-stamp {
+  position: absolute;
+  width: 229px;
+  bottom: -80px;
+  right: -10px;
+  transform: rotate(-10deg);
+}
+
+.about-deco-text {
+  position: absolute;
+  width: 255px;
+  top: -30px;
+  left: -80px;
+  transform: rotate(-15deg);
+}
+
+.usp {
+  background: #eceee2;
+  padding: 65px 176px;
+}
+
+.usp-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 176px;
+  list-style: none;
+}
+
+.usp-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  width: 245px;
+}
+
+.usp-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.usp-heading {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #9d193c;
+  line-height: 0.82;
+}
+
+.usp-body {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #000000;
+  line-height: 1.32;
+}
