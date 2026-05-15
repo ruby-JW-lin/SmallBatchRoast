@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product — Small Batch Roasting Co.</title>
+  <link rel="stylesheet" href="styling.css" />
+  <link rel="stylesheet" href="product.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Square+Peg&family=Short+Stack&display=swap" rel="stylesheet" />
+</head>
+<body class="pdp-page">
+
+  <header>
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Small Batch Roasting Co." />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#">Shop</a></li>
+        <li class="nav-item--dropdown">
+          <a href="#">Coffee</a>
+          <ul class="dropdown">
+            <li><a href="productsAll.html">All</a></li>
+            <li><a href="espresso.html">Espresso</a></li>
+            <li><a href="filter.html">Filter</a></li>
+            <li><a href="bundles.html">Bundles</a></li>
+            <li><a href="decaf.html">Decaf</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Locate</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <div class="nav-icons">
+        <button aria-label="Account"><img src="user-circle.svg" alt="" /></button>
+        <button aria-label="Search"><img src="search.svg" alt="" /></button>
+        <button aria-label="Shopping bag"><img src="shopping-bag-2.svg" alt="" /></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── STICKY SCROLL SECTION ─────────────────────── -->
+    <div class="pdp-scroll-section">
+
+      <!-- Left: sticky image panel -->
+      <div class="pdp-image-panel">
+        <div class="pdp-image-panel__bg"></div>
+        <img class="pdp-image-panel__img" id="pdp-main-image" src="" alt="" />
+      </div>
+
+      <!-- Right: scrollable content -->
+      <div class="pdp-content-panel">
+
+        <!-- Block 1: Purchase -->
+        <section class="pdp-block pdp-block--purchase">
+          <h1 class="pdp-name" id="pdp-name"></h1>
+          <p class="pdp-price" id="pdp-price"></p>
+
+          <div class="pdp-flavours" id="pdp-flavours"></div>
+
+          <hr class="pdp-rule" />
+
+          <div class="pdp-size-row">
+            <span class="pdp-label">size</span>
+            <div class="pdp-size-selector">
+              <span id="pdp-size-value">250g</span>
+              <img src="downArrow.svg" alt="" />
+            </div>
+          </div>
+
+          <hr class="pdp-rule" />
+
+          <div class="pdp-actions">
+            <div class="pdp-qty-selector">
+              <span id="pdp-qty">1</span>
+              <img src="downArrow.svg" alt="" />
+            </div>
+            <button class="pdp-atc-btn">ADD TO CART</button>
+          </div>
+
+          <div class="pdp-pickup">
+            <img src="ok.svg" alt="" />
+            <div>
+              <p>Pickup available at <strong>3-9 Little Howard St</strong></p>
+              <p class="pdp-pickup-sub">Usually ready in 24 hours</p>
+            </div>
+          </div>
+
+          <div class="pdp-shipping">
+            <img src="delivery-truck.svg" alt="" />
+            <span>Free shipping on orders over $60</span>
+          </div>
+        </section>
+
+        <div class="pdp-timeline">
+
+          <div class="pdp-timeline__track">
+            <div class="pdp-step__circle">
+              <img src="step-circle.svg" alt="" />
+              <span>1</span>
+            </div>
+            <div class="pdp-step__line"></div>
+            <div class="pdp-step__circle">
+              <img src="step-circle.svg" alt="" />
+              <span>2</span>
+            </div>
+            <div class="pdp-step__line"></div>
+            <div class="pdp-step__circle">
+              <img src="step-circle.svg" alt="" />
+              <span>3</span>
+            </div>
+          </div>
+
+          <div class="pdp-timeline__content">
+            <section class="pdp-timeline-block">
+              <h2 class="pdp-section-heading">Sourcing</h2>
+              <div class="pdp-sourcing-details" id="pdp-sourcing"></div>
+            </section>
+            <section class="pdp-timeline-block">
+              <h2 class="pdp-section-heading">Process</h2>
+              <p class="pdp-body-text" id="pdp-process"></p>
+            </section>
+            <section class="pdp-timeline-block">
+              <h2 class="pdp-section-heading">Tasting notes</h2>
+              <p class="pdp-body-text" id="pdp-tasting"></p>
+            </section>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <hr class="pdp-section-divider" />
+
+    <!-- ── ABOUT PRODUCER ────────────────────────────── -->
+    <section class="pdp-about">
+      <div class="pdp-about__text">
+        <h2 class="pdp-about__heading" id="pdp-about-heading"></h2>
+        <p class="pdp-about__body" id="pdp-about-body"></p>
+      </div>
+      <div class="pdp-about__photo">
+        <div class="pdp-polaroid">
+          <div class="pdp-polaroid__tape"></div>
+          <img class="pdp-polaroid__img" id="pdp-about-photo" src="" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MORE INFO ACCORDION ───────────────────────── -->
+    <section class="pdp-more-info">
+      <h2 class="pdp-more-info__heading">More Info</h2>
+      <div class="pdp-accordion">
+        <button class="pdp-accordion__btn" aria-expanded="false">
+          <span>Transparency</span>
+          <img src="plus.svg" alt="" />
+        </button>
+        <div class="pdp-accordion__body">
+          <p id="pdp-transparency"></p>
+        </div>
+        <button class="pdp-accordion__btn" aria-expanded="false">
+          <span>About</span>
+          <img src="plus.svg" alt="" />
+        </button>
+        <div class="pdp-accordion__body">
+          <p id="pdp-more-about"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RECOMMENDED ───────────────────────────────── -->
+    <section class="pdp-recommended">
+      <h2 class="pdp-recommended__heading">Recommended</h2>
+      <ul class="products-grid" id="pdp-recommended-grid" aria-label="Recommended products"></ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <img class="footer-scene" src="footer illustration.png" alt="" aria-hidden="true" />
+    <div class="footer-grass" aria-hidden="true">
+      <img src="grass.png" alt="" />
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-contact">
+        <strong class="footer-contact__heading">Contact</strong>
+        <div class="footer-contact__details">
+          <span class="footer-contact__name">Small Batch Roasting Co.</span>
+          <span class="footer-contact__address">3-9 Little Howard St, North Melbourne VIC 3051</span>
+          <span class="footer-contact__instagram">Instagram @smallbatchroast</span>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <span class="footer-nav__copyright">© Small Batch Roasting Co. 2026</span>
+        <a href="/shipping" class="footer-nav__link">Shipping Information</a>
+        <a href="/faq" class="footer-nav__link">FAQ</a>
+        <a href="/contact" class="footer-nav__link">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="products-data.js"></script>
+  <script src="product.js"></script>
+</body>
+</html>

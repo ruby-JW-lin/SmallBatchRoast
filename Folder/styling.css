@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -25,6 +31,9 @@ nav {
   align-items: center;
   gap: 80px;
   list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-links a {
@@ -51,6 +60,56 @@ nav {
   width: 24px;
   height: 24px;
   display: block;
+}
+
+.nav-item--dropdown {
+  position: relative;
+  height: 88px;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 88px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  list-style: none;
+  z-index: 200;
+}
+
+.nav-item--dropdown:hover .dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item--dropdown:hover > a {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+.dropdown li {
+  height: 50px;
+  background: #fff;
+  border: 0.5px solid #dfdfdf;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown li a {
+  padding: 0 19px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #000;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.dropdown li:hover {
+  background: #eceee2;
 }
 
 .hero {
@@ -214,4 +273,1178 @@ nav {
   text-decoration: none;
   border-bottom: 1px solid #c50034;
   align-self: center;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 80px 56px 80px 163px;
+  gap: 80px;
+  margin-bottom: 60px;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 511px;
+  flex-shrink: 0;
+}
+
+.about-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 64px;
+  color: #c50034;
+  line-height: 0.91;
+  font-weight: normal;
+}
+
+.about-body {
+  font-family: 'Short Stack', cursive;
+  font-size: 16px;
+  color: #000000;
+  line-height: normal;
+  max-width: 511px;
+}
+
+.about-read-more {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #c50034;
+  text-decoration: none;
+  border-bottom: 1px solid #c50034;
+  width: fit-content;
+}
+
+.about-media {
+  position: relative;
+  flex: 1;
+}
+
+.about-photo {
+  width: 543px;
+  height: 630px;
+  object-fit: cover;
+  object-position: bottom;
+  display: block;
+}
+
+.about-deco-stamp {
+  position: absolute;
+  width: 229px;
+  bottom: -80px;
+  right: -10px;
+  transform: rotate(-10deg);
+}
+
+.about-deco-text {
+  position: absolute;
+  width: 255px;
+  top: -30px;
+  left: -80px;
+  transform: rotate(-15deg);
+}
+
+.usp {
+  background: #eceee2;
+  padding: 65px 176px;
+}
+
+.usp-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 176px;
+  list-style: none;
+}
+
+.usp-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  width: 245px;
+}
+
+.usp-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.usp-heading {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #9d193c;
+  line-height: 0.82;
+}
+
+.usp-body {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #000000;
+  line-height: 1.32;
+}
+
+.bestsellers {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 40px 56px 60px;
+  margin-top: 60px;
+}
+
+.bestsellers-heading-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.bestsellers-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 64px;
+  color: #c50034;
+  font-weight: normal;
+}
+
+.bestsellers-show-all {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #c50034;
+  text-decoration: none;
+  border-bottom: 1px solid #c50034;
+}
+
+.bestsellers-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  list-style: none;
+}
+
+.bestsellers-grid .product-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bestsellers-grid .product-card img {
+  width: 100%;
+  aspect-ratio: 309 / 380;
+  object-fit: cover;
+  display: block;
+  background: #f4f4f4;
+}
+
+.bestsellers-grid .product-card__name {
+  font-family: 'Square Peg', cursive;
+  font-size: 32px;
+  font-weight: normal;
+  color: #000;
+  line-height: 1.1;
+  text-align: center;
+  padding: 8px 8px 0;
+}
+
+.bestsellers-grid .product-card__price {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #717a3f;
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.product-card > a {
+  display: block;
+  text-decoration: none;
+}
+
+.site-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-scene {
+  width: 100%;
+  display: block;
+}
+
+.footer-grass {
+  width: 100%;
+  height: 82px;
+  overflow: hidden;
+}
+
+.footer-grass img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.footer-bottom {
+  background: #521525;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 34px 56px 28px;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #fff;
+  width: 309px;
+}
+
+.footer-contact__heading {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+
+.footer-contact__name {
+  font-weight: 700;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  align-self: flex-end;
+  background: #521525;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+}
+
+.footer-nav__copyright {
+  font-size: 14px;
+  color: #fff;
+}
+
+.footer-nav__link {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.products-hero {
+  display: flex;
+  align-items: stretch;
+  height: 255px;
+  overflow: hidden;
+}
+
+.products-hero__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  flex-shrink: 0;
+  padding: 0 40px 0 43px;
+  width: 493px;
+}
+
+.products-hero__heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 96px;
+  color: #c50034;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.products-hero__desc {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #000;
+  line-height: 1.375;
+  max-width: 414px;
+}
+
+.products-hero__image {
+  flex: 1;
+  height: 255px;
+  object-fit: cover;
+  display: block;
+}
+
+.products-divider {
+  border: none;
+  border-top: 0.7px solid #dfdfdf;
+  margin: 0;
+}
+
+.products-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 43px;
+  position: sticky;
+  top: 100px;
+  z-index: 50;
+  pointer-events: none;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.products-toolbar__sort,
+.products-toolbar__filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 12px;
+  border: 0.4px solid #000;
+  font-family: 'Short Stack', cursive;
+  font-size: 12px;
+  color: #000;
+  cursor: pointer;
+  background: #fff;
+  pointer-events: all;
+}
+
+.products-toolbar__sort img,
+.products-toolbar__filter img {
+  width: 14px;
+  height: 14px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 309px);
+  gap: 40px;
+  padding: 40px 43px 80px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-card__image {
+  position: relative;
+  width: 309px;
+  height: 380px;
+  background: #f4f4f4;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.product-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-card__bag {
+  position: absolute;
+  bottom: 11px;
+  left: 11px;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card__bag img {
+  width: 33px;
+  height: 33px;
+  object-fit: contain;
+}
+
+.product-card__name {
+  font-family: 'Square Peg', cursive;
+  font-size: 32px;
+  font-weight: normal;
+  color: #000;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.product-card__price {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #717a3f;
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════════════
+   PRODUCT DETAIL PAGE
+   ══════════════════════════════════════════════════ */
+
+.pdp-scroll-section {
+  display: flex;
+  flex-direction: column;
+  background: #f2ede2;
+  
+}
+
+.pdp-image-panel {
+  position: relative;
+  width: 100%;
+  height: 364px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.pdp-image-panel__bg {
+  position: absolute;
+  inset: 0;
+  left: 14px;
+  background: #717a3f;
+}
+
+.pdp-image-panel__img {
+  position: absolute;
+  left: 35px;
+  top: 0;
+  width: calc(100% - 49px);
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.pdp-content-panel {
+  flex: 1;
+  padding: 24px 14px 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdp-block {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+
+.pdp-block--purchase {
+  gap: 0;
+}
+
+.pdp-name {
+  font-family: 'Square Peg', cursive;
+  font-size: 36px;
+  color: #c50034;
+  font-weight: normal;
+  line-height: 0.82;
+  margin-bottom: 12px;
+}
+
+.pdp-price {
+  font-family: 'Square Peg', cursive;
+  font-size: 32px;
+  color: #000;
+  font-weight: normal;
+  line-height: 0.82;
+  margin-bottom: 20px;
+}
+
+.pdp-flavours {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.pdp-flavours strong {
+  font-weight: 700;
+}
+
+.pdp-rule {
+  border: none;
+  border-top: 1px solid #c8c8c8;
+  margin: 0 0 20px;
+}
+
+.pdp-size-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.pdp-label {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #000;
+  line-height: 0.82;
+}
+
+.pdp-size-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  border: 0.8px solid #c50034;
+  border-radius: 20px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #000;
+  cursor: pointer;
+  background: #fff;
+}
+
+.pdp-size-selector img {
+  width: 16px;
+  height: 16px;
+}
+
+.pdp-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pdp-qty-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  border: 0.8px solid #b7556f;
+  border-radius: 20px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #000;
+  cursor: pointer;
+  background: #fff;
+  width: 116px;
+}
+
+.pdp-qty-selector img {
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+}
+
+.pdp-atc-btn {
+  flex: 1;
+  height: 40px;
+  background: #b7556f;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+}
+
+.pdp-pickup {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #000;
+}
+
+.pdp-pickup img {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.pdp-pickup-sub {
+  font-size: 12px;
+  color: #3f3f46;
+  margin-top: 4px;
+}
+
+.pdp-shipping {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 12px;
+  color: #3f3f46;
+}
+
+.pdp-shipping img {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.pdp-timeline {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding-top: 40px;
+  border-top: 1px solid #c8c8c8;
+}
+
+.pdp-timeline__track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.pdp-timeline__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdp-timeline-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 60px;
+}
+
+.pdp-timeline-block:last-child {
+  padding-bottom: 0;
+}
+
+.pdp-step__circle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.pdp-step__circle img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.pdp-step__circle span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Square Peg', cursive;
+  font-size: 40px;
+  color: #fff;
+  line-height: 1;
+}
+
+.pdp-step__line {
+  width: 3px;
+  flex: 1;
+  min-height: 120px;
+  display: block;
+  object-fit: fill;
+}
+
+.pdp-section-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 36px;
+  color: #717a3f;
+  font-weight: normal;
+  line-height: 0.82;
+}
+
+.pdp-sourcing-details {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #000;
+  line-height: 2;
+}
+
+.pdp-sourcing-details strong {
+  font-weight: 700;
+  display: block;
+}
+
+.pdp-body-text {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #000;
+  line-height: 1.5;
+  width: 100%;
+}
+
+.pdp-section-divider {
+  border: none;
+  border-top: 1px solid #c8c8c8;
+  margin-top: 100px;
+}
+
+.pdp-about {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 14px;
+  gap: 24px;
+  background: #f2ede2;
+}
+
+.pdp-about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pdp-about__heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 36px;
+  color: #717a3f;
+  font-weight: normal;
+  line-height: 0.82;
+  text-align: center;
+}
+
+.pdp-about__body {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 24px;
+  color: #000;
+  line-height: 1.02;
+  text-align: center;
+  width: 100%;
+}
+
+.pdp-about__photo {
+  width: 100%;
+}
+
+.pdp-polaroid {
+  position: relative;
+  width: 100%;
+  height: 330px;
+  overflow: hidden;
+}
+
+.pdp-polaroid__tape {
+  display: none;
+}
+
+.pdp-polaroid__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pdp-more-info {
+  background: #f2ede2;
+  padding: 40px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.pdp-more-info__heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 40px;
+  color: #717a3f;
+  font-weight: normal;
+  line-height: 0.82;
+}
+
+.pdp-accordion {
+  width: 100%;
+}
+
+.pdp-accordion__btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border: none;
+  border-top: 1px solid #c8c8c8;
+  background: none;
+  cursor: pointer;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000;
+}
+
+.pdp-accordion__btn:last-of-type {
+  border-bottom: 1px solid #c8c8c8;
+}
+
+.pdp-accordion__btn img {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s;
+}
+
+.pdp-accordion__btn[aria-expanded="true"] img {
+  transform: rotate(45deg);
+}
+
+.pdp-accordion__body {
+  display: none;
+  padding: 0 0 20px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #000;
+  line-height: 1.5;
+}
+
+.pdp-accordion__body.open {
+  display: block;
+}
+
+.pdp-recommended {
+  background: #fff;
+  padding: 40px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pdp-recommended__heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 40px;
+  color: #717a3f;
+  font-weight: normal;
+  line-height: 0.82;
+}
+
+#pdp-recommended-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  list-style: none;
+}
+
+#pdp-recommended-grid .product-card {
+  flex-shrink: 0;
+  width: 309px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#pdp-recommended-grid .product-card__image {
+  width: 309px;
+  height: 310px;
+}
+
+#pdp-recommended-grid .product-card__name {
+  font-size: 20px;
+}
+
+#pdp-recommended-grid .product-card__price {
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+
+  .pdp-scroll-section {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .pdp-image-panel {
+    position: sticky;
+    top: 124px;
+    width: 619px;
+    height: 622px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .pdp-image-panel__bg {
+    position: absolute;
+    inset: 0;
+    left: 56px;
+    background: #717a3f;
+  }
+
+  .pdp-image-panel__img {
+    position: absolute;
+    left: 56px;
+    top: 0;
+    width: 563px;
+    height: 622px;
+    object-fit: contain;
+    object-position: center center;
+    display: block;
+    padding: 40px;
+  }
+
+  .pdp-content-panel {
+  padding: 124px 56px 100px 80px;
+  }
+
+  .pdp-block {
+    padding-bottom: 80px;
+  }
+
+  .pdp-name {
+    font-size: 64px;
+    margin-bottom: 16px;
+  }
+
+  .pdp-price {
+    font-size: 64px;
+    margin-bottom: 32px;
+  }
+
+  .pdp-flavours {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .pdp-rule {
+    margin-bottom: 24px;
+  }
+
+  .pdp-size-row {
+    margin-bottom: 24px;
+  }
+
+  .pdp-size-selector {
+    height: 45px;
+    border-radius: 30px;
+    font-size: 16px;
+  }
+
+  .pdp-actions {
+    margin-bottom: 24px;
+  }
+
+  .pdp-qty-selector {
+    height: 45px;
+    border-radius: 30px;
+    width: 170px;
+  }
+
+  .pdp-atc-btn {
+    height: 45px;
+    border-radius: 30px;
+  }
+
+  .pdp-pickup {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .pdp-pickup-sub {
+    font-size: 14px;
+  }
+
+  .pdp-shipping {
+    font-size: 16px;
+  }
+
+  .pdp-timeline {
+    padding-top: 80px;
+    gap: 40px;
+  }
+
+  .pdp-step__circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .pdp-step__circle span {
+    font-size: 44px;
+  }
+
+  .pdp-step__line {
+    min-height: 200px;
+  }
+
+  .pdp-section-heading {
+    font-size: 64px;
+  }
+
+  .pdp-sourcing-details {
+    font-size: 16px;
+  }
+
+  .pdp-body-text {
+    font-size: 16px;
+    width: 251px;
+  }
+
+  .pdp-about {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 80px 56px 80px 163px;
+    gap: 80px;
+  }
+
+  .pdp-about__text {
+    gap: 20px;
+    max-width: 514px;
+    flex-shrink: 0;
+  }
+
+  .pdp-about__heading {
+    font-size: 64px;
+    text-align: left;
+  }
+
+  .pdp-about__body {
+  font-family: 'Square Peg', cursive;
+  font-size: 36px;
+  color: #000;
+  line-height: 1.02;
+  text-align: left;
+  width: 100%;
+  } 
+
+  .pdp-about__photo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .pdp-polaroid {
+    width: 502px;
+    height: 656px;
+    background: #fff;
+    box-shadow: -11px 20px 22px 0 rgba(0,0,0,0.2);
+    padding: 82px 27px 27px;
+    overflow: visible;
+  }
+
+  .pdp-polaroid__tape {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 40px;
+    background: #dddad0;
+    opacity: 0.8;
+  }
+
+  .pdp-polaroid__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .pdp-more-info {
+    padding: 80px 160px;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .pdp-more-info__heading {
+    font-size: 64px;
+  }
+
+  .pdp-accordion {
+    width: 1119px;
+  }
+
+  .pdp-accordion__btn {
+    padding: 24px 0;
+    font-size: 20px;
+  }
+
+  .pdp-accordion__body {
+    font-size: 16px;
+    padding-bottom: 24px;
+  }
+
+  .pdp-recommended {
+    padding: 80px 42px;
+    gap: 60px;
+  }
+
+  .pdp-recommended__heading {
+    font-size: 64px;
+    padding-left: 34px;
+  }
+
+  #pdp-recommended-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 309px);
+    gap: 40px;
+    overflow-x: visible;
+  }
+
+  #pdp-recommended-grid .product-card {
+    width: auto;
+  }
+
+  #pdp-recommended-grid .product-card__image {
+    width: 309px;
+    height: 380px;
+  }
+
+  #pdp-recommended-grid .product-card__name {
+    font-size: 32px;
+  }
+
+  #pdp-recommended-grid .product-card__price {
+    font-size: 16px;
+  }
+}
+
+.pdp-step__circle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  background: #b0b0b0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdp-step__circle img {
+  display: none;
+}
+
+.pdp-step__circle span {
+  font-family: 'Square Peg', cursive;
+  font-size: 40px;
+  color: #fff;
+  line-height: 1;
+}
+
+.pdp-step__line {
+  width: 2px;
+  flex: 1;
+  min-height: 200px;
+  background: #b0b0b0;
+  display: block;
+}
+
+.pdp-scroll-section,
+.pdp-content-panel {
+  background: #f2ede2;
+}
+
+.pdp-page {
+  background: #f2ede2;
 }
