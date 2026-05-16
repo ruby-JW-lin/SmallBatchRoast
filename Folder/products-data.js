@@ -25,8 +25,8 @@ const PRODUCTS = {
     process: 'A carefully crafted blend combining Colombian and Ethiopian coffees, roasted to highlight sweetness and balance.',
     tasting: 'Milk chocolate, caramel, red apple',
     aboutHeading: 'About Candyman',
-    aboutBody: 'Our most popular espresso blend. Designed to shine as a straight black or with milk, Candyman is the backbone of our espresso menu.',
-    aboutPhoto: 'candyman-photo.png',
+    aboutBody: 'Candyman is our flagship espresso blend, launched in 2010. It\'s our daily labour of love, a constant work-in-progress: making superlative tastiness from the raw components that we insist on buying well, ourselves (ie not just from the importer as is common practice) All this to create sweet, balanced espresso, with or without milk.',
+    aboutPhoto: 'candyman_photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
     moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
     recommended: ['nolberto', 'golden-filter', 'beto', 'white']
