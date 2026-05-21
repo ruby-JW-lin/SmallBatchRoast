@@ -913,6 +913,7 @@ nav {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding-left: 40px;
 }
 
 .pdp-timeline-block {
@@ -973,7 +974,7 @@ nav {
   font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
   font-size: 14px;
   color: #000;
-  line-height: 2;
+  line-height: 1.8;
 }
 
 .pdp-sourcing-details strong {

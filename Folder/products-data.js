@@ -5,7 +5,7 @@ const PRODUCTS = {
     price: '$25.00',
     image: 'nolberto.png',
     flavours: '<strong>Flavours:</strong> Stone fruit, creamy, muscovado & grapefruit residual',
-    sourcing: '<strong>Colombia</strong><br>ORIGIN: Planadas, Tolima<br>VARIETAL: Typica Mejorado<br>PRODUCER: Nolberto Olaya',
+    sourcing: '<strong>Colombia</strong>ORIGIN: Planadas, Tolima<br>VARIETAL: Typica Mejorado<br>PRODUCER: Nolberto Olaya',
     process: 'Nolberto and his son Yefferson carefully process each lot, beginning with sorting ripe cherries before fermenting them in sealed barrels to maintain low temperatures. After de-pulping, the coffee undergoes extended fermentation, is washed twice, and then slowly dried—first in marquesinas, then indoors over several weeks—ensuring clarity, stability, and exceptional quality.',
     tasting: 'Stone fruit, creamy, muscovado & grapefruit residual',
     aboutHeading: 'About Nolberto',
