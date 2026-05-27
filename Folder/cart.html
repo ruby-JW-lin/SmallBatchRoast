@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart — Small Batch Roasting Co.</title>
+  <link rel="stylesheet" href="styling.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Square+Peg&family=Short+Stack&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Small Batch Roasting Co." />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#">Shop</a></li>
+        <li class="nav-item--dropdown">
+          <a href="#">Coffee</a>
+          <ul class="dropdown">
+            <li><a href="productsAll.html">All</a></li>
+            <li><a href="productsEspresso.html">Espresso</a></li>
+            <li><a href="productsFilter.html">Filter</a></li>
+            <li><a href="productsBundles.html">Bundles</a></li>
+            <li><a href="productsDecaf.html">Decaf</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Locate</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <div class="nav-icons">
+        <button aria-label="Account"><img src="user-circle.svg" alt="" /></button>
+        <button aria-label="Search"><img src="search.svg" alt="" /></button>
+        <button aria-label="Shopping bag"><img src="shopping-bag-2.svg" alt="" /></button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="cart-page">
+
+    <div class="cart-header">
+      <h1 class="cart-heading" id="cart-heading">Your Cart (1)</h1>
+      <a href="productsAll.html" class="cart-continue">Continue Shopping</a>
+    </div>
+
+    <div class="cart-table">
+      <div class="cart-table__head">
+        <span class="cart-col--product">Product</span>
+        <span class="cart-col--size">Size</span>
+        <span class="cart-col--qty">Quantity</span>
+        <span class="cart-col--price">Price</span>
+      </div>
+      <hr class="cart-table__divider" />
+
+      <ul class="cart-items" id="cart-items">
+        <!-- Cart items injected by JS -->
+      </ul>
+    </div>
+
+    <div class="cart-summary" id="cart-summary">
+      <div class="cart-summary__row">
+        <span class="cart-summary__label">Subtotal</span>
+        <span class="cart-summary__amount" id="cart-subtotal">$20.00 AUD</span>
+      </div>
+      <button class="cart-checkout-btn">Check out</button>
+      <p class="cart-summary__note">Shipping, taxes, and discount codes are calculated at checkout</p>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <div class="footer-contact">
+        <strong class="footer-contact__heading">Contact</strong>
+        <div class="footer-contact__details">
+          <span class="footer-contact__name">Small Batch Roasting Co.</span>
+          <span class="footer-contact__address">3-9 Little Howard St, North Melbourne VIC 3051</span>
+          <span class="footer-contact__instagram">Instagram @smallbatchroast</span>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <span class="footer-nav__copyright">© Small Batch Roasting Co. 2026</span>
+        <a href="/shipping" class="footer-nav__link">Shipping Information</a>
+        <a href="/faq" class="footer-nav__link">FAQ</a>
+        <a href="/contact" class="footer-nav__link">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="products-data.js"></script>
+  <script src="cart-store.js"></script>
+  <script>
+    function renderCart() {
+      const list = document.getElementById('cart-items');
+      list.innerHTML = '';
+      let subtotal = 0;
+      const cartItems = CartStore.getAll();
+
+      if (cartItems.length === 0) {
+        list.innerHTML = '<li class="cart-empty">Your cart is empty. <a href="productsAll.html">Shop now →</a></li>';
+        document.getElementById('cart-subtotal').textContent = '$0.00 AUD';
+        document.getElementById('cart-heading').textContent = 'Your Cart (0)';
+        return;
+      }
+
+      cartItems.forEach((item, index) => {
+        const p = PRODUCTS[item.id];
+        if (!p) return;
+        const linePrice = parseFloat(p.price.replace('$', '')) * item.qty;
+        subtotal += linePrice;
+
+        const li = document.createElement('li');
+        li.className = 'cart-item';
+        li.innerHTML = `
+          <div class="cart-item__image">
+            <img src="${p.image}" alt="${p.name}" />
+          </div>
+          <span class="cart-item__name cart-col--product">${p.name.replace(/-/g, '\u2011')}</span>
+          <div class="cart-col--size">
+            <div class="cart-select-wrapper">
+              <select class="cart-select cart-select--size" data-id="${item.id}" data-oldsize="${item.size}" aria-label="Size">
+                <option value="250g" ${item.size === '250g' ? 'selected' : ''}>250g</option>
+                <option value="500g" ${item.size === '500g' ? 'selected' : ''}>500g</option>
+                <option value="1kg" ${item.size === '1kg' ? 'selected' : ''}>1kg</option>
+              </select>
+              <img class="cart-select__arrow" src="downArrow.svg" alt="" aria-hidden="true" />
+            </div>
+          </div>
+          <div class="cart-col--qty">
+            <div class="cart-select-wrapper">
+              <select class="cart-select cart-select--qty" data-id="${item.id}" data-size="${item.size}" aria-label="Quantity">
+                ${[1,2,3,4,5,6,7,8,9,10].map(n =>
+                  `<option value="${n}" ${item.qty === n ? 'selected' : ''}>QTY: ${n}</option>`
+                ).join('')}
+              </select>
+              <img class="cart-select__arrow" src="downArrow.svg" alt="" aria-hidden="true" />
+            </div>
+          </div>
+          <span class="cart-item__price cart-col--price">$${linePrice.toFixed(2)}</span>
+          <button class="cart-item__remove" data-id="${item.id}" data-size="${item.size}" aria-label="Remove ${p.name}">
+            <img src="trash.svg" alt="" />
+          </button>
+        `;
+        list.appendChild(li);
+      });
+
+      document.getElementById('cart-subtotal').textContent = `$${subtotal.toFixed(2)} AUD`;
+      document.getElementById('cart-heading').textContent = `Your Cart (${CartStore.count()})`;
+
+      // Re-bind events
+      document.querySelectorAll('.cart-select--size').forEach(sel => {
+        sel.addEventListener('change', e => {
+          const { id, oldsize } = e.target.dataset;
+          CartStore.updateSize(id, oldsize, e.target.value);
+          renderCart();
+        });
+      });
+      document.querySelectorAll('.cart-select--qty').forEach(sel => {
+        sel.addEventListener('change', e => {
+          const { id, size } = e.target.dataset;
+          CartStore.update(id, size, parseInt(e.target.value));
+          renderCart();
+        });
+      });
+      document.querySelectorAll('.cart-item__remove').forEach(btn => {
+        btn.addEventListener('click', e => {
+          const { id, size } = e.currentTarget.dataset;
+          CartStore.remove(id, size);
+          renderCart();
+        });
+      });
+    }
+
+    renderCart();
+  </script>
+  <script src="cart-store.js"></script>
+  <script src="nav-cart.js"></script>
+</body>
+</html>

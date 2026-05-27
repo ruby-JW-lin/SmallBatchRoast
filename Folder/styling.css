@@ -1170,14 +1170,14 @@ nav {
 
   .pdp-image-panel__img {
     position: absolute;
-    left: 56px;
+    left: 15px;
     top: 0;
-    width: 563px;
-    height: 622px;
+    width: 644px;
+    height: 100%;
     object-fit: contain;
     object-position: center center;
     display: block;
-    padding: 40px;
+    padding: 0;
   }
 
   .pdp-content-panel {
@@ -1427,4 +1427,274 @@ nav {
 
 .pdp-page {
   background: #f2ede2;
+}
+
+/* ══════════════════════════════════════════════════
+   CART PAGE
+   ══════════════════════════════════════════════════ */
+
+.cart-page {
+  min-height: 60vh;
+  padding: 48px 56px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Header ────────────────────────────────────── */
+.cart-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.cart-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 64px;
+  font-weight: normal;
+  color: #717a3f;
+  line-height: 1;
+}
+
+.cart-continue {
+  font-family: 'Square Peg', cursive;
+  font-size: 24px;
+  color: #717a3f;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  width: fit-content;
+}
+
+/* ── Table ─────────────────────────────────────── */
+.cart-table {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 48px;
+}
+
+.cart-table__head {
+  display: grid;
+  grid-template-columns: 1fr 200px 220px 160px 48px;
+  align-items: center;
+  padding-bottom: 12px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #000;
+}
+
+.cart-table__divider {
+  border: none;
+  border-top: 1px solid #dfdfdf;
+  margin: 0 0 0;
+}
+
+/* Column alignment helpers */
+.cart-col--product { /* spans image + name in head */ }
+.cart-col--size    { }
+.cart-col--qty     { }
+.cart-col--price   { text-align: right; padding-right: 16px; }
+
+/* ── Cart Items List ────────────────────────────── */
+.cart-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 160px 1fr 200px 220px 160px 48px;
+  align-items: center;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 16px 0;
+  gap: 0;
+}
+
+.cart-item__image {
+  width: 160px;
+  height: 160px;
+  background: #f4f4f4;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.cart-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cart-item__name {
+  font-family: 'Square Peg', cursive;
+  font-size: 28px;
+  font-weight: normal;
+  color: #000;
+  padding-left: 24px;
+  line-height: 1.2;
+}
+
+/* ── Select Dropdowns ───────────────────────────── */
+.cart-select-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.cart-select {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 40px;
+  padding: 0 40px 0 16px;
+  border: 1px solid #c50034;
+  border-radius: 0;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #000;
+  background: #fff;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.cart-select--qty {
+  min-width: 110px;
+  border-color: #c50034;
+}
+
+.cart-select__arrow {
+  position: absolute;
+  right: 12px;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+/* ── Item Price ─────────────────────────────────── */
+.cart-item__price {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #000;
+  text-align: right;
+  padding-right: 16px;
+}
+
+/* ── Remove Button ──────────────────────────────── */
+.cart-item__remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.cart-item__remove:hover {
+  opacity: 1;
+}
+
+.cart-item__remove img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Summary ────────────────────────────────────── */
+.cart-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.cart-summary__row {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+}
+
+.cart-summary__label {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #000;
+}
+
+.cart-summary__amount {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #000;
+}
+
+.cart-checkout-btn {
+  height: 52px;
+  width: 380px;
+  background: #b7556f;
+  border: none;
+  border-radius: 26px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 0.15s;
+}
+
+.cart-checkout-btn:hover {
+  background: #a04460;
+}
+
+.cart-summary__note {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 13px;
+  color: #000;
+  font-style: italic;
+  text-align: right;
+}
+
+/* ── Empty cart ─────────────────────────────────── */
+.cart-empty {
+  padding: 48px 0;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  color: #000;
+  list-style: none;
+}
+
+.cart-empty a {
+  color: #c50034;
+  text-decoration: underline;
+}
+
+/* ── Nav bag count badge ─────────────────────────── */
+.nav-bag-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.nav-bag-count {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  color: #000;
+  text-align: center;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  pointer-events: none;
+}
+
+.cart-page ~ .site-footer .footer-scene,
+.cart-page ~ .site-footer .footer-grass {
+  display: none;
 }
