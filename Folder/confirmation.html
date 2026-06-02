@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmed — Small Batch Roasting Co.</title>
+  <link rel="stylesheet" href="styling.css" />
+  <link rel="stylesheet" href="confirmation.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Square+Peg&family=Short+Stack&display=swap" rel="stylesheet" />
+</head>
+<body class="confirmation-page">
+
+  <header>
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Small Batch Roasting Co." />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#">Shop</a></li>
+        <li class="nav-item--dropdown">
+          <a href="#">Coffee</a>
+          <ul class="dropdown">
+            <li><a href="productsAll.html">All</a></li>
+            <li><a href="productsEspresso.html">Espresso</a></li>
+            <li><a href="productsFilter.html">Filter</a></li>
+            <li><a href="productsBundles.html">Bundles</a></li>
+            <li><a href="productsDecaf.html">Decaf</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Locate</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <div class="nav-icons">
+        <button aria-label="Account"><img src="user-circle.svg" alt="" /></button>
+        <button aria-label="Search"><img src="search.svg" alt="" /></button>
+        <button aria-label="Shopping bag"><img src="shopping-bag-2.svg" alt="" /></button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="confirmation-main">
+
+    <!-- ── Hero confirmation message ─────────────── -->
+    <section class="confirmation-hero" aria-labelledby="confirmation-heading">
+      <img class="confirmation-logo" src="logo.png" alt="Small Batch Roasting Co." />
+      <h1 class="confirmation-heading" id="confirmation-heading">Your order is on its way.</h1>
+      <p class="confirmation-subtext">
+        Small Batch Roasting Co. thanks you for shopping with us. You will receive a confirmation email shortly.
+      </p>
+      <img class="confirmation-bird" src="payment-image.png" alt="" aria-hidden="true" />
+    </section>
+
+    <!-- ── Order summary ─────────────────────────── -->
+    <section class="confirmation-summary" aria-labelledby="items-shipped-heading">
+
+      <h2 class="confirmation-summary__heading" id="items-shipped-heading">Items Shipped</h2>
+
+      <ul class="confirmation-items" id="confirmation-items" aria-label="Items in your order">
+        <!-- Populated by JS -->
+      </ul>
+
+      <dl class="confirmation-totals">
+        <div class="confirmation-totals__row">
+          <dt>Cart Subtotal</dt>
+          <dd id="conf-subtotal">$0.00</dd>
+        </div>
+        <div class="confirmation-totals__row">
+          <dt>Shipping</dt>
+          <dd id="conf-shipping">$8.00</dd>
+        </div>
+        <div class="confirmation-totals__row confirmation-totals__row--total">
+          <dt>Total</dt>
+          <dd>
+            <span class="confirmation-totals__currency">AUD</span>
+            <span class="confirmation-totals__amount" id="conf-total">$0.00</span>
+          </dd>
+        </div>
+      </dl>
+
+      <a href="index.html" class="confirmation-back-btn">Back to home</a>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <div class="footer-contact">
+        <strong class="footer-contact__heading">Contact</strong>
+        <div class="footer-contact__details">
+          <span class="footer-contact__name">Small Batch Roasting Co.</span>
+          <span class="footer-contact__address">3-9 Little Howard St, North Melbourne VIC 3051</span>
+          <span class="footer-contact__instagram">Instagram @smallbatchroast</span>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <span class="footer-nav__copyright">© Small Batch Roasting Co. 2026</span>
+        <a href="/shipping" class="footer-nav__link">Shipping Information</a>
+        <a href="/faq" class="footer-nav__link">FAQ</a>
+        <a href="/contact" class="footer-nav__link">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="products-data.js"></script>
+  <script src="cart-store.js"></script>
+  <script src="nav-cart.js"></script>
+  <script>
+    const shippingCost = 8;
+
+    function renderConfirmation() {
+      const list = document.getElementById('confirmation-items');
+      const items = CartStore.getAll();
+      let subtotal = 0;
+
+      items.forEach(item => {
+        const p = PRODUCTS[item.id];
+        if (!p) return;
+        const linePrice = parseFloat(p.price.replace('$', '')) * item.qty;
+        subtotal += linePrice;
+
+        const li = document.createElement('li');
+        li.className = 'confirmation-item';
+        li.innerHTML = `
+          <div class="confirmation-item__img-wrap">
+            <img src="${p.image}" alt="${p.name}" />
+            <span class="confirmation-item__qty" aria-label="${item.qty} item">${item.qty}</span>
+          </div>
+          <div class="confirmation-item__info">
+            <span class="confirmation-item__name">${p.name}</span>
+            <span class="confirmation-item__size">${item.size}</span>
+          </div>
+          <span class="confirmation-item__price">$${linePrice.toFixed(2)}</span>
+        `;
+        list.appendChild(li);
+      });
+
+      document.getElementById('conf-subtotal').textContent = `$${subtotal.toFixed(2)}`;
+      document.getElementById('conf-shipping').textContent = `$${shippingCost.toFixed(2)}`;
+      document.getElementById('conf-total').textContent = `$${(subtotal + shippingCost).toFixed(2)}`;
+
+      // Clear the cart after confirming
+      CartStore.save([]);
+    }
+
+    renderConfirmation();
+  </script>
+
+</body>
+</html>

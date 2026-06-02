@@ -2309,19 +2309,223 @@ nav {
   background: #5a6230;
 }
 
-/* ── Illustration ───────────────────────────────── */
-.payment-illustration {
-  position: absolute;
-  bottom: 0;
-  left: 40px;
-  width: 280px;
-  object-fit: contain;
-  object-position: bottom;
-  pointer-events: none;
-}
 
 /* ── Payment page footer (no grass/scene) ───────── */
 .payment-page ~ .site-footer .footer-scene,
 .payment-page ~ .site-footer .footer-grass {
+  display: none;
+}
+
+/* ══════════════════════════════════════════════════
+   CONFIRMATION PAGE
+   ══════════════════════════════════════════════════ */
+
+.confirmation-page {
+  background: #f2ede2;
+}
+
+.confirmation-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 56px 80px;
+}
+
+/* ── Hero ───────────────────────────────────────── */
+.confirmation-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.confirmation-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.confirmation-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 56px;
+  font-weight: normal;
+  color: #c50034;
+  line-height: 1.1;
+  max-width: 600px;
+}
+
+.confirmation-subtext {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #000;
+  line-height: 1.6;
+  max-width: 340px;
+  text-align: center;
+}
+
+.confirmation-bird {
+  width: 78.558px;
+  height: 85.7px;
+  object-fit: contain;
+  margin-top: 8px;
+}
+
+/* ── Summary section ────────────────────────────── */
+.confirmation-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 360px;
+}
+
+.confirmation-summary__heading {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+/* ── Items list ─────────────────────────────────── */
+.confirmation-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.confirmation-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.confirmation-item__img-wrap {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  background: #f4f4f4;
+  border-radius: 6px;
+  flex-shrink: 0;
+  border: 1px solid #dfdfdf;
+}
+
+.confirmation-item__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.confirmation-item__qty {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 22px;
+  height: 22px;
+  background: #3d3d3d;
+  color: #fff;
+  border-radius: 50%;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmation-item__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.confirmation-item__name {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+}
+
+.confirmation-item__size {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 13px;
+  color: #555;
+}
+
+.confirmation-item__price {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #000;
+}
+
+/* ── Totals ─────────────────────────────────────── */
+.confirmation-totals {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid #c8c8c8;
+  padding-top: 16px;
+  margin-bottom: 24px;
+}
+
+.confirmation-totals__row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #000;
+}
+
+.confirmation-totals__row--total {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 8px;
+  padding-top: 4px;
+}
+
+.confirmation-totals__currency {
+  font-size: 14px;
+  font-weight: 400;
+  color: #555;
+  margin-right: 6px;
+}
+
+.confirmation-totals__amount {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* ── Back to home button ────────────────────────── */
+.confirmation-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 52px;
+  background: #b7556f;
+  border-radius: 26px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: background 0.15s;
+}
+
+.confirmation-back-btn:hover {
+  background: #a04460;
+}
+
+/* ── Footer (no grass/scene) ────────────────────── */
+.confirmation-page ~ .site-footer .footer-scene,
+.confirmation-page ~ .site-footer .footer-grass {
   display: none;
 }
