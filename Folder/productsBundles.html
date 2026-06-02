@@ -6,6 +6,7 @@
   <title>Coffee Bundles — Small Batch Roasting Co.</title>
   <link rel="stylesheet" href="styling.css" />
   <link href="https://fonts.googleapis.com/css2?family=Square+Peg&family=Short+Stack&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="search-modal.css" />
 </head>
 <body>
 
@@ -120,10 +121,41 @@
         <a href="/contact" class="footer-nav__link">Contact</a>
       </div>
     </div>
+
+    <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" hidden>
+  <div class="search-modal">
+    <div class="search-modal__header">
+      <label class="search-modal__icon" for="search-input" aria-label="Search">
+        <img src="search.svg" alt="" aria-hidden="true" />
+      </label>
+      <input class="search-modal__input" id="search-input" type="search" placeholder="Search" autocomplete="off" aria-label="Search products" />
+      <button class="search-modal__close" id="search-close" aria-label="Close search">
+        <img src="close.svg" alt="" aria-hidden="true" />
+      </button>
+    </div>
+    <div class="search-modal__body" id="search-modal-body">
+      <section class="search-section" id="search-recently-viewed" aria-labelledby="recently-viewed-heading">
+        <h2 class="search-section__heading" id="recently-viewed-heading">Recently Viewed</h2>
+        <ul class="search-products-grid" id="search-recent-list" aria-label="Recently viewed products"></ul>
+      </section>
+      <section class="search-section" id="search-results-section" aria-labelledby="search-results-heading" hidden>
+        <h2 class="search-section__heading" id="search-results-heading">Results</h2>
+        <ul class="search-products-grid" id="search-results-list" aria-label="Search results"></ul>
+        <p class="search-no-results" id="search-no-results" hidden>No products found.</p>
+      </section>
+      <section class="search-section" id="search-discover" aria-labelledby="discover-heading">
+        <h2 class="search-section__heading" id="discover-heading">Discover</h2>
+        <ul class="search-products-grid" id="search-discover-list" aria-label="Discover products"></ul>
+      </section>
+    </div>
+  </div>
+</div>
   </footer>
 
+  <script src="products-data.js"></script>
   <script src="cart-store.js"></script>
   <script src="nav-cart.js"></script>
+  <script src="search-modal.js"></script>
 
 </body>
 </html>

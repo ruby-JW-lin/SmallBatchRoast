@@ -2,6 +2,7 @@
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id') || 'nolberto';
 const p = PRODUCTS[id];
+SearchModal.recordView(id); 
 
 if (p) {
   document.getElementById('pdp-main-image').src = p.image;
