@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 header {
   position: sticky;
   top: 0;
@@ -665,6 +669,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 3px;
 }
 
 .product-card__bag img {
@@ -1660,17 +1665,48 @@ nav {
 }
 
 /* ── Empty cart ─────────────────────────────────── */
-.cart-empty {
-  padding: 48px 0;
-  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
-  font-size: 18px;
-  color: #000;
-  list-style: none;
+.cart-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 60vh;
 }
 
-.cart-empty a {
-  color: #c50034;
-  text-decoration: underline;
+.cart-empty-state__icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  opacity: 0.7;
+}
+
+.cart-empty-state__msg {
+  font-family: 'Square Peg', cursive;
+  font-size: 48px;
+  font-weight: normal;
+  color: #000;
+  text-align: center;
+}
+
+.cart-empty-state__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 380px;
+  height: 52px;
+  background: #b7556f;
+  border-radius: 26px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: background 0.15s;
+}
+
+.cart-empty-state__btn:hover {
+  background: #a04460;
 }
 
 /* ── Nav bag count badge ─────────────────────────── */

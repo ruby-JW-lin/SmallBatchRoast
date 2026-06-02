@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Cart — Small Batch Roasting Co.</title>
   <link rel="stylesheet" href="styling.css" />
+  <link rel="stylesheet" href="cart.css" />
   <link href="https://fonts.googleapis.com/css2?family=Square+Peg&family=Short+Stack&display=swap" rel="stylesheet" />
 </head>
 <body>
@@ -39,33 +40,44 @@
 
   <main class="cart-page">
 
-    <div class="cart-header">
-      <h1 class="cart-heading" id="cart-heading">Your Cart (1)</h1>
-      <a href="productsAll.html" class="cart-continue">Continue Shopping</a>
-    </div>
+    <!-- ── Filled cart state ───────────────────────── -->
+    <section class="cart-filled" id="cart-filled" aria-label="Your cart" hidden>
 
-    <div class="cart-table">
-      <div class="cart-table__head">
-        <span class="cart-col--product">Product</span>
-        <span class="cart-col--size">Size</span>
-        <span class="cart-col--qty">Quantity</span>
-        <span class="cart-col--price">Price</span>
+      <div class="cart-header">
+        <h1 class="cart-heading" id="cart-heading">Your Cart</h1>
+        <a href="productsAll.html" class="cart-continue">Continue Shopping</a>
       </div>
-      <hr class="cart-table__divider" />
 
-      <ul class="cart-items" id="cart-items">
-        <!-- Cart items injected by JS -->
-      </ul>
-    </div>
-
-    <div class="cart-summary" id="cart-summary">
-      <div class="cart-summary__row">
-        <span class="cart-summary__label">Subtotal</span>
-        <span class="cart-summary__amount" id="cart-subtotal">$20.00 AUD</span>
+      <div class="cart-table" role="table" aria-label="Cart items">
+        <div class="cart-table__head" role="row">
+          <span class="cart-col--product" role="columnheader">Product</span>
+          <span class="cart-col--size" role="columnheader">Size</span>
+          <span class="cart-col--qty" role="columnheader">Quantity</span>
+          <span class="cart-col--price" role="columnheader">Price</span>
+        </div>
+        <hr class="cart-table__divider" />
+        <ul class="cart-items" id="cart-items" aria-label="Cart items list">
+          <!-- Populated by JS -->
+        </ul>
       </div>
-      <button class="cart-checkout-btn" onclick="window.location.href='checkout.html'">Check out</button>
-      <p class="cart-summary__note">Shipping, taxes, and discount codes are calculated at checkout</p>
-    </div>
+
+      <div class="cart-summary" id="cart-summary">
+        <div class="cart-summary__row">
+          <span class="cart-summary__label">Subtotal</span>
+          <span class="cart-summary__amount" id="cart-subtotal">$0.00 AUD</span>
+        </div>
+        <button class="cart-checkout-btn" id="cart-checkout-btn" onclick="window.location.href='checkout.html'">Check out</button>
+        <p class="cart-summary__note">Shipping, taxes, and discount codes are calculated at checkout</p>
+      </div>
+
+    </section>
+
+    <!-- ── Empty cart state ────────────────────────── -->
+    <section class="cart-empty-state" id="cart-empty-state" aria-label="Empty cart" hidden>
+      <img class="cart-empty-state__icon" src="empty-bag.png" alt="" aria-hidden="true" />
+      <p class="cart-empty-state__msg">Your cart is empty</p>
+      <a href="productsAll.html" class="cart-empty-state__btn">Continue Shopping</a>
+    </section>
 
   </main>
 
@@ -90,21 +102,27 @@
 
   <script src="products-data.js"></script>
   <script src="cart-store.js"></script>
+  <script src="nav-cart.js"></script>
   <script>
     function renderCart() {
-      const list = document.getElementById('cart-items');
-      list.innerHTML = '';
-      let subtotal = 0;
       const cartItems = CartStore.getAll();
+      const filled = document.getElementById('cart-filled');
+      const empty = document.getElementById('cart-empty-state');
 
       if (cartItems.length === 0) {
-        list.innerHTML = '<li class="cart-empty">Your cart is empty. <a href="productsAll.html">Shop now →</a></li>';
-        document.getElementById('cart-subtotal').textContent = '$0.00 AUD';
-        document.getElementById('cart-heading').textContent = 'Your Cart (0)';
+        filled.hidden = true;
+        empty.hidden = false;
         return;
       }
 
-      cartItems.forEach((item, index) => {
+      filled.hidden = false;
+      empty.hidden = true;
+
+      const list = document.getElementById('cart-items');
+      list.innerHTML = '';
+      let subtotal = 0;
+
+      cartItems.forEach(item => {
         const p = PRODUCTS[item.id];
         if (!p) return;
         const linePrice = parseFloat(p.price.replace('$', '')) * item.qty;
@@ -112,6 +130,7 @@
 
         const li = document.createElement('li');
         li.className = 'cart-item';
+        li.setAttribute('role', 'row');
         li.innerHTML = `
           <div class="cart-item__image">
             <img src="${p.image}" alt="${p.name}" />
@@ -119,17 +138,17 @@
           <span class="cart-item__name cart-col--product">${p.name.replace(/-/g, '\u2011')}</span>
           <div class="cart-col--size">
             <div class="cart-select-wrapper">
-              <select class="cart-select cart-select--size" data-id="${item.id}" data-oldsize="${item.size}" aria-label="Size">
+              <select class="cart-select cart-select--size" data-id="${item.id}" data-oldsize="${item.size}" aria-label="Size for ${p.name}">
                 <option value="250g" ${item.size === '250g' ? 'selected' : ''}>250g</option>
                 <option value="500g" ${item.size === '500g' ? 'selected' : ''}>500g</option>
-                <option value="1kg" ${item.size === '1kg' ? 'selected' : ''}>1kg</option>
+                <option value="1kg"  ${item.size === '1kg'  ? 'selected' : ''}>1kg</option>
               </select>
               <img class="cart-select__arrow" src="downArrow.svg" alt="" aria-hidden="true" />
             </div>
           </div>
           <div class="cart-col--qty">
             <div class="cart-select-wrapper">
-              <select class="cart-select cart-select--qty" data-id="${item.id}" data-size="${item.size}" aria-label="Quantity">
+              <select class="cart-select cart-select--qty" data-id="${item.id}" data-size="${item.size}" aria-label="Quantity for ${p.name}">
                 ${[1,2,3,4,5,6,7,8,9,10].map(n =>
                   `<option value="${n}" ${item.qty === n ? 'selected' : ''}>QTY: ${n}</option>`
                 ).join('')}
@@ -137,9 +156,9 @@
               <img class="cart-select__arrow" src="downArrow.svg" alt="" aria-hidden="true" />
             </div>
           </div>
-          <span class="cart-item__price cart-col--price">$${linePrice.toFixed(2)}</span>
-          <button class="cart-item__remove" data-id="${item.id}" data-size="${item.size}" aria-label="Remove ${p.name}">
-            <img src="trash.svg" alt="" />
+          <span class="cart-item__price cart-col--price" aria-label="Price: $${linePrice.toFixed(2)}">$${linePrice.toFixed(2)}</span>
+          <button class="cart-item__remove" data-id="${item.id}" data-size="${item.size}" aria-label="Remove ${p.name} from cart">
+            <img src="trash.svg" alt="" aria-hidden="true" />
           </button>
         `;
         list.appendChild(li);
@@ -174,7 +193,6 @@
 
     renderCart();
   </script>
-  <script src="cart-store.js"></script>
-  <script src="nav-cart.js"></script>
+
 </body>
 </html>
