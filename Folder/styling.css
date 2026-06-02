@@ -1804,7 +1804,7 @@ nav {
 }
  
 .checkout-input:focus {
-  border-color: #c50034;
+  border-color: #9D193C;
 }
  
 /* Select wrapper */
@@ -1856,12 +1856,12 @@ nav {
 }
  
 .checkout-shipping-option--selected {
-  border-color: #c50034;
+  border-color: #9D193C;
   background: #fff;
 }
  
 .checkout-shipping-option input[type="radio"] {
-  accent-color: #c50034;
+  accent-color: #9D193C;
   width: 18px;
   height: 18px;
   flex-shrink: 0;
@@ -2054,4 +2054,274 @@ nav {
  
 .checkout-proceed-btn:hover {
   background: #a04460;
+}
+
+/* ══════════════════════════════════════════════════
+   PAYMENT PAGE
+   ══════════════════════════════════════════════════ */
+
+.payment-page {
+  background: #f2ede2;
+}
+
+.payment-main {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 56px 80px;
+  position: relative;
+}
+
+/* ── Heading ────────────────────────────────────── */
+.payment-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 80px;
+  font-weight: normal;
+  color: #717a3f;
+  line-height: 1;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+/* ── Card container — now just a column with gaps ── */
+.payment-card {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Email field ────────────────────────────────── */
+.payment-email-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #dfdfdf;
+}
+
+.payment-email-label {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+}
+
+.payment-email-input {
+  border: none;
+  outline: none;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #000;
+  background: transparent;
+  width: 100%;
+}
+
+.payment-email-input::placeholder {
+  color: #aaa;
+}
+
+/* ── Payment method tabs ────────────────────────── */
+.payment-tabs {
+  display: flex;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #dfdfdf;
+  overflow: hidden;
+}
+
+.payment-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 4px;
+  border: none;
+  border-top: 2px solid transparent;
+  background: none;
+  cursor: pointer;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 12px;
+  color: #555;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.payment-tab img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.payment-tab--active {
+  color: #675dff;
+  border-top-color: #675dff;
+}
+
+.payment-tab--more {
+  flex: 0;
+  padding: 10px 12px;
+  font-size: 18px;
+  color: #555;
+  border-top: 2px solid transparent;
+}
+
+/* ── Panel ──────────────────────────────────────── */
+.payment-panel {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #dfdfdf;
+  overflow: hidden;
+}
+
+.payment-panel--hidden {
+  display: none;
+}
+
+.payment-redirect-note {
+  padding: 24px 16px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ── Fields inside panel ────────────────────────── */
+.payment-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.payment-field:last-child {
+  border-bottom: none;
+}
+
+.payment-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.payment-field-row .payment-field {
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.payment-field-row .payment-field:first-child {
+  border-right: 1px solid #dfdfdf;
+}
+
+.payment-field__label {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+}
+
+.payment-field__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.payment-field__input {
+  border: none;
+  outline: none;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #000;
+  background: transparent;
+  width: 100%;
+}
+
+.payment-field__input::placeholder {
+  color: #aaa;
+}
+
+/* Card brand icons */
+.payment-card-icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.payment-card-icons img {
+  height: 20px;
+  width: auto;
+}
+
+/* CVC icon */
+.payment-cvc-icon {
+  width: 30px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* Select */
+.payment-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.payment-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 28px;
+  cursor: pointer;
+}
+
+.payment-select__arrow {
+  position: absolute;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+/* ── Confirm button ─────────────────────────────── */
+.payment-confirm-btn {
+  width: 100%;
+  max-width: 380px;
+  height: 52px;
+  background: #717a3f;
+  border: none;
+  border-radius: 26px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  margin-top: 8px;
+  transition: background 0.15s;
+}
+
+.payment-confirm-btn:hover {
+  background: #5a6230;
+}
+
+/* ── Illustration ───────────────────────────────── */
+.payment-illustration {
+  position: absolute;
+  bottom: 0;
+  left: 40px;
+  width: 280px;
+  object-fit: contain;
+  object-position: bottom;
+  pointer-events: none;
+}
+
+/* ── Payment page footer (no grass/scene) ───────── */
+.payment-page ~ .site-footer .footer-scene,
+.payment-page ~ .site-footer .footer-grass {
+  display: none;
 }

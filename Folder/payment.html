@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment — Small Batch Roasting Co.</title>
+  <link rel="stylesheet" href="styling.css" />
+  <link rel="stylesheet" href="payment.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Square+Peg&family=Short+Stack&display=swap" rel="stylesheet" />
+</head>
+<body class="payment-page">
+
+  <header>
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Small Batch Roasting Co." />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#">Shop</a></li>
+        <li class="nav-item--dropdown">
+          <a href="#">Coffee</a>
+          <ul class="dropdown">
+            <li><a href="productsAll.html">All</a></li>
+            <li><a href="productsEspresso.html">Espresso</a></li>
+            <li><a href="productsFilter.html">Filter</a></li>
+            <li><a href="productsBundles.html">Bundles</a></li>
+            <li><a href="productsDecaf.html">Decaf</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Locate</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <div class="nav-icons">
+        <button aria-label="Account"><img src="user-circle.svg" alt="" /></button>
+        <button aria-label="Search"><img src="search.svg" alt="" /></button>
+        <button aria-label="Shopping bag"><img src="shopping-bag-2.svg" alt="" /></button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="payment-main">
+
+    <h1 class="payment-heading">Payment</h1>
+
+    <div class="payment-card">
+
+      <!-- Email -->
+      <div class="payment-email-field">
+        <label class="payment-email-label" for="payment-email">Email</label>
+        <input class="payment-email-input" id="payment-email" type="email" placeholder="Email address" />
+      </div>
+
+      <!-- Payment method tabs -->
+      <div class="payment-tabs" role="tablist">
+        <button class="payment-tab payment-tab--active" role="tab" aria-selected="true" onclick="setTab(this, 'card')">
+          <img src="card.svg" alt="" />
+          <span>Card</span>
+        </button>
+        <button class="payment-tab" role="tab" aria-selected="false" onclick="setTab(this, 'afterpay')">
+          <img src="afterpay.png" alt="" />
+          <span>Afterpay</span>
+        </button>
+        <button class="payment-tab" role="tab" aria-selected="false" onclick="setTab(this, 'klarna')">
+          <img src="klarna.png" alt="" />
+          <span>Klarna</span>
+        </button>
+        <button class="payment-tab" role="tab" aria-selected="false" onclick="setTab(this, 'affirm')">
+          <img src="affirm.png" alt="" />
+          <span>Affirm</span>
+        </button>
+        <button class="payment-tab payment-tab--more" aria-label="More options">
+          <span>⋮</span>
+        </button>
+      </div>
+
+      <!-- Card details panel -->
+      <div class="payment-panel" id="panel-card">
+
+        <div class="payment-field payment-field--card-number">
+          <label class="payment-field__label">Card number</label>
+          <div class="payment-field__row">
+            <input class="payment-field__input" type="text" placeholder="1234 1234 1234 1234" maxlength="19" id="card-number" oninput="formatCard(this)" />
+            <div class="payment-card-icons">
+              <img src="visa.svg" alt="Visa" />
+              <img src="mastercard.svg" alt="Mastercard" />
+              <img src="amex.svg" alt="Amex" />
+              <img src="discover.svg" alt="Discover" />
+            </div>
+          </div>
+        </div>
+
+        <div class="payment-field-row">
+          <div class="payment-field">
+            <label class="payment-field__label">Expiration</label>
+            <input class="payment-field__input" type="text" placeholder="MM/YY" maxlength="5" oninput="formatExpiry(this)" />
+          </div>
+          <div class="payment-field">
+            <label class="payment-field__label">CVC</label>
+            <div class="payment-field__row">
+              <input class="payment-field__input" type="text" placeholder="123" maxlength="4" />
+              <img class="payment-cvc-icon" src="cvc.svg" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="payment-field">
+          <label class="payment-field__label">Country</label>
+          <div class="payment-select-wrapper">
+            <select class="payment-field__input payment-select">
+              <option>Australia</option>
+              <option>New Zealand</option>
+              <option>United States</option>
+              <option>United Kingdom</option>
+            </select>
+            <img src="downArrow.svg" alt="" class="payment-select__arrow" />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Afterpay / Klarna / Affirm panels (placeholder) -->
+      <div class="payment-panel payment-panel--hidden" id="panel-afterpay">
+        <p class="payment-redirect-note">You'll be redirected to Afterpay to complete your purchase.</p>
+      </div>
+      <div class="payment-panel payment-panel--hidden" id="panel-klarna">
+        <p class="payment-redirect-note">You'll be redirected to Klarna to complete your purchase.</p>
+      </div>
+      <div class="payment-panel payment-panel--hidden" id="panel-affirm">
+        <p class="payment-redirect-note">You'll be redirected to Affirm to complete your purchase.</p>
+      </div>
+
+    </div>
+
+    <button class="payment-confirm-btn">Confirm</button>
+
+    <img class="payment-illustration" src="payment-image.png" alt="" aria-hidden="true" />
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <div class="footer-contact">
+        <strong class="footer-contact__heading">Contact</strong>
+        <div class="footer-contact__details">
+          <span class="footer-contact__name">Small Batch Roasting Co.</span>
+          <span class="footer-contact__address">3-9 Little Howard St, North Melbourne VIC 3051</span>
+          <span class="footer-contact__instagram">Instagram @smallbatchroast</span>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <span class="footer-nav__copyright">© Small Batch Roasting Co. 2026</span>
+        <a href="/shipping" class="footer-nav__link">Shipping Information</a>
+        <a href="/faq" class="footer-nav__link">FAQ</a>
+        <a href="/contact" class="footer-nav__link">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="cart-store.js"></script>
+  <script src="nav-cart.js"></script>
+  <script>
+    function setTab(btn, panel) {
+      document.querySelectorAll('.payment-tab').forEach(t => {
+        t.classList.remove('payment-tab--active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('payment-tab--active');
+      btn.setAttribute('aria-selected', 'true');
+
+      document.querySelectorAll('.payment-panel').forEach(p => p.classList.add('payment-panel--hidden'));
+      const target = document.getElementById('panel-' + panel);
+      if (target) target.classList.remove('payment-panel--hidden');
+    }
+
+    function formatCard(input) {
+      let v = input.value.replace(/\D/g, '').substring(0, 16);
+      input.value = v.replace(/(.{4})/g, '$1 ').trim();
+    }
+
+    function formatExpiry(input) {
+      let v = input.value.replace(/\D/g, '').substring(0, 4);
+      if (v.length >= 3) v = v.substring(0, 2) + '/' + v.substring(2);
+      input.value = v;
+    }
+  </script>
+
+</body>
+</html>
