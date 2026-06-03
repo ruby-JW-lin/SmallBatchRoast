@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Square+Peg&family=Short+Stack&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="search-modal.css" />
+    <link rel="stylesheet" href="responsive.css" />
 </head>
 <body>
       <header>
@@ -44,6 +45,16 @@
           <img src="shopping-bag-2.svg" alt="shoppingBag" />
         </button>
       </div>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <button class="nav-search-mobile" aria-label="Search">
+        <img src="search.svg" alt="" />
+      </button>
 
     </nav>
   </header>
@@ -207,6 +218,24 @@
 
 </footer>
 
+<nav class="nav-drawer" id="nav-drawer" aria-label="Mobile menu">
+  <button class="nav-drawer__close" id="nav-drawer-close" aria-label="Close menu">×</button>
+  <ul class="nav-drawer__links">
+    <li><a href="#">Shop</a></li>
+    <li><a href="#">Coffee</a>
+      <ul class="nav-drawer__sub">
+        <li><a href="productsAll.html">All</a></li>
+        <li><a href="productsEspresso.html">Espresso</a></li>
+        <li><a href="productsFilter.html">Filter</a></li>
+        <li><a href="productsBundles.html">Bundles</a></li>
+        <li><a href="productsDecaf.html">Decaf</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Locate</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</nav>
+
 <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" hidden>
   <div class="search-modal">
  
@@ -264,6 +293,6 @@
 <script src="cart-store.js"></script>
 <script src="nav-cart.js"></script>
 <script src="search-modal.js"></script>
-
+<script src="hamburger.js"></script>
 </body>
 </html>
