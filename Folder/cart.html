@@ -36,6 +36,16 @@
         <button aria-label="Search"><img src="search.svg" alt="" /></button>
         <button aria-label="Shopping bag"><img src="shopping-bag-2.svg" alt="" /></button>
       </div>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <button class="nav-search-mobile" aria-label="Search">
+        <img src="search.svg" alt="" />
+      </button>
     </nav>
   </header>
 
@@ -100,6 +110,24 @@
       </div>
     </div>
   </footer>
+
+  <div class="nav-drawer" id="nav-drawer">
+  <button class="nav-drawer__close" id="nav-drawer-close" aria-label="Close menu">×</button>
+  <div class="nav-drawer__main" id="nav-drawer-main">
+    <a href="#" class="nav-drawer__pill" style="background:#EED8DE;" data-submenu="coffee">Coffee <span class="nav-drawer__arrow">→</span></a>
+    <a href="#" class="nav-drawer__pill" style="background:#D4D7C5;">Shop <span class="nav-drawer__arrow">→</span></a>
+    <a href="#" class="nav-drawer__pill" style="background:#F2EDE2;">Locate <span class="nav-drawer__arrow">→</span></a>
+    <a href="#" class="nav-drawer__pill" style="background:#CEDDE2;">About <span class="nav-drawer__arrow">→</span></a>
+  </div>
+  <div class="nav-drawer__sub-panel" id="nav-drawer-sub-coffee">
+    <button class="nav-drawer__back" id="nav-drawer-back">←</button>
+    <h2 class="nav-drawer__sub-heading">Coffee</h2>
+    <a href="productsAll.html" class="nav-drawer__sub-link">Espresso</a>
+    <a href="productsFilter.html" class="nav-drawer__sub-link">Filter</a>
+    <a href="productsBundles.html" class="nav-drawer__sub-link">Bundles</a>
+    <a href="productsDecaf.html" class="nav-drawer__sub-link">Decaf</a>
+  </div>
+</div>
 
   <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" hidden>
   <div class="search-modal">
@@ -187,35 +215,41 @@
         li.className = 'cart-item';
         li.setAttribute('role', 'row');
         li.innerHTML = `
-          <div class="cart-item__image">
-            <img src="${p.image}" alt="${p.name}" />
-          </div>
-          <span class="cart-item__name cart-col--product">${p.name.replace(/-/g, '\u2011')}</span>
-          <div class="cart-col--size">
-            <div class="cart-select-wrapper">
-              <select class="cart-select cart-select--size" data-id="${item.id}" data-oldsize="${item.size}" aria-label="Size for ${p.name}">
-                <option value="250g" ${item.size === '250g' ? 'selected' : ''}>250g</option>
-                <option value="500g" ${item.size === '500g' ? 'selected' : ''}>500g</option>
-                <option value="1kg"  ${item.size === '1kg'  ? 'selected' : ''}>1kg</option>
-              </select>
-              <img class="cart-select__arrow" src="downArrow.svg" alt="" aria-hidden="true" />
-            </div>
-          </div>
-          <div class="cart-col--qty">
-            <div class="cart-select-wrapper">
-              <select class="cart-select cart-select--qty" data-id="${item.id}" data-size="${item.size}" aria-label="Quantity for ${p.name}">
-                ${[1,2,3,4,5,6,7,8,9,10].map(n =>
-                  `<option value="${n}" ${item.qty === n ? 'selected' : ''}>QTY: ${n}</option>`
-                ).join('')}
-              </select>
-              <img class="cart-select__arrow" src="downArrow.svg" alt="" aria-hidden="true" />
-            </div>
-          </div>
-          <span class="cart-item__price cart-col--price" aria-label="Price: $${linePrice.toFixed(2)}">$${linePrice.toFixed(2)}</span>
-          <button class="cart-item__remove" data-id="${item.id}" data-size="${item.size}" aria-label="Remove ${p.name} from cart">
-            <img src="trash.svg" alt="" aria-hidden="true" />
-          </button>
-        `;
+  <div class="cart-item__top">
+    <div class="cart-item__image">
+      <img src="${p.image}" alt="${p.name}" />
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:4px;">
+      <span class="cart-item__name cart-col--product">${p.name.replace(/-/g, '\u2011')}</span>
+      <span class="cart-item__price cart-col--price" aria-label="Price: $${linePrice.toFixed(2)}">$${linePrice.toFixed(2)}</span>
+    </div>
+    <button class="cart-item__remove" data-id="${item.id}" data-size="${item.size}" aria-label="Remove ${p.name} from cart">
+      <img src="trash.svg" alt="" aria-hidden="true" />
+    </button>
+  </div>
+  <div class="cart-items-dropdowns">
+    <div class="cart-col--size">
+      <div class="cart-select-wrapper">
+        <select class="cart-select cart-select--size" data-id="${item.id}" data-oldsize="${item.size}" aria-label="Size for ${p.name}">
+          <option value="250g" ${item.size === '250g' ? 'selected' : ''}>250g</option>
+          <option value="500g" ${item.size === '500g' ? 'selected' : ''}>500g</option>
+          <option value="1kg"  ${item.size === '1kg'  ? 'selected' : ''}>1kg</option>
+        </select>
+        <img class="cart-select__arrow" src="downArrow.svg" alt="" aria-hidden="true" />
+      </div>
+    </div>
+    <div class="cart-col--qty">
+      <div class="cart-select-wrapper">
+        <select class="cart-select cart-select--qty" data-id="${item.id}" data-size="${item.size}" aria-label="Quantity for ${p.name}">
+          ${[1,2,3,4,5,6,7,8,9,10].map(n =>
+            `<option value="${n}" ${item.qty === n ? 'selected' : ''}>QTY: ${n}</option>`
+          ).join('')}
+        </select>
+        <img class="cart-select__arrow" src="downArrow.svg" alt="" aria-hidden="true" />
+      </div>
+    </div>
+  </div>
+`;
         list.appendChild(li);
       });
 
@@ -249,6 +283,8 @@
     renderCart();
   </script>
   <script src="search-modal.js"></script>
+  <script src="hamburger.js"></script>
 
+  
 </body>
 </html>
