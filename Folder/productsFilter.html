@@ -185,23 +185,33 @@
 </div>
   </footer>
   
-  <nav class="nav-drawer" id="nav-drawer" aria-label="Mobile menu">
-    <button class="nav-drawer__close" id="nav-drawer-close" aria-label="Close menu">×</button>
-    <ul class="nav-drawer__links">
-      <li><a href="#">Shop</a></li>
-      <li><a href="#">Coffee</a>
-        <ul class="nav-drawer__sub">
-          <li><a href="productsAll.html">All</a></li>
-          <li><a href="productsEspresso.html">Espresso</a></li>
-          <li><a href="productsFilter.html">Filter</a></li>
-          <li><a href="productsBundles.html">Bundles</a></li>
-          <li><a href="productsDecaf.html">Decaf</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Locate</a></li>
-      <li><a href="#">About</a></li>
-    </ul>
-  </nav>
+  <div class="nav-drawer" id="nav-drawer">
+  <button class="nav-drawer__close" id="nav-drawer-close" aria-label="Close menu">×</button>
+
+  <div class="nav-drawer__main" id="nav-drawer-main">
+    <a href="#" class="nav-drawer__pill" style="background:#EED8DE;" data-submenu="coffee">
+      Coffee <span class="nav-drawer__arrow">→</span>
+    </a>
+    <a href="#" class="nav-drawer__pill" style="background:#D4D7C5;">
+      Shop <span class="nav-drawer__arrow">→</span>
+    </a>
+    <a href="#" class="nav-drawer__pill" style="background:#F2EDE2;">
+      Locate <span class="nav-drawer__arrow">→</span>
+    </a>
+    <a href="#" class="nav-drawer__pill" style="background:#CEDDE2;">
+      About <span class="nav-drawer__arrow">→</span>
+    </a>
+  </div>
+
+  <div class="nav-drawer__sub-panel" id="nav-drawer-sub-coffee">
+    <button class="nav-drawer__back" id="nav-drawer-back">←</button>
+    <h2 class="nav-drawer__sub-heading">Coffee</h2>
+    <a href="productsAll.html" class="nav-drawer__sub-link">Espresso</a>
+    <a href="productsFilter.html" class="nav-drawer__sub-link">Filter</a>
+    <a href="productsBundles.html" class="nav-drawer__sub-link">Bundles</a>
+    <a href="productsDecaf.html" class="nav-drawer__sub-link">Decaf</a>
+  </div>
+</div>
 
   <script src="products-data.js"></script>
   <script src="cart-store.js"></script>

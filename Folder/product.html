@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="product.css" />
   <link href="https://fonts.googleapis.com/css2?family=Square+Peg&family=Short+Stack&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="search-modal.css" />
+  <link rel="stylesheet" href="responsive.css" />
 </head>
 <body class="pdp-page">
 
@@ -36,6 +37,16 @@
         <button aria-label="Search"><img src="search.svg" alt="" /></button>
         <button aria-label="Shopping bag"><img src="shopping-bag-2.svg" alt="" /></button>
       </div>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <button class="nav-search-mobile" aria-label="Search">
+        <img src="search.svg" alt="" />
+      </button>
     </nav>
   </header>
 
@@ -96,39 +107,39 @@
 
         <div class="pdp-timeline">
 
-          <div class="pdp-timeline__track">
-            <div class="pdp-step__circle">
-              <img src="step-circle.svg" alt="" />
-              <span>1</span>
-            </div>
-            <div class="pdp-step__line"></div>
-            <div class="pdp-step__circle">
-              <img src="step-circle.svg" alt="" />
-              <span>2</span>
-            </div>
-            <div class="pdp-step__line"></div>
-            <div class="pdp-step__circle">
-              <img src="step-circle.svg" alt="" />
-              <span>3</span>
-            </div>
-          </div>
+  <div class="pdp-timeline-step">
+    <div class="pdp-timeline__track">
+      <div class="pdp-step__circle"><span>1</span></div>
+      <div class="pdp-step__line"></div>
+    </div>
+    <section class="pdp-timeline-block">
+      <h2 class="pdp-section-heading">Sourcing</h2>
+      <div class="pdp-sourcing-details" id="pdp-sourcing"></div>
+    </section>
+  </div>
 
-          <div class="pdp-timeline__content">
-            <section class="pdp-timeline-block">
-              <h2 class="pdp-section-heading">Sourcing</h2>
-              <div class="pdp-sourcing-details" id="pdp-sourcing"></div>
-            </section>
-            <section class="pdp-timeline-block">
-              <h2 class="pdp-section-heading">Process</h2>
-              <p class="pdp-body-text" id="pdp-process"></p>
-            </section>
-            <section class="pdp-timeline-block">
-              <h2 class="pdp-section-heading">Tasting notes</h2>
-              <p class="pdp-body-text" id="pdp-tasting"></p>
-            </section>
-          </div>
+  <div class="pdp-timeline-step">
+    <div class="pdp-timeline__track">
+      <div class="pdp-step__circle"><span>2</span></div>
+      <div class="pdp-step__line"></div>
+    </div>
+    <section class="pdp-timeline-block">
+      <h2 class="pdp-section-heading">Process</h2>
+      <p class="pdp-body-text" id="pdp-process"></p>
+    </section>
+  </div>
 
-        </div>
+  <div class="pdp-timeline-step">
+    <div class="pdp-timeline__track">
+      <div class="pdp-step__circle"><span>3</span></div>
+    </div>
+    <section class="pdp-timeline-block">
+      <h2 class="pdp-section-heading">Tasting notes</h2>
+      <p class="pdp-body-text" id="pdp-tasting"></p>
+    </section>
+  </div>
+
+</div>
 
       </div>
     </div>
@@ -196,6 +207,34 @@
     </div>
   </footer>
 
+  <div class="nav-drawer" id="nav-drawer">
+  <button class="nav-drawer__close" id="nav-drawer-close" aria-label="Close menu">×</button>
+
+  <div class="nav-drawer__main" id="nav-drawer-main">
+    <a href="#" class="nav-drawer__pill" style="background:#EED8DE;" data-submenu="coffee">
+      Coffee <span class="nav-drawer__arrow">→</span>
+    </a>
+    <a href="#" class="nav-drawer__pill" style="background:#D4D7C5;">
+      Shop <span class="nav-drawer__arrow">→</span>
+    </a>
+    <a href="#" class="nav-drawer__pill" style="background:#F2EDE2;">
+      Locate <span class="nav-drawer__arrow">→</span>
+    </a>
+    <a href="#" class="nav-drawer__pill" style="background:#CEDDE2;">
+      About <span class="nav-drawer__arrow">→</span>
+    </a>
+  </div>
+
+  <div class="nav-drawer__sub-panel" id="nav-drawer-sub-coffee">
+    <button class="nav-drawer__back" id="nav-drawer-back">←</button>
+    <h2 class="nav-drawer__sub-heading">Coffee</h2>
+    <a href="productsAll.html" class="nav-drawer__sub-link">Espresso</a>
+    <a href="productsFilter.html" class="nav-drawer__sub-link">Filter</a>
+    <a href="productsBundles.html" class="nav-drawer__sub-link">Bundles</a>
+    <a href="productsDecaf.html" class="nav-drawer__sub-link">Decaf</a>
+  </div>
+</div>
+
   <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" hidden>
   <div class="search-modal">
  
@@ -254,5 +293,7 @@
   <script src="nav-cart.js"></script>
   <script src="search-modal.js"></script>
   <script src="product.js"></script>
+  <script src="hamburger.js"></script>
+
 </body>
 </html>

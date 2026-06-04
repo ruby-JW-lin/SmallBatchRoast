@@ -35,3 +35,18 @@
 
   });
 })();
+
+// Submenu
+document.querySelectorAll('[data-submenu]').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = this.getAttribute('data-submenu');
+    document.getElementById('nav-drawer-sub-' + target).classList.add('is-active');
+  });
+});
+
+document.getElementById('nav-drawer-back').addEventListener('click', function() {
+  document.querySelectorAll('.nav-drawer__sub-panel').forEach(function(p) {
+    p.classList.remove('is-active');
+  });
+});
