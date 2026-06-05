@@ -2817,6 +2817,16 @@ nav {
   color: #000;
 }
 
+.nav-drawer__close img {
+  width: 24px;
+  height: 24px;
+}
+
+.nav-drawer__back img {
+  width: 24px;
+  height: 24px;
+}
+
 .nav-drawer__main {
   display: flex;
   flex-direction: column;
@@ -2838,9 +2848,8 @@ nav {
 }
 
 .nav-drawer__arrow {
-  font-family: sans-serif;
-  font-size: 24px;
-  color: #9D193C;
+  width: 24px;
+  height: 24px;
 }
 
 .nav-drawer__sub-panel {
