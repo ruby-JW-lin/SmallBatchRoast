@@ -3348,7 +3348,80 @@ nav {
     display: block;
     margin-top: 4px;
   }
+
+  /* ── Checkout mobile ──────────────────────────── */
+  body:has(.checkout-page) header {
+    display: none;
+  }
+
+  .checkout-page {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 20px 15px 100px;
+  }
+
+  .checkout-form-col {
+    order: 1;
+  }
+
+  .checkout-summary-col {
+    order: 2;
+    padding-top: 32px;
+  }
+
+  .checkout-heading {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .checkout-proceed-btn {
+    position: static;
+    width: 100%;
+    border-radius: 26px;
+    margin: 16px 0 0;
+    height: 56px;
+  }
+
+  .checkout-mobile-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 15px;
+    border-bottom: none;
+    font-family: 'Square Peg', cursive;
+    font-size: 32px;
+  }
+
+  .checkout-mobile-header img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .checkout-mobile-header a {
+    margin-left: auto;
+  }
   
+  .checkout-mobile-header a img {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+
+  .checkout-heading {
+    display: none;
+  }
+
+  body:has(.checkout-page) .site-footer {
+    display: none;
+  }
+
+  body.payment-page .site-footer {
+    display: none;
+  }
+
+  body.confirmation-page .site-footer {
+    display: none;
+  }
 }
 
 .pdp-timeline {
@@ -3503,7 +3576,7 @@ nav {
     font-size: 24px;
     width: fit-content;
     background: none;
-    border-bottom: 1px solid #717a3f;
+    border-bottom: none;
     height: auto;
   }
 
@@ -3532,6 +3605,43 @@ nav {
   }
 
   body:has(.cart-page) header {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  body:has(.cart-page) nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 88px;
+    padding: 0 38px;
+  }
+
+  body:has(.cart-page) .nav-icons {
+    order: 0;
+    margin-left: 0;
+    display: flex;
+  }
+
+  body:has(.cart-page) .nav-logo {
+    order: 0;
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+  }
+
+  body:has(.cart-page) .nav-hamburger {
+    display: none;
+  }
+
+  body:has(.cart-page) .nav-search-mobile {
+    display: none;
+  }
+
+  body:has(.cart-page) .nav-links {
     display: flex;
   }
 
@@ -3539,4 +3649,28 @@ nav {
     display: flex;
   }
 
+  .nav-icons {
+    order: 0;
+    margin-left: 0;
+  }
+
+  nav {
+    height: 88px;
+    padding: 0 38px;
+  }
+
+  .nav-logo {
+    order: 0;
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+  }
+  
+}
+
+@media (min-width: 769px) {
+  .checkout-mobile-header {
+    display: none;
+  }
 }
