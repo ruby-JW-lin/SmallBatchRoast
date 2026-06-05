@@ -23,7 +23,7 @@
           <ul class="dropdown">
             <li><a href="productsAll.html">All</a></li>
             <li><a href="productsEspresso.html">Espresso</a></li>
-            <li><a href="filter.html">Filter</a></li>
+            <li><a href="productsFilter.html">Filter</a></li>
             <li><a href="productsBundles.html">Bundles</a></li>
             <li><a href="productsDecaf.html">Decaf</a></li>
           </ul>
@@ -75,58 +75,68 @@
     <section class="products-grid" aria-label="Filter coffee products">
 
       <article class="product-card">
-        <div class="product-card__image">
-          <img src="golden filter.png" alt="Golden Ticket-Filter" />
-          <button class="product-card__bag" aria-label="Add to bag">
-            <img src="quickAdd.svg" alt="" />
-          </button>
-        </div>
-        <h2 class="product-card__name">Golden Ticket-Filter</h2>
-        <p class="product-card__price">from $20</p>
+        <a href="product.html?id=golden-filter">
+          <div class="product-card__image">
+            <img src="golden filter.png" alt="Golden Ticket-Filter" />
+            <button class="product-card__bag" aria-label="Add to bag">
+              <img src="quickAdd.svg" alt="" />
+            </button>
+          </div>
+          <h2 class="product-card__name">Golden Ticket-Filter</h2>
+          <p class="product-card__price">from $20</p>
+        </a>
       </article>
 
       <article class="product-card">
-        <div class="product-card__image">
-          <img src="AlirioFilter.png" alt="Alirio Munoz-Filter" />
-          <button class="product-card__bag" aria-label="Add to bag">
-            <img src="quickAdd.svg" alt="" />
-          </button>
-        </div>
-        <h2 class="product-card__name">Alirio Munoz-Filter</h2>
-        <p class="product-card__price">from $24</p>
+        <a href="product.html?id=alirio">
+          <div class="product-card__image">
+            <img src="AlirioFilter.png" alt="Alirio Munoz-Filter" />
+            <button class="product-card__bag" aria-label="Add to bag">
+              <img src="quickAdd.svg" alt="" />
+            </button>
+          </div>
+          <h2 class="product-card__name">Alirio Munoz-Filter</h2>
+          <p class="product-card__price">from $24</p>
+        </a>
       </article>
 
       <article class="product-card">
-        <div class="product-card__image">
-          <img src="EstrellasFilter.png" alt="Las Estrellas de Ají-Filter" />
-          <button class="product-card__bag" aria-label="Add to bag">
-            <img src="quickAdd.svg" alt="" />
-          </button>
-        </div>
-        <h2 class="product-card__name">Las Estrellas de Ají-Filter</h2>
-        <p class="product-card__price">from $25</p>
+        <a href="product.html?id=estrellas">
+          <div class="product-card__image">
+            <img src="EstrellasFilter.png" alt="Las Estrellas de Ají-Filter" />
+            <button class="product-card__bag" aria-label="Add to bag">
+              <img src="quickAdd.svg" alt="" />
+            </button>
+          </div>
+          <h2 class="product-card__name">Las Estrellas de Ají-Filter</h2>
+          <p class="product-card__price">from $25</p>
+        </a>
       </article>
 
       <article class="product-card">
-        <div class="product-card__image">
-          <img src="JhoanFilter.png" alt="Jhoan Vergara-Filter" />
-          <button class="product-card__bag" aria-label="Add to bag">
-            <img src="quickAdd.svg" alt="" />
-          </button>
-        </div>
-        <h2 class="product-card__name">Jhoan Vergara-Filter</h2>
-        <p class="product-card__price">from $21</p>
+        <a href="product.html?id=jhoan">
+          <div class="product-card__image">
+            <img src="JhoanFilter.png" alt="Jhoan Vergara-Filter" />
+            <button class="product-card__bag" aria-label="Add to bag">
+              <img src="quickAdd.svg" alt="" />
+            </button>
+          </div>
+          <h2 class="product-card__name">Jhoan Vergara-Filter</h2>
+          <p class="product-card__price">from $21</p>
+        </a>
       </article>
 
       <article class="product-card">
-        <div class="product-card__image">
-          <img src="decaf filter.jpeg" alt="Decaf-Filter" />
-          <button class="product-card__bag" aria-label="Add to bag">
-            <img src="quickAdd.svg" alt="" />
-          </button>
-        </div>
-        <h2 class="product-card__name">Decaf-Filter</h2>
-        <p class="product-card__price">from $20</p>
+        <a href="product.html?id=decaf-filter">
+          <div class="product-card__image">
+            <img src="decaf filter.jpeg" alt="Decaf-Filter" />
+            <button class="product-card__bag" aria-label="Add to bag">
+              <img src="quickAdd.svg" alt="" />
+            </button>
+          </div>
+          <h2 class="product-card__name">Decaf-Filter</h2>
+          <p class="product-card__price">from $20</p>
+        </a>
       </article>
 
     </section>
@@ -154,69 +164,70 @@
         <a href="/contact" class="footer-nav__link">Contact</a>
       </div>
     </div>
-
-    <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" hidden>
-  <div class="search-modal">
-    <div class="search-modal__header">
-      <label class="search-modal__icon" for="search-input" aria-label="Search">
-        <img src="search.svg" alt="" aria-hidden="true" />
-      </label>
-      <input class="search-modal__input" id="search-input" type="search" placeholder="Search" autocomplete="off" aria-label="Search products" />
-      <button class="search-modal__close" id="search-close" aria-label="Close search">
-        <img src="close.svg" alt="" aria-hidden="true" />
-      </button>
-    </div>
-    <div class="search-modal__body" id="search-modal-body">
-      <section class="search-section" id="search-recently-viewed" aria-labelledby="recently-viewed-heading">
-        <h2 class="search-section__heading" id="recently-viewed-heading">Recently Viewed</h2>
-        <ul class="search-products-grid" id="search-recent-list" aria-label="Recently viewed products"></ul>
-      </section>
-      <section class="search-section" id="search-results-section" aria-labelledby="search-results-heading" hidden>
-        <h2 class="search-section__heading" id="search-results-heading">Results</h2>
-        <ul class="search-products-grid" id="search-results-list" aria-label="Search results"></ul>
-        <p class="search-no-results" id="search-no-results" hidden>No products found.</p>
-      </section>
-      <section class="search-section" id="search-discover" aria-labelledby="discover-heading">
-        <h2 class="search-section__heading" id="discover-heading">Discover</h2>
-        <ul class="search-products-grid" id="search-discover-list" aria-label="Discover products"></ul>
-      </section>
-    </div>
-  </div>
-</div>
   </footer>
-  
+
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" hidden>
+    <div class="search-modal">
+      <div class="search-modal__header">
+        <label class="search-modal__icon" for="search-input" aria-label="Search">
+          <img src="search.svg" alt="" aria-hidden="true" />
+        </label>
+        <input class="search-modal__input" id="search-input" type="search" placeholder="Search" autocomplete="off" aria-label="Search products" />
+        <button class="search-modal__close" id="search-close" aria-label="Close search">
+          <img src="close.svg" alt="" aria-hidden="true" />
+        </button>
+      </div>
+      <div class="search-modal__body" id="search-modal-body">
+        <section class="search-section" id="search-recently-viewed" aria-labelledby="recently-viewed-heading">
+          <h2 class="search-section__heading" id="recently-viewed-heading">Recently Viewed</h2>
+          <ul class="search-products-grid" id="search-recent-list" aria-label="Recently viewed products"></ul>
+        </section>
+        <section class="search-section" id="search-results-section" aria-labelledby="search-results-heading" hidden>
+          <h2 class="search-section__heading" id="search-results-heading">Results</h2>
+          <ul class="search-products-grid" id="search-results-list" aria-label="Search results"></ul>
+          <p class="search-no-results" id="search-no-results" hidden>No products found.</p>
+        </section>
+        <section class="search-section" id="search-discover" aria-labelledby="discover-heading">
+          <h2 class="search-section__heading" id="discover-heading">Discover</h2>
+          <ul class="search-products-grid" id="search-discover-list" aria-label="Discover products"></ul>
+        </section>
+      </div>
+    </div>
+  </div>
+
   <div class="nav-drawer" id="nav-drawer">
-  <button class="nav-drawer__close" id="nav-drawer-close" aria-label="Close menu">×</button>
+    <button class="nav-drawer__close" id="nav-drawer-close" aria-label="Close menu"><img src="x-close.svg" alt="" /></button>
 
-  <div class="nav-drawer__main" id="nav-drawer-main">
-    <a href="#" class="nav-drawer__pill" style="background:#EED8DE;" data-submenu="coffee">
-      Coffee <span class="nav-drawer__arrow">→</span>
-    </a>
-    <a href="#" class="nav-drawer__pill" style="background:#D4D7C5;">
-      Shop <span class="nav-drawer__arrow">→</span>
-    </a>
-    <a href="#" class="nav-drawer__pill" style="background:#F2EDE2;">
-      Locate <span class="nav-drawer__arrow">→</span>
-    </a>
-    <a href="#" class="nav-drawer__pill" style="background:#CEDDE2;">
-      About <span class="nav-drawer__arrow">→</span>
-    </a>
-  </div>
+    <div class="nav-drawer__main" id="nav-drawer-main">
+      <a href="#" class="nav-drawer__pill" style="background:#EED8DE;" data-submenu="coffee">
+        Coffee <img class="nav-drawer__arrow" src="arrow-right.svg" alt="" />
+      </a>
+      <a href="#" class="nav-drawer__pill" style="background:#D4D7C5;">
+        Shop <img class="nav-drawer__arrow" src="arrow-right.svg" alt="" />
+      </a>
+      <a href="#" class="nav-drawer__pill" style="background:#F2EDE2;">
+        Locate <img class="nav-drawer__arrow" src="arrow-right.svg" alt="" />
+      </a>
+      <a href="#" class="nav-drawer__pill" style="background:#CEDDE2;">
+        About <img class="nav-drawer__arrow" src="arrow-right.svg" alt="" />
+      </a>
+    </div>
 
-  <div class="nav-drawer__sub-panel" id="nav-drawer-sub-coffee">
-    <button class="nav-drawer__back" id="nav-drawer-back">←</button>
-    <h2 class="nav-drawer__sub-heading">Coffee</h2>
-    <a href="productsAll.html" class="nav-drawer__sub-link">Espresso</a>
-    <a href="productsFilter.html" class="nav-drawer__sub-link">Filter</a>
-    <a href="productsBundles.html" class="nav-drawer__sub-link">Bundles</a>
-    <a href="productsDecaf.html" class="nav-drawer__sub-link">Decaf</a>
+    <div class="nav-drawer__sub-panel" id="nav-drawer-sub-coffee">
+      <button class="nav-drawer__back" id="nav-drawer-back"><img src="arrow-right.svg" alt="" style="transform: rotate(180deg);" /></button>
+      <h2 class="nav-drawer__sub-heading">Coffee</h2>
+      <a href="productsAll.html" class="nav-drawer__sub-link">Espresso</a>
+      <a href="productsFilter.html" class="nav-drawer__sub-link">Filter</a>
+      <a href="productsBundles.html" class="nav-drawer__sub-link">Bundles</a>
+      <a href="productsDecaf.html" class="nav-drawer__sub-link">Decaf</a>
+    </div>
   </div>
-</div>
 
   <script src="products-data.js"></script>
   <script src="cart-store.js"></script>
   <script src="nav-cart.js"></script>
   <script src="search-modal.js"></script>
   <script src="hamburger.js"></script>
+
 </body>
 </html>

@@ -42,7 +42,7 @@ const PRODUCTS = {
     tasting: 'Juicy, bright, stone fruit',
     aboutHeading: 'About Golden Ticket',
     aboutBody: 'Our everyday filter coffee. Bright, clean and endlessly drinkable.',
-    aboutPhoto: 'golden-photo.png',
+    aboutPhoto: 'nolberto-photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
     moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
     recommended: ['nolberto', 'alirio', 'jhoan', 'estrellas']
@@ -58,7 +58,7 @@ const PRODUCTS = {
     tasting: 'Peach, floral, clean',
     aboutHeading: 'About Alirio',
     aboutBody: 'Alirio Munoz is a dedicated producer from Caturron, Colombia, known for his meticulous approach to fermentation and drying.',
-    aboutPhoto: 'alirio-photo.png',
+    aboutPhoto: 'candyman_photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
     moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
     recommended: ['nolberto', 'golden-filter', 'jhoan', 'estrellas']
@@ -74,7 +74,7 @@ const PRODUCTS = {
     tasting: 'Raspberry, brown sugar, milk chocolate',
     aboutHeading: 'About Beto',
     aboutBody: 'A standout Pink Bourbon grown in the hills of Huila, Colombia.',
-    aboutPhoto: 'beto-photo.png',
+    aboutPhoto: 'nolberto-photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
     moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
     recommended: ['nolberto', 'candyman', 'white', 'golden-filter']
@@ -90,7 +90,7 @@ const PRODUCTS = {
     tasting: 'Toffee, walnut, dried fruit',
     aboutHeading: 'About The Ones We Love',
     aboutBody: 'Our milk-based espresso blend. Rich, sweet and comforting.',
-    aboutPhoto: 'white-photo.png',
+    aboutPhoto: 'candyman_photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
     moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
     recommended: ['candyman', 'nolberto', 'beto', 'golden-filter']
@@ -106,7 +106,7 @@ const PRODUCTS = {
     tasting: 'Pink Bourbon, floral, sweet',
     aboutHeading: 'About Jhoan',
     aboutBody: 'Jhoan Vergara produces exceptional Pink Bourbon coffees in Colombia.',
-    aboutPhoto: 'jhoan-photo.png',
+    aboutPhoto: 'nolberto-photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
     moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
     recommended: ['alirio', 'golden-filter', 'estrellas', 'nolberto']
@@ -122,7 +122,7 @@ const PRODUCTS = {
     tasting: 'Tropical fruit, complex, bright',
     aboutHeading: 'About Las Estrellas',
     aboutBody: 'A complex and vibrant filter coffee from Colombia.',
-    aboutPhoto: 'estrellas-photo.png',
+    aboutPhoto: 'candyman_photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
     moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
     recommended: ['alirio', 'jhoan', 'golden-filter', 'nolberto']
@@ -138,7 +138,7 @@ const PRODUCTS = {
     tasting: 'Varied across the bundle',
     aboutHeading: 'About the Espresso Bundle',
     aboutBody: 'The perfect way to explore our espresso range. Includes a selection of our most popular espresso roasts.',
-    aboutPhoto: 'EspressoBundle.jpeg',
+    aboutPhoto: 'nolberto-photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
     moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
     recommended: ['candyman', 'nolberto', 'beto', 'white']
@@ -154,7 +154,7 @@ const PRODUCTS = {
     tasting: 'Varied across the bundle',
     aboutHeading: 'About the Filter Bundle',
     aboutBody: 'The perfect way to explore our filter range. Includes a selection of our most popular filter roasts.',
-    aboutPhoto: 'FilterBundle.jpeg',
+    aboutPhoto: 'candyman_photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
     moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
     recommended: ['golden-filter', 'alirio', 'jhoan', 'estrellas']
@@ -170,7 +170,7 @@ const PRODUCTS = {
     tasting: 'Varied across the bundle',
     aboutHeading: 'About the Combo Bundle',
     aboutBody: 'Can\'t decide between filter and espresso? Get both. Our combo bundle includes top picks from each range.',
-    aboutPhoto: 'ComboBundle.jpeg',
+    aboutPhoto: 'nolberto-photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
     moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
     recommended: ['espresso-bundle', 'filter-bundle', 'candyman', 'golden-filter']
@@ -186,7 +186,7 @@ const PRODUCTS = {
     tasting: 'Chocolate, caramel, smooth',
     aboutHeading: 'About Decaf Espresso',
     aboutBody: 'All the flavour, none of the caffeine. Our decaf espresso is processed using the Swiss Water Method to retain its natural character.',
-    aboutPhoto: 'decaf_espresso.png',
+    aboutPhoto: 'candyman_photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
     moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
     recommended: ['decaf-filter', 'candyman', 'white', 'nolberto']
@@ -202,7 +202,7 @@ const PRODUCTS = {
     tasting: 'Stone fruit, gentle, sweet',
     aboutHeading: 'About Decaf Filter',
     aboutBody: 'A gentle, flavourful decaf perfect for filter brewing. Processed using the Swiss Water Method.',
-    aboutPhoto: 'decaf filter.jpeg',
+    aboutPhoto: 'nolberto-photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
     moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
     recommended: ['decaf-espresso', 'golden-filter', 'alirio', 'jhoan']
