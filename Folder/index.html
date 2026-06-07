@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Small Batch Roasting Co.</title>
     <link rel="stylesheet" href="styling.css" />
     <link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Square+Peg&family=Short+Stack&display=swap" rel="stylesheet" />
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="responsive.css" />
 </head>
 <body>
-      <header>
+  <header>
     <nav>
 
       <a href="index.html" class="nav-logo">
@@ -32,7 +32,7 @@
         </li>
         <li><a href="#">Locate</a></li>
         <li><a href="#">About</a></li>
-      </ul> 
+      </ul>
 
       <div class="nav-icons">
         <button aria-label="Account">
@@ -72,23 +72,31 @@
   <ul class="collections-grid">
 
     <li class="collection-card">
-      <img src="golden filter.png" alt="Filter" />
-      <span class="collection-label">FILTER</span>
+      <a href="productsFilter.html">
+        <img src="golden filter.png" alt="Filter" />
+        <span class="collection-label">FILTER</span>
+      </a>
     </li>
 
     <li class="collection-card">
-      <img src="nolberto.png" alt="Espresso" />
-      <span class="collection-label">ESPRESSO</span>
+      <a href="productsEspresso.html">
+        <img src="nolberto.png" alt="Espresso" />
+        <span class="collection-label">ESPRESSO</span>
+      </a>
     </li>
 
     <li class="collection-card">
-      <img src="decaf filter.jpeg" alt="Decaf" />
-      <span class="collection-label">DECAF</span>
+      <a href="productsDecaf.html">
+        <img src="decaf filter.jpeg" alt="Decaf" />
+        <span class="collection-label">DECAF</span>
+      </a>
     </li>
 
     <li class="collection-card">
-      <img src="EspressoBundle.jpeg" alt="Bundles" />
-      <span class="collection-label">BUNDLES</span>
+      <a href="productsBundles.html">
+        <img src="EspressoBundle.jpeg" alt="Bundles" />
+        <span class="collection-label">BUNDLES</span>
+      </a>
     </li>
 
   </ul>
@@ -160,31 +168,39 @@
 
   <div class="bestsellers-heading-row">
     <h2 class="bestsellers-heading">Our Bestsellers</h2>
-    <a href="#" class="bestsellers-show-all">Show all</a>
+    <a href="productsAll.html" class="bestsellers-show-all">Show all</a>
   </div>
 
   <ul class="bestsellers-grid">
-  <li class="product-card">
-    <img src="white.png" alt="The Ones We Love-Espresso" />
-    <h2 class="product-card__name">The Ones We Love-Espresso</h2>
-    <p class="product-card__price">from $21</p>
-  </li>
-  <li class="product-card">
-    <img src="nolberto.png" alt="Nolberto-Espresso" />
-    <h2 class="product-card__name">Nolberto-Espresso</h2>
-    <p class="product-card__price">from $25</p>
-  </li>
-  <li class="product-card">
-    <img src="candyman.png" alt="Candyman Espresso Blend" />
-    <h2 class="product-card__name">Candyman Espresso Blend</h2>
-    <p class="product-card__price">from $20</p>
-  </li>
-  <li class="product-card">
-    <img src="golden filter.png" alt="Golden Ticket-Filter" />
-    <h2 class="product-card__name">Golden Ticket-Filter</h2>
-    <p class="product-card__price">from $20</p>
-  </li>
-</ul>
+    <li class="product-card">
+      <a href="product.html?id=white">
+        <img src="white.png" alt="The Ones We Love-Espresso" />
+        <h2 class="product-card__name">The Ones We Love-Espresso</h2>
+        <p class="product-card__price">from $21</p>
+      </a>
+    </li>
+    <li class="product-card">
+      <a href="product.html?id=nolberto">
+        <img src="nolberto.png" alt="Nolberto-Espresso" />
+        <h2 class="product-card__name">Nolberto-Espresso</h2>
+        <p class="product-card__price">from $25</p>
+      </a>
+    </li>
+    <li class="product-card">
+      <a href="product.html?id=candyman">
+        <img src="candyman.png" alt="Candyman Espresso Blend" />
+        <h2 class="product-card__name">Candyman Espresso Blend</h2>
+        <p class="product-card__price">from $20</p>
+      </a>
+    </li>
+    <li class="product-card">
+      <a href="product.html?id=golden-filter">
+        <img src="golden filter.png" alt="Golden Ticket-Filter" />
+        <h2 class="product-card__name">Golden Ticket-Filter</h2>
+        <p class="product-card__price">from $20</p>
+      </a>
+    </li>
+  </ul>
 
 </section>
 
@@ -248,8 +264,7 @@
 
 <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" hidden>
   <div class="search-modal">
- 
-    <!-- Search input row -->
+
     <div class="search-modal__header">
       <label class="search-modal__icon" for="search-input" aria-label="Search">
         <img src="search.svg" alt="" aria-hidden="true" />
@@ -266,35 +281,25 @@
         <img src="close.svg" alt="" aria-hidden="true" />
       </button>
     </div>
- 
-    <!-- Scrollable body -->
+
     <div class="search-modal__body" id="search-modal-body">
- 
-      <!-- Recently Viewed -->
+
       <section class="search-section" id="search-recently-viewed" aria-labelledby="recently-viewed-heading">
         <h2 class="search-section__heading" id="recently-viewed-heading">Recently Viewed</h2>
-        <ul class="search-products-grid" id="search-recent-list" aria-label="Recently viewed products">
-          <!-- Populated by JS -->
-        </ul>
+        <ul class="search-products-grid" id="search-recent-list" aria-label="Recently viewed products"></ul>
       </section>
- 
-      <!-- Search Results (shown when typing) -->
+
       <section class="search-section" id="search-results-section" aria-labelledby="search-results-heading" hidden>
         <h2 class="search-section__heading" id="search-results-heading">Results</h2>
-        <ul class="search-products-grid" id="search-results-list" aria-label="Search results">
-          <!-- Populated by JS -->
-        </ul>
+        <ul class="search-products-grid" id="search-results-list" aria-label="Search results"></ul>
         <p class="search-no-results" id="search-no-results" hidden>No products found.</p>
       </section>
- 
-      <!-- Discover -->
+
       <section class="search-section" id="search-discover" aria-labelledby="discover-heading">
         <h2 class="search-section__heading" id="discover-heading">Discover</h2>
-        <ul class="search-products-grid" id="search-discover-list" aria-label="Discover products">
-          <!-- Populated by JS -->
-        </ul>
+        <ul class="search-products-grid" id="search-discover-list" aria-label="Discover products"></ul>
       </section>
- 
+
     </div>
   </div>
 </div>

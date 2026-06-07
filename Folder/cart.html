@@ -5,10 +5,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Cart — Small Batch Roasting Co.</title>
   <link rel="stylesheet" href="styling.css" />
-  <link rel="stylesheet" href="cart.css" />
   <link href="https://fonts.googleapis.com/css2?family=Square+Peg&family=Short+Stack&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="search-modal.css" />
   <link rel="stylesheet" href="responsive.css" />
+  <style>
+  @media (min-width: 769px) {
+    .cart-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-bottom: 1px solid #dfdfdf;
+      padding: 16px 0;
+      gap: 0;
+    }
+
+    .cart-item__top {
+      display: flex;
+      align-items: center;
+      width: 38%;
+      flex-shrink: 0;
+    }
+
+    .cart-item__image {
+      width: 160px;
+      height: 160px;
+      flex-shrink: 0;
+      background: #f2f2f2;
+      overflow: hidden;
+    }
+
+    .cart-item__name {
+      font-family: 'Square Peg', cursive;
+      font-size: 24px;
+      color: #000;
+      padding-left: 24px;
+      flex: 1;
+    }
+
+    .cart-items-dropdowns {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      gap: 0;
+    }
+
+    .cart-items-dropdowns .cart-select-wrapper:first-child {
+      width: 130px;
+      flex-shrink: 0;
+      margin-right: 6%;
+    }
+
+    .cart-items-dropdowns .cart-select-wrapper:nth-child(2) {
+      width: 130px;
+      flex-shrink: 0;
+      margin-right: 6%;
+      margin-left: 95px;
+    }
+
+    .cart-items-dropdowns .cart-select {
+      width: 130px;
+      min-width: unset;
+      height: 40px;
+      border: 0.8px solid #b7556f;
+      font-size: 15px;
+      padding: 0 32px 0 11px;
+    }
+
+    .cart-item__price--desktop {
+      font-family: 'Square Peg', cursive;
+      font-size: 24px;
+      color: #000;
+      display: block !important;
+      flex-shrink: 0;
+      margin-left: -100px;
+    }
+
+    .cart-items-dropdowns .cart-item__price--desktop {
+      font-family: 'Square Peg', cursive;
+      font-size: 24px;
+      color: #000;
+      display: block !important;
+      flex-shrink: 0;
+      flex: 0 0 auto !important;
+      margin-left: 95px;
+      text-align: left;
+      padding-right: 0;
+    }
+
+    .cart-item__price--mobile {
+      display: none !important;
+    }
+
+    .cart-item__remove--mobile {
+      display: none !important;
+    }
+
+    .cart-item__remove--desktop {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      opacity: 0.7;
+    }
+
+    .cart-item__remove--desktop img {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
+    .cart-item__remove--desktop:hover {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .cart-item__price--desktop {
+      display: none !important;
+    }
+    .cart-item__remove--desktop {
+      display: none !important;
+    }
+  }
+</style>
 </head>
 <body>
 
@@ -37,13 +162,9 @@
         <button aria-label="Search"><img src="search.svg" alt="" /></button>
         <button aria-label="Shopping bag"><img src="shopping-bag-2.svg" alt="" /></button>
       </div>
-
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
-
       <button class="nav-search-mobile" aria-label="Search">
         <img src="search.svg" alt="" />
       </button>
@@ -52,7 +173,6 @@
 
   <main class="cart-page">
 
-    <!-- ── Filled cart state ───────────────────────── -->
     <section class="cart-filled" id="cart-filled" aria-label="Your cart" hidden>
 
       <div class="cart-header">
@@ -62,15 +182,13 @@
 
       <div class="cart-table" role="table" aria-label="Cart items">
         <div class="cart-table__head" role="row">
-          <span class="cart-col--product" role="columnheader">Product</span>
-          <span class="cart-col--size" role="columnheader">Size</span>
-          <span class="cart-col--qty" role="columnheader">Quantity</span>
-          <span class="cart-col--price" role="columnheader">Price</span>
+          <span role="columnheader">Product</span>
+          <span role="columnheader">Size</span>
+          <span role="columnheader">Quantity</span>
+          <span role="columnheader">Price</span>
         </div>
         <hr class="cart-table__divider" />
-        <ul class="cart-items" id="cart-items" aria-label="Cart items list">
-          <!-- Populated by JS -->
-        </ul>
+        <ul class="cart-items" id="cart-items" aria-label="Cart items list"></ul>
       </div>
 
       <div class="cart-summary" id="cart-summary">
@@ -78,13 +196,12 @@
           <span class="cart-summary__label">Subtotal</span>
           <span class="cart-summary__amount" id="cart-subtotal">$0.00 AUD</span>
         </div>
-        <button class="cart-checkout-btn" id="cart-checkout-btn" onclick="window.location.href='checkout.html'">Check out</button>
+        <button class="cart-checkout-btn" onclick="window.location.href='checkout.html'">Check out</button>
         <p class="cart-summary__note">Shipping, taxes, and discount codes are calculated at checkout</p>
       </div>
 
     </section>
 
-    <!-- ── Empty cart state ────────────────────────── -->
     <section class="cart-empty-state" id="cart-empty-state" aria-label="Empty cart" hidden>
       <img class="cart-empty-state__icon" src="empty-bag.png" alt="" aria-hidden="true" />
       <p class="cart-empty-state__msg">Your cart is empty</p>
@@ -113,76 +230,51 @@
   </footer>
 
   <div class="nav-drawer" id="nav-drawer">
-  <button class="nav-drawer__close" id="nav-drawer-close" aria-label="Close menu">×</button>
-  <div class="nav-drawer__main" id="nav-drawer-main">
-    <a href="#" class="nav-drawer__pill" style="background:#EED8DE;" data-submenu="coffee">Coffee <span class="nav-drawer__arrow">→</span></a>
-    <a href="#" class="nav-drawer__pill" style="background:#D4D7C5;">Shop <span class="nav-drawer__arrow">→</span></a>
-    <a href="#" class="nav-drawer__pill" style="background:#F2EDE2;">Locate <span class="nav-drawer__arrow">→</span></a>
-    <a href="#" class="nav-drawer__pill" style="background:#CEDDE2;">About <span class="nav-drawer__arrow">→</span></a>
+    <button class="nav-drawer__close" id="nav-drawer-close" aria-label="Close menu"><img src="x-close.svg" alt="" /></button>
+    <div class="nav-drawer__main" id="nav-drawer-main">
+      <a href="#" class="nav-drawer__pill" style="background:#EED8DE;" data-submenu="coffee">Coffee <img class="nav-drawer__arrow" src="arrow-right.svg" alt="" /></a>
+      <a href="#" class="nav-drawer__pill" style="background:#D4D7C5;">Shop <img class="nav-drawer__arrow" src="arrow-right.svg" alt="" /></a>
+      <a href="#" class="nav-drawer__pill" style="background:#F2EDE2;">Locate <img class="nav-drawer__arrow" src="arrow-right.svg" alt="" /></a>
+      <a href="#" class="nav-drawer__pill" style="background:#CEDDE2;">About <img class="nav-drawer__arrow" src="arrow-right.svg" alt="" /></a>
+    </div>
+    <div class="nav-drawer__sub-panel" id="nav-drawer-sub-coffee">
+      <button class="nav-drawer__back" id="nav-drawer-back"><img src="arrow-right.svg" alt="" style="transform:rotate(180deg);" /></button>
+      <h2 class="nav-drawer__sub-heading">Coffee</h2>
+      <a href="productsAll.html" class="nav-drawer__sub-link">Espresso</a>
+      <a href="productsFilter.html" class="nav-drawer__sub-link">Filter</a>
+      <a href="productsBundles.html" class="nav-drawer__sub-link">Bundles</a>
+      <a href="productsDecaf.html" class="nav-drawer__sub-link">Decaf</a>
+    </div>
   </div>
-  <div class="nav-drawer__sub-panel" id="nav-drawer-sub-coffee">
-    <button class="nav-drawer__back" id="nav-drawer-back">←</button>
-    <h2 class="nav-drawer__sub-heading">Coffee</h2>
-    <a href="productsAll.html" class="nav-drawer__sub-link">Espresso</a>
-    <a href="productsFilter.html" class="nav-drawer__sub-link">Filter</a>
-    <a href="productsBundles.html" class="nav-drawer__sub-link">Bundles</a>
-    <a href="productsDecaf.html" class="nav-drawer__sub-link">Decaf</a>
-  </div>
-</div>
 
   <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" hidden>
-  <div class="search-modal">
- 
-    <!-- Search input row -->
-    <div class="search-modal__header">
-      <label class="search-modal__icon" for="search-input" aria-label="Search">
-        <img src="search.svg" alt="" aria-hidden="true" />
-      </label>
-      <input
-        class="search-modal__input"
-        id="search-input"
-        type="search"
-        placeholder="Search"
-        autocomplete="off"
-        aria-label="Search products"
-      />
-      <button class="search-modal__close" id="search-close" aria-label="Close search">
-        <img src="close.svg" alt="" aria-hidden="true" />
-      </button>
-    </div>
- 
-    <!-- Scrollable body -->
-    <div class="search-modal__body" id="search-modal-body">
- 
-      <!-- Recently Viewed -->
-      <section class="search-section" id="search-recently-viewed" aria-labelledby="recently-viewed-heading">
-        <h2 class="search-section__heading" id="recently-viewed-heading">Recently Viewed</h2>
-        <ul class="search-products-grid" id="search-recent-list" aria-label="Recently viewed products">
-          <!-- Populated by JS -->
-        </ul>
-      </section>
- 
-      <!-- Search Results (shown when typing) -->
-      <section class="search-section" id="search-results-section" aria-labelledby="search-results-heading" hidden>
-        <h2 class="search-section__heading" id="search-results-heading">Results</h2>
-        <ul class="search-products-grid" id="search-results-list" aria-label="Search results">
-          <!-- Populated by JS -->
-        </ul>
-        <p class="search-no-results" id="search-no-results" hidden>No products found.</p>
-      </section>
- 
-      <!-- Discover -->
-      <section class="search-section" id="search-discover" aria-labelledby="discover-heading">
-        <h2 class="search-section__heading" id="discover-heading">Discover</h2>
-        <ul class="search-products-grid" id="search-discover-list" aria-label="Discover products">
-          <!-- Populated by JS -->
-        </ul>
-      </section>
- 
+    <div class="search-modal">
+      <div class="search-modal__header">
+        <label class="search-modal__icon" for="search-input" aria-label="Search">
+          <img src="search.svg" alt="" aria-hidden="true" />
+        </label>
+        <input class="search-modal__input" id="search-input" type="search" placeholder="Search" autocomplete="off" aria-label="Search products" />
+        <button class="search-modal__close" id="search-close" aria-label="Close search">
+          <img src="close.svg" alt="" aria-hidden="true" />
+        </button>
+      </div>
+      <div class="search-modal__body" id="search-modal-body">
+        <section class="search-section" id="search-recently-viewed" aria-labelledby="recently-viewed-heading">
+          <h2 class="search-section__heading" id="recently-viewed-heading">Recently Viewed</h2>
+          <ul class="search-products-grid" id="search-recent-list"></ul>
+        </section>
+        <section class="search-section" id="search-results-section" aria-labelledby="search-results-heading" hidden>
+          <h2 class="search-section__heading" id="search-results-heading">Results</h2>
+          <ul class="search-products-grid" id="search-results-list"></ul>
+          <p class="search-no-results" id="search-no-results" hidden>No products found.</p>
+        </section>
+        <section class="search-section" id="search-discover" aria-labelledby="discover-heading">
+          <h2 class="search-section__heading" id="discover-heading">Discover</h2>
+          <ul class="search-products-grid" id="search-discover-list"></ul>
+        </section>
+      </div>
     </div>
   </div>
-</div>
-
 
   <script src="products-data.js"></script>
   <script src="cart-store.js"></script>
@@ -220,35 +312,35 @@
     <div class="cart-item__image">
       <img src="${p.image}" alt="${p.name}" />
     </div>
-    <div style="flex:1; display:flex; flex-direction:column; gap:4px;">
-      <span class="cart-item__name cart-col--product">${p.name.replace(/-/g, '\u2011')}</span>
-      <span class="cart-item__price cart-col--price" aria-label="Price: $${linePrice.toFixed(2)}">$${linePrice.toFixed(2)}</span>
+    <div style="flex:1;display:flex;flex-direction:column;gap:4px;">
+      <span class="cart-item__name">${p.name.replace(/-/g, '\u2011')}</span>
+      <span class="cart-item__price cart-item__price--mobile">$${linePrice.toFixed(2)}</span>
     </div>
-    <button class="cart-item__remove" data-id="${item.id}" data-size="${item.size}" aria-label="Remove ${p.name} from cart">
+    <button class="cart-item__remove cart-item__remove--mobile" data-id="${item.id}" data-size="${item.size}" aria-label="Remove ${p.name} from cart">
       <img src="trash.svg" alt="" aria-hidden="true" />
     </button>
   </div>
   <div class="cart-items-dropdowns">
-    <div class="cart-col--size">
-      <div class="cart-select-wrapper">
-        <select class="cart-select cart-select--size" data-id="${item.id}" data-oldsize="${item.size}" aria-label="Size for ${p.name}">
-          <option value="250g" ${item.size === '250g' ? 'selected' : ''}>250g</option>
-          <option value="500g" ${item.size === '500g' ? 'selected' : ''}>500g</option>
-          <option value="1kg"  ${item.size === '1kg'  ? 'selected' : ''}>1kg</option>
-        </select>
-        <img class="cart-select__arrow" src="downArrow.svg" alt="" aria-hidden="true" />
-      </div>
+    <div class="cart-select-wrapper">
+      <select class="cart-select cart-select--size" data-id="${item.id}" data-oldsize="${item.size}" aria-label="Size for ${p.name}">
+        <option value="250g" ${item.size === '250g' ? 'selected' : ''}>250g</option>
+        <option value="500g" ${item.size === '500g' ? 'selected' : ''}>500g</option>
+        <option value="1kg"  ${item.size === '1kg'  ? 'selected' : ''}>1kg</option>
+      </select>
+      <img class="cart-select__arrow" src="downArrow.svg" alt="" aria-hidden="true" />
     </div>
-    <div class="cart-col--qty">
-      <div class="cart-select-wrapper">
-        <select class="cart-select cart-select--qty" data-id="${item.id}" data-size="${item.size}" aria-label="Quantity for ${p.name}">
-          ${[1,2,3,4,5,6,7,8,9,10].map(n =>
-            `<option value="${n}" ${item.qty === n ? 'selected' : ''}>QTY: ${n}</option>`
-          ).join('')}
-        </select>
-        <img class="cart-select__arrow" src="downArrow.svg" alt="" aria-hidden="true" />
-      </div>
+    <div class="cart-select-wrapper">
+      <select class="cart-select cart-select--qty" data-id="${item.id}" data-size="${item.size}" aria-label="Quantity for ${p.name}">
+        ${[1,2,3,4,5,6,7,8,9,10].map(n =>
+          `<option value="${n}" ${item.qty === n ? 'selected' : ''}>QTY: ${n}</option>`
+        ).join('')}
+      </select>
+      <img class="cart-select__arrow" src="downArrow.svg" alt="" aria-hidden="true" />
     </div>
+    <span class="cart-item__price cart-item__price--desktop">$${linePrice.toFixed(2)}</span>
+    <button class="cart-item__remove cart-item__remove--desktop" data-id="${item.id}" data-size="${item.size}" aria-label="Remove ${p.name} from cart">
+      <img src="trash.svg" alt="" aria-hidden="true" />
+    </button>
   </div>
 `;
         list.appendChild(li);
@@ -257,7 +349,6 @@
       document.getElementById('cart-subtotal').textContent = `$${subtotal.toFixed(2)} AUD`;
       document.getElementById('cart-heading').textContent = `Your Cart (${CartStore.count()})`;
 
-      // Re-bind events
       document.querySelectorAll('.cart-select--size').forEach(sel => {
         sel.addEventListener('change', e => {
           const { id, oldsize } = e.target.dataset;
@@ -286,6 +377,5 @@
   <script src="search-modal.js"></script>
   <script src="hamburger.js"></script>
 
-  
 </body>
 </html>
