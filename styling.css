@@ -1,0 +1,3750 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: clip;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+}
+
+
+[hidden] {
+  display: none !important;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+  padding: 0 38px;
+  background: white;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.nav-logo img {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #717a3f;
+  font-size: 20px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-icons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-icons img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.nav-item--dropdown {
+  position: relative;
+  height: 88px;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 88px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  list-style: none;
+  z-index: 200;
+}
+
+.nav-item--dropdown:hover .dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item--dropdown:hover > a {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+.dropdown li {
+  height: 50px;
+  background: #fff;
+  border: 0.5px solid #dfdfdf;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown li a {
+  padding: 0 19px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #000;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.dropdown li:hover {
+  background: #eceee2;
+}
+
+.hero {
+  position: relative;
+  height: 842px;
+  overflow: hidden;
+}
+
+.hero img {
+  position: absolute;
+  width: 100%;
+  height: 119%;
+  top: -12%;
+  left: 0;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 850px;
+  height: 850px;
+  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0));
+}
+
+.hero-text {
+  position: absolute;
+  left: 56px;
+  bottom: 90px;
+  font-family: 'Square Peg', cursive;
+  font-size: 200px;
+  line-height: 160px;
+  color: white;
+}
+
+.collections {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 56px 60px;
+}
+
+.collections-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 64px;
+  color: #c50034;
+  font-weight: normal;
+}
+
+.collections-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 29px;
+}
+
+.collection-card {
+  position: relative;
+  flex: 1;
+  background: #f4f4f4;
+  aspect-ratio: 309 / 380;
+  overflow: hidden;
+}
+
+.collection-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection-label {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  font-family: 'Short Stack', cursive;
+  font-size: 20px;
+  color: #c50034;
+}
+
+.news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 56px;
+}
+
+.news-heading-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.news-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 64px;
+  color: #c50034;
+  font-weight: normal;
+}
+
+.news-flower {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+
+.news-images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 80px;
+  list-style: none;
+  width: 100%;
+  padding: 40px 0;
+  justify-content: center;
+}
+
+.news-images li {
+  width: 374px;
+  height: 515px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 16px;
+}
+
+.news-images li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: center top;
+}
+
+.news-caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 450px;
+}
+
+.news-meta {
+  font-family: 'Square Peg', cursive;
+  font-size: 40px;
+  color: #c50034;
+}
+
+.news-body {
+  font-family: 'Short Stack', cursive;
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.6;
+}
+
+.news-read-more {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #c50034;
+  text-decoration: none;
+  border-bottom: 1px solid #c50034;
+  align-self: center;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 80px 56px 80px 163px;
+  gap: 80px;
+  margin-bottom: 60px;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 511px;
+  flex-shrink: 0;
+}
+
+.about-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 64px;
+  color: #c50034;
+  line-height: 0.91;
+  font-weight: normal;
+}
+
+.about-body {
+  font-family: 'Short Stack', cursive;
+  font-size: 16px;
+  color: #000000;
+  line-height: normal;
+  max-width: 511px;
+}
+
+.about-read-more {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #c50034;
+  text-decoration: none;
+  border-bottom: 1px solid #c50034;
+  width: fit-content;
+}
+
+.about-media {
+  position: relative;
+  flex: 1;
+}
+
+.about-photo {
+  width: 543px;
+  height: 630px;
+  object-fit: cover;
+  object-position: bottom;
+  display: block;
+}
+
+.about-deco-stamp {
+  position: absolute;
+  width: 229px;
+  bottom: -80px;
+  right: -10px;
+  transform: rotate(-10deg);
+}
+
+.about-deco-text {
+  position: absolute;
+  width: 255px;
+  top: -30px;
+  left: -80px;
+  transform: rotate(-15deg);
+}
+
+.usp {
+  background: #eceee2;
+  padding: 65px 176px;
+}
+
+.usp-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 176px;
+  list-style: none;
+}
+
+.usp-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  width: 245px;
+}
+
+.usp-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.usp-heading {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #9d193c;
+  line-height: 0.82;
+}
+
+.usp-body {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #000000;
+  line-height: 1.32;
+}
+
+.bestsellers {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 40px 56px 60px;
+  margin-top: 60px;
+}
+
+.bestsellers-heading-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.bestsellers-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 64px;
+  color: #c50034;
+  font-weight: normal;
+}
+
+.bestsellers-show-all {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #c50034;
+  text-decoration: none;
+  border-bottom: 1px solid #c50034;
+}
+
+.bestsellers-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  list-style: none;
+}
+
+.bestsellers-grid .product-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bestsellers-grid .product-card img {
+  width: 100%;
+  aspect-ratio: 309 / 380;
+  object-fit: cover;
+  display: block;
+  background: #f4f4f4;
+}
+
+.bestsellers-grid .product-card__name {
+  font-family: 'Square Peg', cursive;
+  font-size: 32px;
+  font-weight: normal;
+  color: #000;
+  line-height: 1.1;
+  text-align: center;
+  padding: 8px 8px 0;
+}
+
+.bestsellers-grid .product-card__price {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #717a3f;
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.product-card > a {
+  display: block;
+  text-decoration: none;
+}
+
+.site-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-scene {
+  width: 100%;
+  display: block;
+}
+
+.footer-grass {
+  width: 100%;
+  height: 82px;
+  overflow: hidden;
+}
+
+.footer-grass img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.footer-bottom {
+  background: #521525;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 34px 56px 28px;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #fff;
+  width: 309px;
+}
+
+.footer-contact__heading {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+
+.footer-contact__name {
+  font-weight: 700;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  align-self: flex-end;
+  background: #521525;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+}
+
+.footer-nav__copyright {
+  font-size: 14px;
+  color: #fff;
+}
+
+.footer-nav__link {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.products-hero {
+  display: flex;
+  align-items: stretch;
+  height: 255px;
+  overflow: hidden;
+}
+
+.products-hero__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  flex-shrink: 0;
+  padding: 0 40px 0 43px;
+  width: 493px;
+}
+
+.products-hero__heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 96px;
+  color: #c50034;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.products-hero__desc {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #000;
+  line-height: 1.375;
+  max-width: 414px;
+}
+
+.products-hero__image {
+  flex: 1;
+  height: 255px;
+  object-fit: cover;
+  display: block;
+}
+
+.products-divider {
+  border: none;
+  border-top: 0.7px solid #dfdfdf;
+  margin: 0;
+}
+
+.products-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 43px;
+  position: sticky;
+  top: 100px;
+  z-index: 50;
+  pointer-events: none;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.products-toolbar__sort,
+.products-toolbar__filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 12px;
+  border: 0.4px solid #000;
+  font-family: 'Short Stack', cursive;
+  font-size: 12px;
+  color: #000;
+  cursor: pointer;
+  background: #fff;
+  pointer-events: all;
+}
+
+.products-toolbar__sort img,
+.products-toolbar__filter img {
+  width: 14px;
+  height: 14px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 40px;
+  padding: 40px 43px 80px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-card__image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 309/380;
+  background: #f4f4f4;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.product-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-card__bag {
+  position: absolute;
+  bottom: 11px;
+  left: 11px;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3px;
+}
+
+.product-card__bag img {
+  width: 33px;
+  height: 33px;
+  object-fit: contain;
+}
+
+.product-card__name {
+  font-family: 'Square Peg', cursive;
+  font-size: 32px;
+  font-weight: normal;
+  color: #000;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.product-card__price {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #717a3f;
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════════════
+   PRODUCT DETAIL PAGE
+   ══════════════════════════════════════════════════ */
+
+.pdp-scroll-section {
+  display: flex;
+  flex-direction: column;
+  background: #f2ede2;
+  
+}
+
+.pdp-image-panel {
+  position: relative;
+  width: 100%;
+  height: 364px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.pdp-image-panel__bg {
+  position: absolute;
+  inset: 0;
+  left: 14px;
+  right: 14px;
+  background: #717a3f;
+}
+
+.pdp-image-panel__img {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: calc(100% - 28px);
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.pdp-content-panel {
+  flex: 1;
+  padding: 24px 14px 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdp-block {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 40px;
+}
+
+.pdp-block--purchase {
+  gap: 0;
+}
+
+.pdp-name {
+  font-family: 'Square Peg', cursive;
+  font-size: 36px;
+  color: #c50034;
+  font-weight: normal;
+  line-height: 0.82;
+  margin-bottom: 12px;
+}
+
+.pdp-price {
+  font-family: 'Square Peg', cursive;
+  font-size: 32px;
+  color: #000;
+  font-weight: normal;
+  line-height: 0.82;
+  margin-bottom: 20px;
+}
+
+.pdp-flavours {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.pdp-flavours strong {
+  font-weight: 700;
+}
+
+.pdp-rule {
+  border: none;
+  border-top: 1px solid #c8c8c8;
+  margin: 0 0 20px;
+}
+
+.pdp-size-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.pdp-label {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #000;
+  line-height: 0.82;
+}
+
+.pdp-size-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  border: 0.8px solid #c50034;
+  border-radius: 20px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #000;
+  cursor: pointer;
+  background: #fff;
+}
+
+.pdp-size-selector img {
+  width: 16px;
+  height: 16px;
+}
+
+.pdp-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pdp-qty-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  border: 0.8px solid #b7556f;
+  border-radius: 20px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #000;
+  cursor: pointer;
+  background: #fff;
+  width: 116px;
+}
+
+.pdp-qty-selector img {
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+}
+
+.pdp-atc-btn {
+  flex: 1;
+  height: 40px;
+  background: #b7556f;
+  border: none;
+  border-radius: 20px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+}
+
+.pdp-pickup {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #000;
+}
+
+.pdp-pickup img {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.pdp-pickup-sub {
+  font-size: 12px;
+  color: #3f3f46;
+  margin-top: 4px;
+}
+
+.pdp-shipping {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 12px;
+  color: #3f3f46;
+}
+
+.pdp-shipping img {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.pdp-step__circle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.pdp-step__circle img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.pdp-step__circle span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Square Peg', cursive;
+  font-size: 40px;
+  color: #fff;
+  line-height: 1;
+}
+
+.pdp-step__line {
+  width: 3px;
+  flex: 1;
+  min-height: 120px;
+  display: block;
+  object-fit: fill;
+}
+
+.pdp-section-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 36px;
+  color: #717a3f;
+  font-weight: normal;
+  line-height: 0.82;
+}
+
+.pdp-sourcing-details {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #000;
+  line-height: 1.8;
+}
+
+.pdp-sourcing-details strong {
+  font-weight: 700;
+  display: block;
+}
+
+.pdp-body-text {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #000;
+  line-height: 1.5;
+  width: 100%;
+}
+
+.pdp-section-divider {
+  border: none;
+  border-top: 1px solid #c8c8c8;
+  margin-top: 100px;
+}
+
+.pdp-about {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 14px;
+  gap: 24px;
+  background: #f2ede2;
+}
+
+.pdp-about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pdp-about__heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 36px;
+  color: #717a3f;
+  font-weight: normal;
+  line-height: 0.82;
+  text-align: center;
+}
+
+.pdp-about__body {
+  font-family: 'Square Peg', cursive;
+  font-size: 24px;
+  color: #000;
+  line-height: 1.02;
+  text-align: center;
+  width: 100%;
+}
+
+.pdp-about__img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  display: block;
+}
+
+.pdp-more-info {
+  background: #f2ede2;
+  padding: 40px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.pdp-more-info__heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 40px;
+  color: #717a3f;
+  font-weight: normal;
+  line-height: 0.82;
+}
+
+.pdp-accordion {
+  width: 100%;
+}
+
+.pdp-accordion__btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border: none;
+  border-top: 1px solid #c8c8c8;
+  background: none;
+  cursor: pointer;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000;
+}
+
+.pdp-accordion__btn:last-of-type {
+  border-bottom: 1px solid #c8c8c8;
+}
+
+.pdp-accordion__btn img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s;
+}
+
+.pdp-accordion__btn[aria-expanded="true"] img {
+  transform: rotate(45deg);
+}
+
+.pdp-accordion__body {
+  display: none;
+  padding: 0 0 20px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #000;
+  line-height: 1.5;
+}
+
+.pdp-accordion__body.open {
+  display: block;
+}
+
+.pdp-recommended {
+  background: #fff;
+  padding: 40px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pdp-recommended__heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 40px;
+  color: #717a3f;
+  font-weight: normal;
+  line-height: 0.82;
+}
+
+#pdp-recommended-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  list-style: none;
+}
+
+#pdp-recommended-grid .product-card {
+  flex-shrink: 0;
+  width: 309px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#pdp-recommended-grid .product-card__image {
+  width: 309px;
+  height: 310px;
+}
+
+#pdp-recommended-grid .product-card__name {
+  font-size: 20px;
+}
+
+#pdp-recommended-grid .product-card__price {
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+
+  .pdp-scroll-section {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .pdp-image-panel {
+    position: sticky;
+    top: 124px;
+    width: 619px;
+    height: 622px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .pdp-image-panel__bg {
+    position: absolute;
+    inset: 0;
+    left: 56px;
+    background: #717a3f;
+  }
+
+  .pdp-image-panel__img {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    width: 644px;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+    display: block;
+    padding: 0;
+    transform: none;
+  }
+
+  .pdp-content-panel {
+    padding: 124px 56px 100px 80px;
+  }
+
+  .pdp-block {
+    padding-bottom: 80px;
+  }
+
+  .pdp-name {
+    font-size: 64px;
+    margin-bottom: 16px;
+  }
+
+  .pdp-price {
+    font-size: 64px;
+    margin-bottom: 32px;
+  }
+
+  .pdp-flavours {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .pdp-rule {
+    margin-bottom: 24px;
+  }
+
+  .pdp-size-row {
+    margin-bottom: 24px;
+  }
+
+  .pdp-size-selector {
+    height: 45px;
+    border-radius: 30px;
+    font-size: 16px;
+  }
+
+  .pdp-actions {
+    margin-bottom: 24px;
+  }
+
+  .pdp-qty-selector {
+    height: 45px;
+    border-radius: 30px;
+    width: 170px;
+  }
+
+  .pdp-atc-btn {
+    height: 45px;
+    border-radius: 30px;
+  }
+
+  .pdp-pickup {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .pdp-pickup-sub {
+    font-size: 14px;
+  }
+
+  .pdp-shipping {
+    font-size: 16px;
+  }
+
+  .pdp-timeline {
+    padding-top: 80px;
+    gap: 0;
+  }
+
+  .pdp-step__circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .pdp-step__circle span {
+    font-size: 44px;
+  }
+
+  .pdp-step__line {
+    min-height: 0;
+  }
+
+  .pdp-section-heading {
+    font-size: 64px;
+  }
+
+  .pdp-sourcing-details {
+    font-size: 16px;
+  }
+
+  .pdp-body-text {
+    font-size: 16px;
+    width: 251px;
+  }
+
+  .pdp-about {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    padding: 100px 56px 100px 161px;
+    gap: 80px;
+    background: #f2ede2;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: static;
+  }
+
+  .pdp-about__text {
+    position: static;
+    width: 514px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex-shrink: 0;
+  }
+
+  .pdp-about__heading {
+    font-family: 'Square Peg', cursive;
+    font-size: 64px;
+    color: #717a3f;
+    font-weight: normal;
+    line-height: 0.82;
+    text-align: left;
+  }
+
+  .pdp-about__body {
+    font-family: 'Square Peg', cursive;
+    font-size: 36px;
+    color: #000;
+    line-height: 1.02;
+    text-align: left;
+    width: 514px;
+  }
+
+  .pdp-about__img {
+    position: static;
+    width: 542px;
+    height: 542px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .pdp-more-info {
+    padding: 80px 160px;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .pdp-more-info__heading {
+    font-size: 64px;
+  }
+
+  .pdp-accordion {
+    width: 100%;
+    max-width: 1119px;
+  }
+
+  .pdp-accordion__btn {
+    padding: 24px 0;
+    font-size: 20px;
+  }
+
+  .pdp-accordion__body {
+    font-size: 16px;
+    padding-bottom: 24px;
+  }
+
+  .pdp-recommended {
+    padding: 120px 42px 80px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pdp-recommended__heading {
+    font-size: 64px;
+    padding-left: 0;
+    align-self: flex-start;
+    padding-left: 34px;
+  }
+
+  #pdp-recommended-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 40px;
+    overflow-x: visible;
+    justify-content: center;
+  }
+
+  #pdp-recommended-grid .product-card {
+    width: auto;
+  }
+
+  #pdp-recommended-grid .product-card__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 309 / 380;
+  }
+
+  #pdp-recommended-grid .product-card__name {
+    font-size: 32px;
+  }
+
+  #pdp-recommended-grid .product-card__price {
+    font-size: 16px;
+  }
+
+  .pdp-timeline-step .pdp-timeline-block {
+    padding-bottom: 80px;
+  }
+
+  .pdp-timeline-step:last-child .pdp-timeline-block {
+    padding-bottom: 0;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .pdp-page main {
+    padding-top: 14px;
+  }
+}
+.pdp-step__circle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  background: #b0b0b0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdp-step__circle img {
+  display: none;
+}
+
+.pdp-step__circle span {
+  font-family: 'Square Peg', cursive;
+  font-size: 40px;
+  color: #fff;
+  line-height: 1;
+}
+
+.pdp-step__line {
+  width: 2px;
+  flex: 1;
+  min-height: 200px;
+  background: #b0b0b0;
+  display: block;
+}
+
+.pdp-scroll-section,
+.pdp-content-panel {
+  background: #f2ede2;
+}
+
+.pdp-page {
+  background: #f2ede2;
+}
+
+/* ══════════════════════════════════════════════════
+   CART PAGE
+   ══════════════════════════════════════════════════ */
+
+.cart-page {
+  min-height: 60vh;
+  padding: 48px 56px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Header ────────────────────────────────────── */
+.cart-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.cart-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 64px;
+  font-weight: normal;
+  color: #717a3f;
+  line-height: 1;
+}
+
+.cart-continue {
+  font-family: 'Square Peg', cursive;
+  font-size: 24px;
+  color: #717a3f;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  width: fit-content;
+}
+
+/* ── Table ─────────────────────────────────────── */
+.cart-table {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 48px;
+}
+
+.cart-table__head {
+  display: grid;
+  grid-template-columns: 522px 315px 315px 1fr;
+  align-items: center;
+  padding-bottom: 12px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #000;
+}
+
+.cart-table__divider {
+  border: none;
+  border-top: 1px solid #dfdfdf;
+  margin: 0 0 0;
+}
+
+/* Column alignment helpers */
+.cart-col--product { /* spans image + name in head */ }
+.cart-col--size    { }
+.cart-col--qty     { }
+.cart-col--price   { text-align: right; padding-right: 16px; }
+
+/* ── Cart Items List ────────────────────────────── */
+.cart-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 522px 175px 175px 160px 48px;
+  align-items: center;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 16px 0;
+  gap: 0;
+}
+
+.cart-item__image {
+  width: 160px;
+  height: 160px;
+  background: #f4f4f4;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.cart-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cart-item__name {
+  font-family: 'Square Peg', cursive;
+  font-size: 28px;
+  font-weight: normal;
+  color: #000;
+  padding-left: 24px;
+  line-height: 1.2;
+}
+
+/* ── Select Dropdowns ───────────────────────────── */
+.cart-select-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.cart-select {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 40px;
+  padding: 0 40px 0 16px;
+  border: 1px solid #c50034;
+  border-radius: 0;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #000;
+  background: #fff;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.cart-select--qty {
+  min-width: 110px;
+  border-color: #c50034;
+}
+
+.cart-select__arrow {
+  position: absolute;
+  right: 12px;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+/* ── Item Price ─────────────────────────────────── */
+.cart-item__price {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #000;
+  text-align: right;
+  padding-right: 16px;
+}
+
+/* ── Remove Button ──────────────────────────────── */
+.cart-item__remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.cart-item__remove:hover {
+  opacity: 1;
+}
+
+.cart-item__remove img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ── Summary ────────────────────────────────────── */
+.cart-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.cart-summary__row {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+}
+
+.cart-summary__label {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #000;
+}
+
+.cart-summary__amount {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #000;
+}
+
+.cart-checkout-btn {
+  height: 52px;
+  width: 380px;
+  background: #b7556f;
+  border: none;
+  border-radius: 26px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 0.15s;
+}
+
+.cart-checkout-btn:hover {
+  background: #a04460;
+}
+
+.cart-summary__note {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 13px;
+  color: #000;
+  font-style: italic;
+  text-align: right;
+}
+
+/* ── Empty cart ─────────────────────────────────── */
+.cart-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 60vh;
+}
+
+.cart-empty-state__icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  opacity: 0.7;
+}
+
+.cart-empty-state__msg {
+  font-family: 'Square Peg', cursive;
+  font-size: 48px;
+  font-weight: normal;
+  color: #000;
+  text-align: center;
+}
+
+.cart-empty-state__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 380px;
+  height: 52px;
+  background: #b7556f;
+  border-radius: 26px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: background 0.15s;
+}
+
+.cart-empty-state__btn:hover {
+  background: #a04460;
+}
+
+/* ── Nav bag count badge ─────────────────────────── */
+.nav-bag-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.nav-bag-count {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  color: #000;
+  text-align: center;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  pointer-events: none;
+}
+
+.cart-page ~ .site-footer .footer-scene,
+.cart-page ~ .site-footer .footer-grass {
+  display: none;
+}
+
+/* ══════════════════════════════════════════════════
+   CHECKOUT PAGE
+   ══════════════════════════════════════════════════ */
+ 
+.checkout-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 48px 80px 80px;
+  min-height: 80vh;
+  align-items: start;
+}
+ 
+/* ── Heading ────────────────────────────────────── */
+.checkout-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 64px;
+  font-weight: normal;
+  color: #000;
+  line-height: 1;
+  margin-bottom: 32px;
+}
+ 
+/* ── Ship / Pickup Toggle ───────────────────────── */
+.checkout-toggle {
+  display: flex;
+  width: 100%;
+  height: 72.431px;
+  padding: 3.622px 3.622px 3.622px 3.622px;
+  align-items: center;
+  gap: 0;
+  border-radius: 19.315px;
+  background: #DFDFDF;
+  margin-bottom: 32px;
+}
+ 
+.checkout-toggle__btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+  border: none;
+  border-radius: 15.693px;
+  background: none;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+ 
+.checkout-toggle__btn img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0);
+}
+ 
+.checkout-toggle__btn--active {
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+ 
+/* ── Form Fields ────────────────────────────────── */
+.checkout-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+ 
+.checkout-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+ 
+.checkout-label {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #9D193C;
+}
+ 
+.checkout-label--optional span {
+  font-weight: 400;
+  color: #717a3f;
+}
+ 
+.checkout-input {
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid #dfdfdf;
+  border-radius: 4px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #000;
+  background: #fff;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+}
+ 
+.checkout-input:focus {
+  border-color: #9D193C;
+}
+ 
+/* Select wrapper */
+.checkout-select-wrapper {
+  position: relative;
+}
+ 
+.checkout-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 36px;
+  cursor: pointer;
+}
+ 
+.checkout-select__arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+ 
+/* ── Shipping Method ────────────────────────────── */
+.checkout-shipping-method {
+  margin-top: 8px;
+}
+ 
+.checkout-shipping-heading {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 12px;
+}
+ 
+.checkout-shipping-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid #dfdfdf;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background: #f4f4f4;
+  transition: border-color 0.15s;
+}
+ 
+.checkout-shipping-option--selected {
+  border-color: #9D193C;
+  background: #fff;
+}
+ 
+.checkout-shipping-option input[type="radio"] {
+  accent-color: #9D193C;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+ 
+.checkout-shipping-option__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+ 
+.checkout-shipping-option__name {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+}
+ 
+.checkout-shipping-option__sub {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 13px;
+  color: #555;
+}
+ 
+.checkout-shipping-option__price {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+}
+ 
+/* ── Pickup note ────────────────────────────────── */
+.checkout-pickup-note {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #000;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #eceee2;
+  border-radius: 8px;
+}
+ 
+/* ── Order Summary Column ───────────────────────── */
+.checkout-summary-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 96px;
+}
+ 
+.checkout-summary-heading {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+}
+ 
+/* ── Summary Items ──────────────────────────────── */
+.checkout-summary-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+ 
+.checkout-summary-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+ 
+.checkout-summary-item__img-wrap {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background: #f4f4f4;
+  border-radius: 6px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+ 
+.checkout-summary-item__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+ 
+.checkout-summary-item__qty {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  background: #3d3d3d;
+  color: #fff;
+  border-radius: 50%;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.checkout-summary-item__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+ 
+.checkout-summary-item__name {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+}
+ 
+.checkout-summary-item__size {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 13px;
+  color: #555;
+}
+ 
+.checkout-summary-item__price {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #000;
+}
+ 
+/* ── Totals ─────────────────────────────────────── */
+.checkout-summary-totals {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid #dfdfdf;
+  padding-top: 16px;
+  margin-bottom: 24px;
+}
+ 
+.checkout-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #000;
+}
+ 
+.checkout-summary-row--total {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #dfdfdf;
+}
+ 
+.checkout-total-currency {
+  font-size: 14px;
+  font-weight: 400;
+  color: #555;
+  margin-right: 6px;
+}
+ 
+.checkout-total-amount {
+  font-size: 28px;
+  font-weight: 700;
+}
+ 
+/* ── Proceed Button ─────────────────────────────── */
+.checkout-proceed-btn {
+  width: 100%;
+  height: 52px;
+  background: #b7556f;
+  border: none;
+  border-radius: 26px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 0.15s;
+  margin-bottom: 32px;
+}
+ 
+.checkout-proceed-btn:hover {
+  background: #a04460;
+}
+
+/* ══════════════════════════════════════════════════
+   PAYMENT PAGE
+   ══════════════════════════════════════════════════ */
+
+.payment-page {
+  background: #f2ede2;
+}
+
+.payment-main {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 56px 80px;
+  position: relative;
+}
+
+/* ── Heading ────────────────────────────────────── */
+.payment-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 80px;
+  font-weight: normal;
+  color: #717a3f;
+  line-height: 1;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+/* ── Card container — now just a column with gaps ── */
+.payment-card {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Email field ────────────────────────────────── */
+.payment-email-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #dfdfdf;
+}
+
+.payment-email-label {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+}
+
+.payment-email-input {
+  border: none;
+  outline: none;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #000;
+  background: transparent;
+  width: 100%;
+}
+
+.payment-email-input::placeholder {
+  color: #aaa;
+}
+
+/* ── Payment method tabs ────────────────────────── */
+.payment-tabs {
+  display: flex;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #dfdfdf;
+  overflow: hidden;
+}
+
+.payment-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 4px;
+  border: none;
+  border-top: 2px solid transparent;
+  background: none;
+  cursor: pointer;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 12px;
+  color: #555;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.payment-tab img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.payment-tab--active {
+  color: #675dff;
+  border-top-color: #675dff;
+}
+
+.payment-tab--more {
+  flex: 0;
+  padding: 10px 12px;
+  font-size: 18px;
+  color: #555;
+  border-top: 2px solid transparent;
+}
+
+/* ── Panel ──────────────────────────────────────── */
+.payment-panel {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #dfdfdf;
+  overflow: hidden;
+}
+
+.payment-panel--hidden {
+  display: none;
+}
+
+.payment-redirect-note {
+  padding: 24px 16px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ── Fields inside panel ────────────────────────── */
+.payment-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.payment-field:last-child {
+  border-bottom: none;
+}
+
+.payment-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.payment-field-row .payment-field {
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.payment-field-row .payment-field:first-child {
+  border-right: 1px solid #dfdfdf;
+}
+
+.payment-field__label {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+}
+
+.payment-field__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.payment-field__input {
+  border: none;
+  outline: none;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #000;
+  background: transparent;
+  width: 100%;
+}
+
+.payment-field__input::placeholder {
+  color: #aaa;
+}
+
+/* Card brand icons */
+.payment-card-icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.payment-card-icons img {
+  height: 20px;
+  width: auto;
+}
+
+/* CVC icon */
+.payment-cvc-icon {
+  width: 30px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* Select */
+.payment-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.payment-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 28px;
+  cursor: pointer;
+}
+
+.payment-select__arrow {
+  position: absolute;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+}
+
+/* ── Confirm button ─────────────────────────────── */
+.payment-confirm-btn {
+  width: 100%;
+  max-width: 380px;
+  height: 52px;
+  background: #717a3f;
+  border: none;
+  border-radius: 26px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  margin-top: 8px;
+  transition: background 0.15s;
+}
+
+.payment-confirm-btn:hover {
+  background: #5a6230;
+}
+
+
+/* ── Payment page footer (no grass/scene) ───────── */
+.payment-page ~ .site-footer .footer-scene,
+.payment-page ~ .site-footer .footer-grass {
+  display: none;
+}
+
+/* ══════════════════════════════════════════════════
+   CONFIRMATION PAGE
+   ══════════════════════════════════════════════════ */
+
+.confirmation-page {
+  background: #f2ede2;
+}
+
+.confirmation-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 56px 80px;
+}
+
+/* ── Hero ───────────────────────────────────────── */
+.confirmation-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.confirmation-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.confirmation-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 56px;
+  font-weight: normal;
+  color: #c50034;
+  line-height: 1.1;
+  max-width: 600px;
+}
+
+.confirmation-subtext {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  color: #000;
+  line-height: 1.6;
+  max-width: 340px;
+  text-align: center;
+}
+
+.confirmation-bird {
+  width: 78.558px;
+  height: 85.7px;
+  object-fit: contain;
+  margin-top: 8px;
+}
+
+/* ── Summary section ────────────────────────────── */
+.confirmation-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 360px;
+}
+
+.confirmation-summary__heading {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+/* ── Items list ─────────────────────────────────── */
+.confirmation-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.confirmation-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.confirmation-item__img-wrap {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  background: #f4f4f4;
+  border-radius: 6px;
+  flex-shrink: 0;
+  border: 1px solid #dfdfdf;
+}
+
+.confirmation-item__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.confirmation-item__qty {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 22px;
+  height: 22px;
+  background: #3d3d3d;
+  color: #fff;
+  border-radius: 50%;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmation-item__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.confirmation-item__name {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
+}
+
+.confirmation-item__size {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 13px;
+  color: #555;
+}
+
+.confirmation-item__price {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #000;
+}
+
+/* ── Totals ─────────────────────────────────────── */
+.confirmation-totals {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid #c8c8c8;
+  padding-top: 16px;
+  margin-bottom: 24px;
+}
+
+.confirmation-totals__row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #000;
+}
+
+.confirmation-totals__row--total {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 8px;
+  padding-top: 4px;
+}
+
+.confirmation-totals__currency {
+  font-size: 14px;
+  font-weight: 400;
+  color: #555;
+  margin-right: 6px;
+}
+
+.confirmation-totals__amount {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* ── Back to home button ────────────────────────── */
+.confirmation-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 52px;
+  background: #b7556f;
+  border-radius: 26px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: background 0.15s;
+}
+
+.confirmation-back-btn:hover {
+  background: #a04460;
+}
+
+/* ── Footer (no grass/scene) ────────────────────── */
+.confirmation-page ~ .site-footer .footer-scene,
+.confirmation-page ~ .site-footer .footer-grass {
+  display: none;
+}
+
+/* ══════════════════════════════════════════════════
+   SEARCH MODAL
+   ══════════════════════════════════════════════════ */
+
+/* ── Overlay ────────────────────────────────────── */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 500;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 88px; /* clears the sticky nav */
+}
+
+/* ── Modal box ──────────────────────────────────── */
+.search-modal {
+  background: #fff;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 88px - 40px);
+}
+
+/* ── Header row ─────────────────────────────────── */
+.search-modal__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 24px;
+  border-bottom: 1px solid #f0f0f0;
+  flex-shrink: 0;
+}
+
+.search-modal__icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.search-modal__icon img {
+  width: 22px;
+  height: 22px;
+}
+
+.search-modal__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 18px;
+  color: #000;
+  background: transparent;
+}
+
+.search-modal__input::placeholder {
+  color: #aaa;
+}
+
+/* hide browser's default clear button */
+.search-modal__input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-modal__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.search-modal__close img {
+  width: 22px;
+  height: 22px;
+}
+
+/* ── Scrollable body ────────────────────────────── */
+.search-modal__body {
+  overflow-y: auto;
+  padding: 24px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Section ────────────────────────────────────── */
+.search-section__heading {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 16px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ── Product grid ───────────────────────────────── */
+.search-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  list-style: none;
+}
+
+/* ── Product card ───────────────────────────────── */
+.search-product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-product-card__img-wrap {
+  position: relative;
+  background: #f4f4f4;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.search-product-card__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.search-product-card__quick-add {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2px;
+  transition: transform 0.15s;
+}
+
+.search-product-card__quick-add:hover {
+  transform: scale(1.1);
+}
+
+.search-product-card__quick-add img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.search-product-card__name {
+  font-family: 'Square Peg', cursive;
+  font-size: 18px;
+  font-weight: normal;
+  color: #000;
+  line-height: 1.1;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+.search-product-card__name:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.search-product-card__price {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 13px;
+  color: #717a3f;
+  text-align: center;
+}
+
+/* ── No results ─────────────────────────────────── */
+.search-no-results {
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 15px;
+  color: #555;
+  padding: 8px 0;
+}
+
+/* ══════════════════════════════════════════════════
+   RESPONSIVE / MOBILE STYLES
+   ══════════════════════════════════════════════════ */
+
+/* ── Hamburger button (hidden on desktop) ───────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 300;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #000;
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+/* Animate to X when open */
+.nav-hamburger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-hamburger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile nav drawer ──────────────────────────── */
+.nav-drawer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 250;
+  overflow: hidden;
+}
+
+.nav-drawer.is-open {
+  display: block;
+}
+
+.nav-drawer__close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 1;
+  color: #000;
+}
+
+.nav-drawer__close img {
+  width: 24px;
+  height: 24px;
+}
+
+.nav-drawer__back img {
+  width: 24px;
+  height: 24px;
+}
+
+.nav-drawer__main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 100px 24px 48px;
+  transition: transform 0.3s ease;
+}
+
+.nav-drawer__pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-radius: 50px;
+  font-family: 'Square Peg', cursive;
+  font-size: 40px;
+  color: #9D193C;
+  text-decoration: none;
+}
+
+.nav-drawer__arrow {
+  width: 24px;
+  height: 24px;
+}
+
+.nav-drawer__sub-panel {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 100px 32px 48px;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.nav-drawer__sub-panel.is-active {
+  display: flex;
+}
+
+.nav-drawer__back {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #000;
+}
+
+.nav-drawer__sub-heading {
+  font-family: 'Square Peg', cursive;
+  font-size: 48px;
+  color: #9D193C;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.nav-drawer__sub-link {
+  font-family: 'Square Peg', cursive;
+  font-size: 36px;
+  color: #000;
+  text-decoration: none;
+}
+
+.nav-search-mobile {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-search-mobile img {
+  width: 22px;
+  height: 22px;
+}
+
+@media (max-width: 768px) {
+
+  /* ── Nav ──────────────────────────────────────── */
+  .nav-links {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  nav {
+    padding: 0 20px;
+    height: 64px;
+  }
+
+  .nav-logo img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+  }
+
+  .nav-icons {
+    gap: 36px;
+  }
+
+  .nav-icons img {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* ── Hero ─────────────────────────────────────── */
+  .hero {
+    height: 500px;
+  }
+
+  .hero-text {
+    font-size: 96px;
+    line-height: 80px;
+    left: 24px;
+    bottom: 48px;
+  }
+
+  .hero-overlay {
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+  }
+
+  /* ── Collections ──────────────────────────────── */
+  .collections {
+    padding: 32px 20px 40px;
+    gap: 24px;
+  }
+
+  .collections-heading {
+    font-size: 40px;
+  }
+
+  .collections-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  /* ── News ─────────────────────────────────────── */
+  .news {
+    padding: 40px 20px;
+    gap: 24px;
+  }
+
+  .news-heading {
+    font-size: 40px;
+  }
+
+  .news-flower {
+    width: 40px;
+    height: 40px;
+  }
+
+  .news-images {
+    flex-direction: row;
+    gap: 16px;
+    padding: 16px 24px 24px;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .news-images li {
+    width: 80%;
+    height: auto;
+    aspect-ratio: 374 / 515;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+
+  .news-meta {
+    font-size: 28px;
+  }
+
+  .news-body {
+    font-size: 14px;
+  }
+
+  /* ── About ────────────────────────────────────── */
+  .about {
+    flex-direction: column-reverse;
+    padding: 0 25px;
+    gap: 24px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-heading {
+    font-size: 40px;
+  }
+
+  .about-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+
+  .about-deco-text,
+  .about-deco-stamp {
+    display: none;
+  }
+
+  /* ── USP ──────────────────────────────────────── */
+  .usp {
+    padding: 40px 25px;
+  }
+
+  .usp-inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .usp-item {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* ── Bestsellers ──────────────────────────────── */
+  .bestsellers {
+    padding: 32px 20px 48px;
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .bestsellers-heading {
+    font-size: 40px;
+  }
+
+  .bestsellers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .bestsellers-grid .product-card__name {
+    font-size: 20px;
+  }
+
+  /* ── Footer ───────────────────────────────────── */
+  .footer-bottom {
+    padding: 28px 20px 20px;
+  }
+
+  .footer-contact__heading {
+    font-size: 24px;
+  }
+
+  .footer-contact__details {
+    font-size: 15px;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    gap: 12px;
+    align-self: flex-start;
+  }
+
+  /* ── Products grid (all/espresso/filter pages) ── */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 24px 20px 48px;
+  }
+
+  .product-card__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 309 / 380;
+  }
+
+  .product-card__name {
+    font-size: 20px;
+  }
+
+  .products-hero {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .products-hero__text {
+    width: 100%;
+    padding: 24px 20px;
+  }
+
+  .products-hero__heading {
+    font-size: 56px;
+  }
+
+  .products-hero__image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .products-toolbar {
+    padding: 0 20px;
+    top: 64px;
+  }
+
+  /* Hide search from nav-icons on mobile */
+  .nav-icons [aria-label="Search"] {
+    display: none;
+  }
+
+  /* Show a standalone search button on mobile left side */
+  .nav-search-mobile {
+    display: flex;
+    align-items: center;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  .nav-hamburger {
+    order: 1;
+    margin-right: 36px;
+  }
+
+  .nav-search-mobile {
+    order: 2;
+  }
+
+  .nav-logo {
+    order: 3;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .nav-icons {
+    order: 4;
+    margin-left: auto;
+  }
+
+  .about-media {
+    width: 100%;
+    flex: none;
+    position: relative;
+  }
+
+  .about-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .cart-item {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 15px;
+    gap: 12px;
+    border-bottom: 1px solid #dfdfdf;
+  }
+
+  .cart-item__top {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .cart-item__image {
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+  }
+
+  .cart-item__name {
+    flex: 1;
+    padding-left: 0;
+    font-size: 20px;
+  }
+
+  .cart-item__price {
+    text-align: left;
+    padding-right: 0;
+    font-size: 16px;
+  }
+
+  .cart-item__remove {
+    margin-left: auto;
+    align-self: flex-start;
+    flex-shrink: 0;
+  }
+
+  .cart-col--size,
+  .cart-col--qty {
+    width: 50%;
+    display: inline-flex;
+  }
+
+  .cart-items-dropdowns {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .cart-page {
+    padding: 0 0 40px;
+  }
+
+  .cart-header {
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 15px;
+    border-bottom: 1px solid #dfdfdf;
+    margin-bottom: 0;
+  }
+
+  .cart-heading {
+    font-size: 28px;
+    color: #000;
+    flex: 1;
+  }
+
+  .cart-continue {
+    font-size: 0;
+    width: 28px;
+    height: 28px;
+    border-bottom: none;
+    background: url('close.svg') no-repeat center;
+    background-size: contain;
+  }
+
+  .cart-table__head {
+    display: none;
+  }
+
+  .cart-table__divider {
+    display: none;
+  }
+
+  .cart-table {
+    margin-bottom: 0;
+  }
+
+  .cart-select-wrapper {
+    width: 100%;
+  }
+
+  .cart-select {
+    width: 100%;
+  }
+
+  .cart-summary {
+    flex-shrink: 0;
+    padding: 16px 15px 0px;
+    border-top: 1px solid #dfdfdf;
+    background: #fff;
+    align-items: stretch;
+  }
+
+  .cart-summary__row {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .cart-checkout-btn {
+    width: 100%;
+    border-radius: 32px;
+    height: 56px;
+    font-size: 16px;
+  }
+
+  .cart-summary__amount {
+    font-size: 28px;
+  }
+
+  .cart-summary__note {
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  body:has(.cart-page) header {
+    display: none;
+  }
+
+  /* Hide footer on mobile cart */
+  body:has(.cart-page) .site-footer {
+    display: none;
+  }
+
+  /* Make cart page fill screen with fixed bottom */
+  .cart-page {
+    padding: 0;
+    height: calc(100vh - 64px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Cart filled section scrollable */
+  .cart-filled {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* Scrollable items area */
+  .cart-table {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 0;
+  }
+
+
+  /* Price below name */
+  .cart-item__price {
+    display: block;
+    margin-top: 4px;
+  }
+
+  /* ── Checkout mobile ──────────────────────────── */
+  body:has(.checkout-page) header {
+    display: none;
+  }
+
+  .checkout-page {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 20px 15px 100px;
+  }
+
+  .checkout-form-col {
+    order: 1;
+  }
+
+  .checkout-summary-col {
+    order: 2;
+    padding-top: 32px;
+  }
+
+  .checkout-heading {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .checkout-proceed-btn {
+    position: static;
+    width: 100%;
+    border-radius: 26px;
+    margin: 16px 0 0;
+    height: 56px;
+  }
+
+  .checkout-mobile-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 15px;
+    border-bottom: none;
+    font-family: 'Square Peg', cursive;
+    font-size: 32px;
+  }
+
+  .checkout-mobile-header img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .checkout-mobile-header a {
+    margin-left: auto;
+  }
+  
+  .checkout-mobile-header a img {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+
+  .checkout-heading {
+    display: none;
+  }
+
+  body:has(.checkout-page) .site-footer {
+    display: none;
+  }
+
+  body.payment-page .site-footer {
+    display: none;
+  }
+
+  body.confirmation-page .site-footer {
+    display: none;
+  }
+
+  .cart-item__remove--desktop {
+    display: none;
+  }
+}
+
+.pdp-timeline {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  border-top: 1px solid #c8c8c8;
+}
+
+.pdp-timeline-step {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.pdp-timeline-step .pdp-timeline__track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 60px;
+}
+
+.pdp-timeline-step .pdp-step__line {
+  flex: 1;
+  min-height: 0;
+  width: 2px;
+  background: #b0b0b0;
+}
+
+.pdp-timeline-step .pdp-timeline__track {
+  align-self: stretch;
+}
+
+.pdp-timeline-step .pdp-timeline-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 48px;
+  padding-top: 12px;
+}
+
+.pdp-timeline-step:last-child .pdp-timeline-block {
+  padding-bottom: 0;
+}
+
+.pdp-timeline-step:last-child .pdp-timeline__track {
+  padding-bottom: 0;
+}
+
+@media (min-width: 769px) {
+
+  /* ── Cart row layout ─────────────────────────── */
+  .cart-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #dfdfdf;
+    padding: 16px 0;
+  }
+
+  /* Left block: image + name, fixed 522px */
+  .cart-item__top {
+    display: flex;
+    align-items: center;
+    width: 38%;
+    flex-shrink: 0;
+  }
+
+  .cart-item__image {
+    width: 160px;
+    height: 160px;
+    flex-shrink: 0;
+  }
+
+  .cart-item__name {
+    padding-left: 24px;
+    font-size: 24px;
+    flex: 1;
+  }
+
+  /* Right block: size + qty + price + trash */
+  .cart-items-dropdowns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    gap: 0;
+  }
+
+  .cart-items-dropdowns .cart-select-wrapper:first-child {
+    width: 130px;
+    flex-shrink: 0;
+    margin-right: 6%;
+  }
+
+  .cart-items-dropdowns .cart-select-wrapper:nth-child(2) {
+    width: 130px;
+    flex-shrink: 0;
+    margin-right: 6%;
+  }
+
+  .cart-items-dropdowns .cart-select {
+    width: 130px;
+    min-width: unset;
+    height: 40px;
+    border: 0.8px solid #b7556f;
+    font-size: 15px;
+    padding: 0 32px 0 11px;
+  }
+
+  .cart-item__price--desktop {
+    font-family: 'Square Peg', cursive;
+    font-size: 24px;
+    color: #000;
+    flex: 1;
+    display: block !important;
+  }
+
+  .cart-item__price--mobile {
+    display: none !important;
+  }
+
+  .cart-item__remove--desktop {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    opacity: 0.7;
+  }
+
+  .cart-item__remove--desktop img {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+
+  .cart-item__remove--desktop:hover {
+    opacity: 1;
+  }
+
+  .cart-item__remove--mobile {
+    display: none !important;
+  }
+
+  /* ── Rest of desktop cart styles ──────────────── */
+  .cart-col--size,
+  .cart-col--qty {
+    width: auto;
+    display: block;
+  }
+
+  .cart-select-wrapper {
+    width: fit-content;
+  }
+
+  .cart-filled {
+    display: block;
+    overflow: visible;
+  }
+
+  .cart-table {
+    flex: none;
+    overflow: visible;
+    margin-bottom: 48px;
+  }
+
+  .cart-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+    margin-top: 16px;
+    padding: 0;
+    border-top: none;
+    background: transparent;
+  }
+
+  .cart-page {
+    min-height: 60vh;
+    padding: 48px 56px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: auto;
+    overflow: visible;
+  }
+
+  .cart-header {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 48px;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .cart-heading {
+    font-size: 64px;
+    color: #717a3f;
+  }
+
+  .cart-continue {
+    font-size: 24px;
+    width: fit-content;
+    background: none;
+    border-bottom: none;
+    height: auto;
+  }
+
+  .cart-table__head {
+    display: grid;
+    grid-template-columns: 38% 1fr 1fr 1fr;
+  }
+
+  .cart-table__divider {
+    display: block;
+  }
+
+  .cart-checkout-btn {
+    width: 380px;
+    border-radius: 26px;
+    height: 52px;
+  }
+
+  .cart-summary__amount {
+    font-size: 40px;
+  }
+
+  .cart-summary__row {
+    justify-content: flex-start;
+    width: auto;
+    gap: 24px;
+  }
+
+  body:has(.cart-page) header {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  body:has(.cart-page) nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 88px;
+    padding: 0 38px;
+  }
+
+  body:has(.cart-page) .nav-icons {
+    order: 0;
+    margin-left: 0;
+    display: flex;
+  }
+
+  body:has(.cart-page) .nav-logo {
+    order: 0;
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+  }
+
+  body:has(.cart-page) .nav-hamburger {
+    display: none;
+  }
+
+  body:has(.cart-page) .nav-search-mobile {
+    display: none;
+  }
+
+  body:has(.cart-page) .nav-links {
+    display: flex;
+  }
+
+  body:has(.cart-page) .site-footer {
+    display: flex;
+  }
+
+  .nav-icons {
+    order: 0;
+    margin-left: 0;
+  }
+
+  nav {
+    height: 88px;
+    padding: 0 38px;
+  }
+
+  .nav-logo {
+    order: 0;
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+  }
+
+  .checkout-mobile-header {
+    display: none;
+  }
+}

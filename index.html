@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Batch Roasting Co.</title>
+    <link rel="stylesheet" href="styling.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Square+Peg&family=Short+Stack&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="search-modal.css" />
+    <link rel="stylesheet" href="responsive.css" />
+</head>
+<body>
+  <header>
+    <nav>
+
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Small Batch Roasting Co." />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#">Shop</a></li>
+        <li class="nav-item--dropdown">
+          <a href="#">Coffee</a>
+          <ul class="dropdown">
+            <li><a href="productsAll.html">All</a></li>
+            <li><a href="productsEspresso.html">Espresso</a></li>
+            <li><a href="productsFilter.html">Filter</a></li>
+            <li><a href="productsBundles.html">Bundles</a></li>
+            <li><a href="productsDecaf.html">Decaf</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Locate</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+
+      <div class="nav-icons">
+        <button aria-label="Account">
+          <img src="user-circle.svg" alt="userCircle" />
+        </button>
+        <button aria-label="Search">
+          <img src="search.svg" alt="Search" />
+        </button>
+        <button aria-label="Shopping bag">
+          <img src="shopping-bag-2.svg" alt="shoppingBag" />
+        </button>
+      </div>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <button class="nav-search-mobile" aria-label="Search">
+        <img src="search.svg" alt="" />
+      </button>
+
+    </nav>
+  </header>
+
+<section class="hero">
+  <img src="homepage_banner.webp" alt="" />
+  <div class="hero-overlay"></div>
+  <p class="hero-text">From <br>Bean<br>to Brew</p>
+</section>
+
+<section class="collections">
+
+  <h2 class="collections-heading">Shop By Collection</h2>
+
+  <ul class="collections-grid">
+
+    <li class="collection-card">
+      <a href="productsFilter.html">
+        <img src="golden filter.png" alt="Filter" />
+        <span class="collection-label">FILTER</span>
+      </a>
+    </li>
+
+    <li class="collection-card">
+      <a href="productsEspresso.html">
+        <img src="nolberto.png" alt="Espresso" />
+        <span class="collection-label">ESPRESSO</span>
+      </a>
+    </li>
+
+    <li class="collection-card">
+      <a href="productsDecaf.html">
+        <img src="decaf filter.jpeg" alt="Decaf" />
+        <span class="collection-label">DECAF</span>
+      </a>
+    </li>
+
+    <li class="collection-card">
+      <a href="productsBundles.html">
+        <img src="EspressoBundle.jpeg" alt="Bundles" />
+        <span class="collection-label">BUNDLES</span>
+      </a>
+    </li>
+
+  </ul>
+
+</section>
+
+<section class="news">
+
+  <div class="news-heading-row">
+    <h2 class="news-heading">News</h2>
+    <img class="news-flower" src="flower.png" alt="" />
+  </div>
+
+  <ul class="news-images">
+    <li><img src="news1.png" alt="News image 1" /></li>
+    <li><img src="news2.png" alt="News image 2" /></li>
+    <li><img src="news3.png" alt="News image 3" /></li>
+  </ul>
+
+  <article class="news-caption">
+    <p class="news-meta">Rob Garner | 19 Feb, 2026</p>
+    <p class="news-body">We love Colombia. Colombian coffee provides the consistent backbone of our espresso blends, the shining juiciness of our single espresso roasts and the 'warm hug' profile among our filter menu. In short, it's the cornerstone of our menu.</p>
+    <a href="#" class="news-read-more">Read more</a>
+  </article>
+
+</section>
+
+<section class="about">
+
+  <div class="about-text">
+    <h2 class="about-heading">We believe coffee<br>can be better.</h2>
+    <p class="about-body">Since 2008, Melbournians have been flocking to North Melbourne, answering the siren call of what The Age Good Cafe Guide has twice called Melbourne's best café.</p>
+    <a href="#" class="about-read-more">Read more</a>
+  </div>
+
+  <div class="about-media">
+    <img class="about-photo" src="articleImage.png" alt="Small Batch roaster" />
+    <img class="about-deco-stamp" src="flowerDecor.png" alt="flowerDecor" />
+    <img class="about-deco-text" src="tape.png" alt="tape" />
+  </div>
+
+</section>
+
+<section class="usp">
+  <ul class="usp-inner">
+
+    <li class="usp-item">
+      <img class="usp-icon" src="package-order.svg" alt="package" />
+      <strong class="usp-heading">100% Recyclable Coffee Packaging</strong>
+      <p class="usp-body">Our paper coffee packages reduce single-use plastics and can be recycled at home.</p>
+    </li>
+
+    <li class="usp-item">
+      <img class="usp-icon" src="delivery-truck.svg" alt="truck" />
+      <strong class="usp-heading">Free Australian shipping over $60</strong>
+      <p class="usp-body">And free standard shipping on all Subscriptions.</p>
+    </li>
+
+    <li class="usp-item">
+      <img class="usp-icon" src="map-marker-pin.svg" alt="loactionPin" />
+      <strong class="usp-heading">Local pick-up available</strong>
+      <p class="usp-body">Orders are usually completed in 24-48 hours. Collect from Little Howard St Mon-Fri: 8am-4pm</p>
+    </li>
+
+  </ul>
+</section>
+
+<section class="bestsellers">
+
+  <div class="bestsellers-heading-row">
+    <h2 class="bestsellers-heading">Our Bestsellers</h2>
+    <a href="productsAll.html" class="bestsellers-show-all">Show all</a>
+  </div>
+
+  <ul class="bestsellers-grid">
+    <li class="product-card">
+      <a href="product.html?id=white">
+        <img src="white.png" alt="The Ones We Love-Espresso" />
+        <h2 class="product-card__name">The Ones We Love-Espresso</h2>
+        <p class="product-card__price">from $21</p>
+      </a>
+    </li>
+    <li class="product-card">
+      <a href="product.html?id=nolberto">
+        <img src="nolberto.png" alt="Nolberto-Espresso" />
+        <h2 class="product-card__name">Nolberto-Espresso</h2>
+        <p class="product-card__price">from $25</p>
+      </a>
+    </li>
+    <li class="product-card">
+      <a href="product.html?id=candyman">
+        <img src="candyman.png" alt="Candyman Espresso Blend" />
+        <h2 class="product-card__name">Candyman Espresso Blend</h2>
+        <p class="product-card__price">from $20</p>
+      </a>
+    </li>
+    <li class="product-card">
+      <a href="product.html?id=golden-filter">
+        <img src="golden filter.png" alt="Golden Ticket-Filter" />
+        <h2 class="product-card__name">Golden Ticket-Filter</h2>
+        <p class="product-card__price">from $20</p>
+      </a>
+    </li>
+  </ul>
+
+</section>
+
+<footer class="site-footer">
+
+  <img class="footer-scene" src="footer illustration.png" alt="" aria-hidden="true" />
+
+  <div class="footer-grass" aria-hidden="true">
+    <img src="grass.png" alt="" />
+  </div>
+
+  <div class="footer-bottom">
+
+    <div class="footer-contact">
+      <strong class="footer-contact__heading">Contact</strong>
+      <div class="footer-contact__details">
+        <span class="footer-contact__name">Small Batch Roasting Co.</span>
+        <span class="footer-contact__address">3-9 Little Howard St, North Melbourne VIC 3051</span>
+        <span class="footer-contact__instagram">Instagram @smallbatchroast</span>
+      </div>
+    </div>
+
+    <div class="footer-nav">
+      <span class="footer-nav__copyright">© Small Batch Roasting Co. 2026</span>
+      <a href="/shipping" class="footer-nav__link">Shipping Information</a>
+      <a href="/faq" class="footer-nav__link">FAQ</a>
+      <a href="/contact" class="footer-nav__link">Contact</a>
+    </div>
+
+  </div>
+
+</footer>
+
+<div class="nav-drawer" id="nav-drawer">
+  <button class="nav-drawer__close" id="nav-drawer-close" aria-label="Close menu"><img src="x-close.svg" alt="" /></button>
+
+  <div class="nav-drawer__main" id="nav-drawer-main">
+    <a href="#" class="nav-drawer__pill" style="background:#EED8DE;" data-submenu="coffee">
+      Coffee <img class="nav-drawer__arrow" src="arrow-right.svg" alt="" />
+    </a>
+    <a href="#" class="nav-drawer__pill" style="background:#D4D7C5;">
+      Shop <img class="nav-drawer__arrow" src="arrow-right.svg" alt="" />
+    </a>
+    <a href="#" class="nav-drawer__pill" style="background:#F2EDE2;">
+      Locate <img class="nav-drawer__arrow" src="arrow-right.svg" alt="" />
+    </a>
+    <a href="#" class="nav-drawer__pill" style="background:#CEDDE2;">
+      About <img class="nav-drawer__arrow" src="arrow-right.svg" alt="" />
+    </a>
+  </div>
+
+  <div class="nav-drawer__sub-panel" id="nav-drawer-sub-coffee">
+    <button class="nav-drawer__back" id="nav-drawer-back"><img src="arrow-right.svg" alt="" style="transform: rotate(180deg);" /></button>
+    <h2 class="nav-drawer__sub-heading">Coffee</h2>
+    <a href="productsAll.html" class="nav-drawer__sub-link">Espresso</a>
+    <a href="productsFilter.html" class="nav-drawer__sub-link">Filter</a>
+    <a href="productsBundles.html" class="nav-drawer__sub-link">Bundles</a>
+    <a href="productsDecaf.html" class="nav-drawer__sub-link">Decaf</a>
+  </div>
+</div>
+
+<div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" hidden>
+  <div class="search-modal">
+
+    <div class="search-modal__header">
+      <label class="search-modal__icon" for="search-input" aria-label="Search">
+        <img src="search.svg" alt="" aria-hidden="true" />
+      </label>
+      <input
+        class="search-modal__input"
+        id="search-input"
+        type="search"
+        placeholder="Search"
+        autocomplete="off"
+        aria-label="Search products"
+      />
+      <button class="search-modal__close" id="search-close" aria-label="Close search">
+        <img src="close.svg" alt="" aria-hidden="true" />
+      </button>
+    </div>
+
+    <div class="search-modal__body" id="search-modal-body">
+
+      <section class="search-section" id="search-recently-viewed" aria-labelledby="recently-viewed-heading">
+        <h2 class="search-section__heading" id="recently-viewed-heading">Recently Viewed</h2>
+        <ul class="search-products-grid" id="search-recent-list" aria-label="Recently viewed products"></ul>
+      </section>
+
+      <section class="search-section" id="search-results-section" aria-labelledby="search-results-heading" hidden>
+        <h2 class="search-section__heading" id="search-results-heading">Results</h2>
+        <ul class="search-products-grid" id="search-results-list" aria-label="Search results"></ul>
+        <p class="search-no-results" id="search-no-results" hidden>No products found.</p>
+      </section>
+
+      <section class="search-section" id="search-discover" aria-labelledby="discover-heading">
+        <h2 class="search-section__heading" id="discover-heading">Discover</h2>
+        <ul class="search-products-grid" id="search-discover-list" aria-label="Discover products"></ul>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script src="products-data.js"></script>
+<script src="cart-store.js"></script>
+<script src="nav-cart.js"></script>
+<script src="search-modal.js"></script>
+<script src="hamburger.js"></script>
+</body>
+</html>

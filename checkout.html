@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — Small Batch Roasting Co.</title>
+  <link rel="stylesheet" href="styling.css" />
+  <link rel="stylesheet" href="cart.css" />
+  <link rel="stylesheet" href="checkout.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Square+Peg&family=Short+Stack&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="search-modal.css" />
+</head>
+<body>
+
+  <div class="checkout-mobile-header">
+    <img src="shopping-bag-2.svg" alt="" />
+    <span>Checkout</span>
+    <a href="cart.html"><img src="close.svg" alt="Close" /></a>
+  </div>
+
+  <header>
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Small Batch Roasting Co." />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#">Shop</a></li>
+        <li class="nav-item--dropdown">
+          <a href="#">Coffee</a>
+          <ul class="dropdown">
+            <li><a href="productsAll.html">All</a></li>
+            <li><a href="productsEspresso.html">Espresso</a></li>
+            <li><a href="productsFilter.html">Filter</a></li>
+            <li><a href="productsBundles.html">Bundles</a></li>
+            <li><a href="productsDecaf.html">Decaf</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Locate</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <div class="nav-icons">
+        <button aria-label="Account"><img src="user-circle.svg" alt="" /></button>
+        <button aria-label="Search"><img src="search.svg" alt="" /></button>
+        <button aria-label="Shopping bag"><img src="shopping-bag-2.svg" alt="" /></button>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <button class="nav-search-mobile" aria-label="Search">
+        <img src="search.svg" alt="" />
+      </button>
+    </nav>
+  </header>
+
+  <main class="checkout-page">
+
+    <!-- ── LEFT: Form ─────────────────────────────── -->
+    <div class="checkout-form-col">
+      <h1 class="checkout-heading">Checkout</h1>
+
+      <!-- Ship / Pickup toggle -->
+      <div class="checkout-toggle" role="group" aria-label="Delivery method">
+        <button class="checkout-toggle__btn checkout-toggle__btn--active" id="btn-ship" onclick="setDelivery('ship')">
+          <img src="delivery-truck.svg" alt="" />
+          Ship
+        </button>
+        <button class="checkout-toggle__btn" id="btn-pickup" onclick="setDelivery('pickup')">
+          <img src="map-marker-pin.svg" alt="" />
+          Pickup
+        </button>
+      </div>
+
+      <div id="ship-form">
+        <!-- Country -->
+        <div class="checkout-field">
+          <label class="checkout-label" for="country">Country</label>
+          <div class="checkout-select-wrapper">
+            <select class="checkout-input checkout-select" id="country">
+              <option>Australia</option>
+              <option>New Zealand</option>
+              <option>United States</option>
+              <option>United Kingdom</option>
+            </select>
+            <img src="downArrow.svg" alt="" class="checkout-select__arrow" />
+          </div>
+        </div>
+
+        <!-- First / Last name -->
+        <div class="checkout-field-row">
+          <div class="checkout-field">
+            <label class="checkout-label" for="first-name">First Name</label>
+            <input class="checkout-input" id="first-name" type="text" placeholder="First Name" />
+          </div>
+          <div class="checkout-field">
+            <label class="checkout-label" for="last-name">Last Name</label>
+            <input class="checkout-input" id="last-name" type="text" placeholder="Last Name" />
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="checkout-field">
+          <label class="checkout-label" for="address">Address</label>
+          <input class="checkout-input" id="address" type="text" placeholder="Street address" />
+        </div>
+
+        <!-- Unit -->
+        <div class="checkout-field">
+          <label class="checkout-label checkout-label--optional" for="unit">Unit Number <span>(optional)</span></label>
+          <input class="checkout-input" id="unit" type="text" />
+        </div>
+
+        <!-- Town / City -->
+        <div class="checkout-field">
+          <label class="checkout-label" for="city">Town / City</label>
+          <input class="checkout-input" id="city" type="text" placeholder="City" />
+        </div>
+
+        <!-- State / Postcode -->
+        <div class="checkout-field-row">
+          <div class="checkout-field">
+            <label class="checkout-label" for="state">State</label>
+            <input class="checkout-input" id="state" type="text" placeholder="State" />
+          </div>
+          <div class="checkout-field">
+            <label class="checkout-label" for="postcode">Postcode / Zip</label>
+            <input class="checkout-input" id="postcode" type="text" placeholder="Postcode" />
+          </div>
+        </div>
+
+        <!-- Email / Phone -->
+        <div class="checkout-field-row">
+          <div class="checkout-field">
+            <label class="checkout-label" for="email">Email Address</label>
+            <input class="checkout-input" id="email" type="email" placeholder="Email" />
+          </div>
+          <div class="checkout-field">
+            <label class="checkout-label" for="phone">Phone</label>
+            <input class="checkout-input" id="phone" type="tel" placeholder="Phone" />
+          </div>
+        </div>
+
+        <!-- Shipping Method -->
+        <div class="checkout-shipping-method">
+          <h2 class="checkout-shipping-heading">Shipping Method</h2>
+          <label class="checkout-shipping-option checkout-shipping-option--selected" id="option-standard">
+            <input type="radio" name="shipping" value="standard" checked onchange="setShipping(8)" />
+            <div class="checkout-shipping-option__info">
+              <span class="checkout-shipping-option__name">Standard</span>
+              <span class="checkout-shipping-option__sub">2-4 Business Days</span>
+            </div>
+            <span class="checkout-shipping-option__price">$8</span>
+          </label>
+          <label class="checkout-shipping-option" id="option-express">
+            <input type="radio" name="shipping" value="express" onchange="setShipping(14)" />
+            <div class="checkout-shipping-option__info">
+              <span class="checkout-shipping-option__name">Express</span>
+              <span class="checkout-shipping-option__sub">1-2 Business Days</span>
+            </div>
+            <span class="checkout-shipping-option__price">$14</span>
+          </label>
+        </div>
+      </div>
+
+      <div id="pickup-form" style="display:none;">
+        <p class="checkout-pickup-note">Pickup available at <strong>3-9 Little Howard St, North Melbourne VIC 3051</strong>. Usually ready in 24 hours.</p>
+        <div class="checkout-field-row">
+          <div class="checkout-field">
+            <label class="checkout-label" for="pickup-first">First Name</label>
+            <input class="checkout-input" id="pickup-first" type="text" placeholder="First Name" />
+          </div>
+          <div class="checkout-field">
+            <label class="checkout-label" for="pickup-last">Last Name</label>
+            <input class="checkout-input" id="pickup-last" type="text" placeholder="Last Name" />
+          </div>
+        </div>
+        <div class="checkout-field-row">
+          <div class="checkout-field">
+            <label class="checkout-label" for="pickup-email">Email Address</label>
+            <input class="checkout-input" id="pickup-email" type="email" placeholder="Email" />
+          </div>
+          <div class="checkout-field">
+            <label class="checkout-label" for="pickup-phone">Phone</label>
+            <input class="checkout-input" id="pickup-phone" type="tel" placeholder="Phone" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── RIGHT: Order Summary ───────────────────── -->
+    <div class="checkout-summary-col">
+      <h2 class="checkout-summary-heading">Order Summary</h2>
+
+      <ul class="checkout-summary-items" id="checkout-items"></ul>
+
+      <div class="checkout-summary-totals">
+        <div class="checkout-summary-row">
+          <span>Cart Subtotal</span>
+          <span id="checkout-subtotal">$0.00</span>
+        </div>
+        <div class="checkout-summary-row">
+          <span>Shipping</span>
+          <span id="checkout-shipping">$8.00</span>
+        </div>
+        <div class="checkout-summary-row checkout-summary-row--total">
+          <span>Total</span>
+          <span>
+            <span class="checkout-total-currency">AUD</span>
+            <span class="checkout-total-amount" id="checkout-total">$0.00</span>
+          </span>
+        </div>
+      </div>
+
+      <button class="checkout-proceed-btn" onclick="window.location.href='payment.html'">Proceed to Payment</button>
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <div class="footer-contact">
+        <strong class="footer-contact__heading">Contact</strong>
+        <div class="footer-contact__details">
+          <span class="footer-contact__name">Small Batch Roasting Co.</span>
+          <span class="footer-contact__address">3-9 Little Howard St, North Melbourne VIC 3051</span>
+          <span class="footer-contact__instagram">Instagram @smallbatchroast</span>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <span class="footer-nav__copyright">© Small Batch Roasting Co. 2026</span>
+        <a href="/shipping" class="footer-nav__link">Shipping Information</a>
+        <a href="/faq" class="footer-nav__link">FAQ</a>
+        <a href="/contact" class="footer-nav__link">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="nav-drawer" id="nav-drawer">
+  <button class="nav-drawer__close" id="nav-drawer-close" aria-label="Close menu">×</button>
+  <div class="nav-drawer__main" id="nav-drawer-main">
+    <a href="#" class="nav-drawer__pill" style="background:#EED8DE;" data-submenu="coffee">
+      Coffee <span class="nav-drawer__arrow">→</span>
+    </a>
+    <a href="#" class="nav-drawer__pill" style="background:#D4D7C5;">
+      Shop <span class="nav-drawer__arrow">→</span>
+    </a>
+    <a href="#" class="nav-drawer__pill" style="background:#F2EDE2;">
+      Locate <span class="nav-drawer__arrow">→</span>
+    </a>
+    <a href="#" class="nav-drawer__pill" style="background:#CEDDE2;">
+      About <span class="nav-drawer__arrow">→</span>
+    </a>
+  </div>
+  <div class="nav-drawer__sub-panel" id="nav-drawer-sub-coffee">
+    <button class="nav-drawer__back" id="nav-drawer-back">←</button>
+    <h2 class="nav-drawer__sub-heading">Coffee</h2>
+    <a href="productsAll.html" class="nav-drawer__sub-link">Espresso</a>
+    <a href="productsFilter.html" class="nav-drawer__sub-link">Filter</a>
+    <a href="productsBundles.html" class="nav-drawer__sub-link">Bundles</a>
+    <a href="productsDecaf.html" class="nav-drawer__sub-link">Decaf</a>
+  </div>
+</div>
+
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" hidden>
+  <div class="search-modal">
+ 
+    <!-- Search input row -->
+    <div class="search-modal__header">
+      <label class="search-modal__icon" for="search-input" aria-label="Search">
+        <img src="search.svg" alt="" aria-hidden="true" />
+      </label>
+      <input
+        class="search-modal__input"
+        id="search-input"
+        type="search"
+        placeholder="Search"
+        autocomplete="off"
+        aria-label="Search products"
+      />
+      <button class="search-modal__close" id="search-close" aria-label="Close search">
+        <img src="close.svg" alt="" aria-hidden="true" />
+      </button>
+    </div>
+ 
+    <!-- Scrollable body -->
+    <div class="search-modal__body" id="search-modal-body">
+ 
+      <!-- Recently Viewed -->
+      <section class="search-section" id="search-recently-viewed" aria-labelledby="recently-viewed-heading">
+        <h2 class="search-section__heading" id="recently-viewed-heading">Recently Viewed</h2>
+        <ul class="search-products-grid" id="search-recent-list" aria-label="Recently viewed products">
+          <!-- Populated by JS -->
+        </ul>
+      </section>
+ 
+      <!-- Search Results (shown when typing) -->
+      <section class="search-section" id="search-results-section" aria-labelledby="search-results-heading" hidden>
+        <h2 class="search-section__heading" id="search-results-heading">Results</h2>
+        <ul class="search-products-grid" id="search-results-list" aria-label="Search results">
+          <!-- Populated by JS -->
+        </ul>
+        <p class="search-no-results" id="search-no-results" hidden>No products found.</p>
+      </section>
+ 
+      <!-- Discover -->
+      <section class="search-section" id="search-discover" aria-labelledby="discover-heading">
+        <h2 class="search-section__heading" id="discover-heading">Discover</h2>
+        <ul class="search-products-grid" id="search-discover-list" aria-label="Discover products">
+          <!-- Populated by JS -->
+        </ul>
+      </section>
+ 
+    </div>
+  </div>
+</div>
+
+  <script src="products-data.js"></script>
+  <script src="cart-store.js"></script>
+  <script src="nav-cart.js"></script>
+  <script src="search-modal.js"></script>
+<script src="hamburger.js"></script>
+
+  <script>
+    let shippingCost = 8;
+
+    function setDelivery(mode) {
+      document.getElementById('ship-form').style.display = mode === 'ship' ? 'block' : 'none';
+      document.getElementById('pickup-form').style.display = mode === 'pickup' ? 'block' : 'none';
+      document.getElementById('btn-ship').classList.toggle('checkout-toggle__btn--active', mode === 'ship');
+      document.getElementById('btn-pickup').classList.toggle('checkout-toggle__btn--active', mode === 'pickup');
+      shippingCost = mode === 'pickup' ? 0 : 8;
+      updateTotals();
+    }
+
+    function setShipping(cost) {
+      shippingCost = cost;
+      // Update selected styling
+      document.querySelectorAll('.checkout-shipping-option').forEach(opt => {
+        opt.classList.remove('checkout-shipping-option--selected');
+      });
+      const checked = document.querySelector('input[name="shipping"]:checked');
+      if (checked) checked.closest('.checkout-shipping-option').classList.add('checkout-shipping-option--selected');
+      updateTotals();
+    }
+
+    function updateTotals() {
+      const subtotal = CartStore.subtotal(PRODUCTS);
+      document.getElementById('checkout-subtotal').textContent = `$${subtotal.toFixed(2)}`;
+      document.getElementById('checkout-shipping').textContent = shippingCost === 0 ? 'Free' : `$${shippingCost.toFixed(2)}`;
+      document.getElementById('checkout-total').textContent = `$${(subtotal + shippingCost).toFixed(2)}`;
+    }
+
+    function renderItems() {
+      const list = document.getElementById('checkout-items');
+      list.innerHTML = '';
+      CartStore.getAll().forEach(item => {
+        const p = PRODUCTS[item.id];
+        if (!p) return;
+        const li = document.createElement('li');
+        li.className = 'checkout-summary-item';
+        li.innerHTML = `
+          <div class="checkout-summary-item__img-wrap">
+            <img src="${p.image}" alt="${p.name}" />
+            <span class="checkout-summary-item__qty">${item.qty}</span>
+          </div>
+          <div class="checkout-summary-item__info">
+            <span class="checkout-summary-item__name">${p.name}</span>
+            <span class="checkout-summary-item__size">${item.size}</span>
+          </div>
+          <span class="checkout-summary-item__price">$${(parseFloat(p.price.replace('$','')) * item.qty).toFixed(2)}</span>
+        `;
+        list.appendChild(li);
+      });
+      updateTotals();
+    }
+
+    renderItems();
+  </script>
+  <script src="search-modal.js"></script>
+
+</body>
+</html>

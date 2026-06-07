@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product — Small Batch Roasting Co.</title>
+  <link rel="stylesheet" href="styling.css" />
+  <link rel="stylesheet" href="product.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Square+Peg&family=Short+Stack&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="search-modal.css" />
+  <link rel="stylesheet" href="responsive.css" />
+</head>
+<body class="pdp-page">
+
+  <header>
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Small Batch Roasting Co." />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#">Shop</a></li>
+        <li class="nav-item--dropdown">
+          <a href="#">Coffee</a>
+          <ul class="dropdown">
+            <li><a href="productsAll.html">All</a></li>
+            <li><a href="espresso.html">Espresso</a></li>
+            <li><a href="filter.html">Filter</a></li>
+            <li><a href="bundles.html">Bundles</a></li>
+            <li><a href="decaf.html">Decaf</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Locate</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <div class="nav-icons">
+        <button aria-label="Account"><img src="user-circle.svg" alt="" /></button>
+        <button aria-label="Search"><img src="search.svg" alt="" /></button>
+        <button aria-label="Shopping bag"><img src="shopping-bag-2.svg" alt="" /></button>
+      </div>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <button class="nav-search-mobile" aria-label="Search">
+        <img src="search.svg" alt="" />
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── STICKY SCROLL SECTION ─────────────────────── -->
+    <div class="pdp-scroll-section">
+
+      <!-- Left: sticky image panel -->
+      <div class="pdp-image-panel">
+        <div class="pdp-image-panel__bg"></div>
+        <img class="pdp-image-panel__img" id="pdp-main-image" src="" alt="" />
+      </div>
+
+      <!-- Right: scrollable content -->
+      <div class="pdp-content-panel">
+
+        <!-- Block 1: Purchase -->
+        <section class="pdp-block pdp-block--purchase">
+          <h1 class="pdp-name" id="pdp-name"></h1>
+          <p class="pdp-price" id="pdp-price"></p>
+
+          <div class="pdp-flavours" id="pdp-flavours"></div>
+
+          <hr class="pdp-rule" />
+
+          <div class="pdp-size-row">
+            <span class="pdp-label">size</span>
+            <div class="pdp-size-selector">
+              <span id="pdp-size-value">250g</span>
+              <img src="downArrow.svg" alt="" />
+            </div>
+          </div>
+
+          <hr class="pdp-rule" />
+
+          <div class="pdp-actions">
+            <div class="pdp-qty-selector">
+              <span id="pdp-qty">1</span>
+              <img src="downArrow.svg" alt="" />
+            </div>
+            <button class="pdp-atc-btn">ADD TO CART</button>
+          </div>
+
+          <div class="pdp-pickup">
+            <img src="ok.svg" alt="" />
+            <div>
+              <p>Pickup available at <strong>3-9 Little Howard St</strong></p>
+              <p class="pdp-pickup-sub">Usually ready in 24 hours</p>
+            </div>
+          </div>
+
+          <div class="pdp-shipping">
+            <img src="delivery-truck.svg" alt="" />
+            <span>Free shipping on orders over $60</span>
+          </div>
+        </section>
+
+        <div class="pdp-timeline">
+
+  <div class="pdp-timeline-step">
+    <div class="pdp-timeline__track">
+      <div class="pdp-step__circle"><span>1</span></div>
+      <div class="pdp-step__line"></div>
+    </div>
+    <section class="pdp-timeline-block">
+      <h2 class="pdp-section-heading">Sourcing</h2>
+      <div class="pdp-sourcing-details" id="pdp-sourcing"></div>
+    </section>
+  </div>
+
+  <div class="pdp-timeline-step">
+    <div class="pdp-timeline__track">
+      <div class="pdp-step__circle"><span>2</span></div>
+      <div class="pdp-step__line"></div>
+    </div>
+    <section class="pdp-timeline-block">
+      <h2 class="pdp-section-heading">Process</h2>
+      <p class="pdp-body-text" id="pdp-process"></p>
+    </section>
+  </div>
+
+  <div class="pdp-timeline-step">
+    <div class="pdp-timeline__track">
+      <div class="pdp-step__circle"><span>3</span></div>
+    </div>
+    <section class="pdp-timeline-block">
+      <h2 class="pdp-section-heading">Tasting notes</h2>
+      <p class="pdp-body-text" id="pdp-tasting"></p>
+    </section>
+  </div>
+
+</div>
+
+      </div>
+    </div>
+
+    <hr class="pdp-section-divider" />
+
+    <!-- ── ABOUT PRODUCER ────────────────────────────── -->
+    <section class="pdp-about">
+      <div class="pdp-about__text">
+        <h2 class="pdp-about__heading" id="pdp-about-heading"></h2>
+        <p class="pdp-about__body" id="pdp-about-body"></p>
+      </div>
+      <img class="pdp-about__img" id="pdp-about-photo" src="" alt="" />
+    </section>
+
+    <!-- ── MORE INFO ACCORDION ───────────────────────── -->
+    <section class="pdp-more-info">
+      <h2 class="pdp-more-info__heading">More Info</h2>
+      <div class="pdp-accordion">
+        <button class="pdp-accordion__btn" aria-expanded="false">
+          <span>Transparency</span>
+          <img src="plus.svg" alt="" />
+        </button>
+        <div class="pdp-accordion__body">
+          <p id="pdp-transparency"></p>
+        </div>
+        <button class="pdp-accordion__btn" aria-expanded="false">
+          <span>About</span>
+          <img src="plus.svg" alt="" />
+        </button>
+        <div class="pdp-accordion__body">
+          <p id="pdp-more-about"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RECOMMENDED ───────────────────────────────── -->
+    <section class="pdp-recommended">
+      <h2 class="pdp-recommended__heading">Recommended</h2>
+      <ul class="products-grid" id="pdp-recommended-grid" aria-label="Recommended products"></ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <img class="footer-scene" src="footer illustration.png" alt="" aria-hidden="true" />
+    <div class="footer-grass" aria-hidden="true">
+      <img src="grass.png" alt="" />
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-contact">
+        <strong class="footer-contact__heading">Contact</strong>
+        <div class="footer-contact__details">
+          <span class="footer-contact__name">Small Batch Roasting Co.</span>
+          <span class="footer-contact__address">3-9 Little Howard St, North Melbourne VIC 3051</span>
+          <span class="footer-contact__instagram">Instagram @smallbatchroast</span>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <span class="footer-nav__copyright">© Small Batch Roasting Co. 2026</span>
+        <a href="/shipping" class="footer-nav__link">Shipping Information</a>
+        <a href="/faq" class="footer-nav__link">FAQ</a>
+        <a href="/contact" class="footer-nav__link">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="nav-drawer" id="nav-drawer">
+  <button class="nav-drawer__close" id="nav-drawer-close" aria-label="Close menu"><img src="x-close.svg" alt="" /></button>
+
+  <div class="nav-drawer__main" id="nav-drawer-main">
+    <a href="#" class="nav-drawer__pill" style="background:#EED8DE;" data-submenu="coffee">
+      Coffee <img class="nav-drawer__arrow" src="arrow-right.svg" alt="" />
+    </a>
+    <a href="#" class="nav-drawer__pill" style="background:#D4D7C5;">
+      Shop <img class="nav-drawer__arrow" src="arrow-right.svg" alt="" />
+    </a>
+    <a href="#" class="nav-drawer__pill" style="background:#F2EDE2;">
+      Locate <img class="nav-drawer__arrow" src="arrow-right.svg" alt="" />
+    </a>
+    <a href="#" class="nav-drawer__pill" style="background:#CEDDE2;">
+      About <img class="nav-drawer__arrow" src="arrow-right.svg" alt="" />
+    </a>
+  </div>
+
+  <div class="nav-drawer__sub-panel" id="nav-drawer-sub-coffee">
+    <button class="nav-drawer__back" id="nav-drawer-back"><img src="arrow-right.svg" alt="" style="transform: rotate(180deg);" /></button>
+    <h2 class="nav-drawer__sub-heading">Coffee</h2>
+    <a href="productsAll.html" class="nav-drawer__sub-link">Espresso</a>
+    <a href="productsFilter.html" class="nav-drawer__sub-link">Filter</a>
+    <a href="productsBundles.html" class="nav-drawer__sub-link">Bundles</a>
+    <a href="productsDecaf.html" class="nav-drawer__sub-link">Decaf</a>
+  </div>
+</div>
+
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search" hidden>
+  <div class="search-modal">
+ 
+    <!-- Search input row -->
+    <div class="search-modal__header">
+      <label class="search-modal__icon" for="search-input" aria-label="Search">
+        <img src="search.svg" alt="" aria-hidden="true" />
+      </label>
+      <input
+        class="search-modal__input"
+        id="search-input"
+        type="search"
+        placeholder="Search"
+        autocomplete="off"
+        aria-label="Search products"
+      />
+      <button class="search-modal__close" id="search-close" aria-label="Close search">
+        <img src="close.svg" alt="" aria-hidden="true" />
+      </button>
+    </div>
+ 
+    <!-- Scrollable body -->
+    <div class="search-modal__body" id="search-modal-body">
+ 
+      <!-- Recently Viewed -->
+      <section class="search-section" id="search-recently-viewed" aria-labelledby="recently-viewed-heading">
+        <h2 class="search-section__heading" id="recently-viewed-heading">Recently Viewed</h2>
+        <ul class="search-products-grid" id="search-recent-list" aria-label="Recently viewed products">
+          <!-- Populated by JS -->
+        </ul>
+      </section>
+ 
+      <!-- Search Results (shown when typing) -->
+      <section class="search-section" id="search-results-section" aria-labelledby="search-results-heading" hidden>
+        <h2 class="search-section__heading" id="search-results-heading">Results</h2>
+        <ul class="search-products-grid" id="search-results-list" aria-label="Search results">
+          <!-- Populated by JS -->
+        </ul>
+        <p class="search-no-results" id="search-no-results" hidden>No products found.</p>
+      </section>
+ 
+      <!-- Discover -->
+      <section class="search-section" id="search-discover" aria-labelledby="discover-heading">
+        <h2 class="search-section__heading" id="discover-heading">Discover</h2>
+        <ul class="search-products-grid" id="search-discover-list" aria-label="Discover products">
+          <!-- Populated by JS -->
+        </ul>
+      </section>
+ 
+    </div>
+  </div>
+</div>
+
+  <script src="products-data.js"></script>
+  <script src="cart-store.js"></script>
+  <script src="nav-cart.js"></script>
+  <script src="search-modal.js"></script>
+  <script src="product.js"></script>
+  <script src="hamburger.js"></script>
+
+</body>
+</html>
