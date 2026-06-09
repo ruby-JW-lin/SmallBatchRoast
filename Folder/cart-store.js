@@ -59,12 +59,13 @@ const CartStore = {
   },
 
   subtotal(products) {
-    return this.getAll().reduce((sum, item) => {
-      const p = products[item.id];
-      if (!p) return sum;
-      return sum + parseFloat(p.price.replace('$', '')) * item.qty;
-    }, 0);
-  },
+  return this.getAll().reduce((sum, item) => {
+    const p = products[item.id];
+    if (!p) return sum;
+    const price = p.prices ? p.prices[item.size] : parseFloat(p.price.replace('$', ''));
+    return sum + price * item.qty;
+  }, 0);
+},
 
   // Fires a custom event so any open page can react (e.g. update bag count)
   _notify() {

@@ -17,7 +17,7 @@
         <img src="logo.png" alt="Small Batch Roasting Co." />
       </a>
       <ul class="nav-links">
-        <li><a href="#">Shop</a></li>
+        <li><a href="productsAll.html">Shop</a></li>
         <li class="nav-item--dropdown">
           <a href="#">Coffee</a>
           <ul class="dropdown">
@@ -182,7 +182,7 @@
       items.forEach(item => {
         const p = PRODUCTS[item.id];
         if (!p) return;
-        const linePrice = parseFloat(p.price.replace('$', '')) * item.qty;
+        const linePrice = (p.prices ? p.prices[item.size] : parseFloat(p.price.replace('$', ''))) * item.qty;
         subtotal += linePrice;
 
         const li = document.createElement('li');

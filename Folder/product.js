@@ -8,7 +8,7 @@ if (p) {
   document.getElementById('pdp-main-image').src = p.image;
   document.getElementById('pdp-main-image').alt = p.name;
   document.getElementById('pdp-name').textContent = p.name;
-  document.getElementById('pdp-price').textContent = p.price;
+  document.getElementById('pdp-price').textContent = p.prices ? `$${p.prices['250g'].toFixed(2)}` : p.price;
   document.getElementById('pdp-flavours').innerHTML = p.flavours;
   document.getElementById('pdp-sourcing').innerHTML = p.sourcing;
   document.getElementById('pdp-process').textContent = p.process;
@@ -51,6 +51,9 @@ let sizeIndex = 0;
 document.querySelector('.pdp-size-selector')?.addEventListener('click', () => {
   sizeIndex = (sizeIndex + 1) % sizes.length;
   sizeValue.textContent = sizes[sizeIndex];
+  if (p.prices) {
+    document.getElementById('pdp-price').textContent = `$${p.prices[sizes[sizeIndex]].toFixed(2)}`;
+  }
 });
 
 // ── Quantity selector ──────────────────────────────────────────────────────

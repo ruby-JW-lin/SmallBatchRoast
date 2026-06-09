@@ -3,6 +3,11 @@ const PRODUCTS = {
     id: 'nolberto',
     name: 'Nolberto Espresso',
     price: '$25.00',
+    prices: {
+    '250g': 20.00,
+    '500g': 36.00,
+    '1kg': 68.00
+  },
     image: 'nolberto.png',
     flavours: '<strong>Flavours:</strong> Stone fruit, creamy, muscovado & grapefruit residual',
     sourcing: '<strong>Colombia</strong>ORIGIN: Planadas, Tolima<br>VARIETAL: Typica Mejorado<br>PRODUCER: Nolberto Olaya',
@@ -12,13 +17,18 @@ const PRODUCTS = {
     aboutBody: 'Nolberto, a third-generation coffee producer with over 24 years of experience, is known for his expertise in organic and regenerative farming. He manages his farm holistically, producing his own natural fertilisers and cultivating a diverse range of varieties including Caturra, Gesha, Pink Bourbon, and Java. With most of the farm under shade trees, his approach supports soil health, biodiversity, and resilience to changing climate conditions resulting in consistently healthy harvests and exceptional quality.',
     aboutPhoto: 'nolberto-photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
-    moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
+    moreAbout: 'Citrus fruit flavours balanced by delicate notes of white and red florals, a bright but rounded acidity, silky in body. … “I’ve got a golden twinkle in my eye. .. I’ve got a golden sun up in the sky ..” (“Willy Wonka & The Chocolate Factory” 1971) What happens when you put several stunning coffees together in a blend for filter brewing methods? Do you diminish each of them or do you create something greater than the sum of the parts? Well, when you’re Small Batch, resplendid with deep producer relationships and with more frequently arriving micro-lotes than you can poke a stick at, it’s the latter, we assure you! Small Batch has long championed the virtues of filter brewing, and this product was launched in 2017  with the realisation that a combination of several single origin coffees was a great way to go to produce maximum approachableness, a journey in flavour from hot to cool, the greatest balance of juiciness and sweetness, and – mostly importantly for a daily driver – consistent performance.',
     recommended: ['candyman', 'golden-filter', 'alirio', 'beto']
   },
   candyman: {
     id: 'candyman',
     name: 'Candyman Espresso Blend',
     price: '$20.00',
+    prices: {
+    '250g': 20.00,
+    '500g': 36.00,
+    '1kg': 68.00
+  },
     image: 'candyman.png',
     flavours: '<strong>Flavours:</strong> Milk chocolate, caramel, red apple',
     sourcing: '<strong>Colombia & Ethiopia</strong><br>ORIGIN: Various<br>VARIETAL: Mixed<br>PRODUCER: Various',
@@ -28,13 +38,18 @@ const PRODUCTS = {
     aboutBody: 'Candyman is our flagship espresso blend, launched in 2010. It\'s our daily labour of love, a constant work-in-progress: making superlative tastiness from the raw components that we insist on buying well, ourselves (ie not just from the importer as is common practice) All this to create sweet, balanced espresso, with or without milk.',
     aboutPhoto: 'candyman_photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
-    moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
+    moreAbout: 'Citrus fruit flavours balanced by delicate notes of white and red florals, a bright but rounded acidity, silky in body. … “I’ve got a golden twinkle in my eye. .. I’ve got a golden sun up in the sky ..” (“Willy Wonka & The Chocolate Factory” 1971) What happens when you put several stunning coffees together in a blend for filter brewing methods? Do you diminish each of them or do you create something greater than the sum of the parts? Well, when you’re Small Batch, resplendid with deep producer relationships and with more frequently arriving micro-lotes than you can poke a stick at, it’s the latter, we assure you! Small Batch has long championed the virtues of filter brewing, and this product was launched in 2017  with the realisation that a combination of several single origin coffees was a great way to go to produce maximum approachableness, a journey in flavour from hot to cool, the greatest balance of juiciness and sweetness, and – mostly importantly for a daily driver – consistent performance.',
     recommended: ['nolberto', 'golden-filter', 'beto', 'white']
   },
   'golden-filter': {
     id: 'golden-filter',
     name: 'Golden Ticket-Filter',
     price: '$20.00',
+    prices: {
+    '250g': 20.00,
+    '500g': 36.00,
+    '1kg': 68.00
+  },
     image: 'golden filter.png',
     flavours: '<strong>Flavours:</strong> Juicy, bright, stone fruit',
     sourcing: '<strong>Colombia</strong><br>ORIGIN: Huila<br>VARIETAL: Caturra<br>PRODUCER: Various',
@@ -44,13 +59,18 @@ const PRODUCTS = {
     aboutBody: 'Our everyday filter coffee. Bright, clean and endlessly drinkable.',
     aboutPhoto: 'nolberto-photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
-    moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
+    moreAbout: 'Citrus fruit flavours balanced by delicate notes of white and red florals, a bright but rounded acidity, silky in body. … “I’ve got a golden twinkle in my eye. .. I’ve got a golden sun up in the sky ..” (“Willy Wonka & The Chocolate Factory” 1971) What happens when you put several stunning coffees together in a blend for filter brewing methods? Do you diminish each of them or do you create something greater than the sum of the parts? Well, when you’re Small Batch, resplendid with deep producer relationships and with more frequently arriving micro-lotes than you can poke a stick at, it’s the latter, we assure you! Small Batch has long championed the virtues of filter brewing, and this product was launched in 2017  with the realisation that a combination of several single origin coffees was a great way to go to produce maximum approachableness, a journey in flavour from hot to cool, the greatest balance of juiciness and sweetness, and – mostly importantly for a daily driver – consistent performance.',
     recommended: ['nolberto', 'alirio', 'jhoan', 'estrellas']
   },
   alirio: {
     id: 'alirio',
     name: 'Alirio Munoz-Filter',
     price: '$24.00',
+    prices: {
+    '250g': 24.00,
+    '500g': 36.00,
+    '1kg': 68.00
+  },
     image: 'AlirioFilter.png',
     flavours: '<strong>Flavours:</strong> Peach, floral, clean',
     sourcing: '<strong>Colombia</strong><br>ORIGIN: Caturron<br>VARIETAL: Caturra<br>PRODUCER: Alirio Munoz',
@@ -60,13 +80,18 @@ const PRODUCTS = {
     aboutBody: 'Alirio Munoz is a dedicated producer from Caturron, Colombia, known for his meticulous approach to fermentation and drying.',
     aboutPhoto: 'candyman_photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
-    moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
+    moreAbout: 'Citrus fruit flavours balanced by delicate notes of white and red florals, a bright but rounded acidity, silky in body. … “I’ve got a golden twinkle in my eye. .. I’ve got a golden sun up in the sky ..” (“Willy Wonka & The Chocolate Factory” 1971) What happens when you put several stunning coffees together in a blend for filter brewing methods? Do you diminish each of them or do you create something greater than the sum of the parts? Well, when you’re Small Batch, resplendid with deep producer relationships and with more frequently arriving micro-lotes than you can poke a stick at, it’s the latter, we assure you! Small Batch has long championed the virtues of filter brewing, and this product was launched in 2017  with the realisation that a combination of several single origin coffees was a great way to go to produce maximum approachableness, a journey in flavour from hot to cool, the greatest balance of juiciness and sweetness, and – mostly importantly for a daily driver – consistent performance.',
     recommended: ['nolberto', 'golden-filter', 'jhoan', 'estrellas']
   },
   beto: {
     id: 'beto',
     name: 'Beto-Pink Bourbon Espresso',
     price: '$24.00',
+    prices: {
+    '250g': 24.00,
+    '500g': 36.00,
+    '1kg': 68.00
+  },
     image: 'beto_espresso.png',
     flavours: '<strong>Flavours:</strong> Raspberry, brown sugar, milk chocolate',
     sourcing: '<strong>Colombia</strong><br>ORIGIN: Huila<br>VARIETAL: Pink Bourbon<br>PRODUCER: Beto',
@@ -76,13 +101,18 @@ const PRODUCTS = {
     aboutBody: 'A standout Pink Bourbon grown in the hills of Huila, Colombia.',
     aboutPhoto: 'nolberto-photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
-    moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
+    moreAbout: 'Citrus fruit flavours balanced by delicate notes of white and red florals, a bright but rounded acidity, silky in body. … “I’ve got a golden twinkle in my eye. .. I’ve got a golden sun up in the sky ..” (“Willy Wonka & The Chocolate Factory” 1971) What happens when you put several stunning coffees together in a blend for filter brewing methods? Do you diminish each of them or do you create something greater than the sum of the parts? Well, when you’re Small Batch, resplendid with deep producer relationships and with more frequently arriving micro-lotes than you can poke a stick at, it’s the latter, we assure you! Small Batch has long championed the virtues of filter brewing, and this product was launched in 2017  with the realisation that a combination of several single origin coffees was a great way to go to produce maximum approachableness, a journey in flavour from hot to cool, the greatest balance of juiciness and sweetness, and – mostly importantly for a daily driver – consistent performance.',
     recommended: ['nolberto', 'candyman', 'white', 'golden-filter']
   },
   white: {
     id: 'white',
     name: 'The Ones We Love-Espresso',
     price: '$21.00',
+    prices: {
+    '250g': 21.00,
+    '500g': 36.00,
+    '1kg': 68.00
+  },
     image: 'white.png',
     flavours: '<strong>Flavours:</strong> Toffee, walnut, dried fruit',
     sourcing: '<strong>Colombia & Brazil</strong><br>ORIGIN: Various<br>VARIETAL: Mixed<br>PRODUCER: Various',
@@ -92,13 +122,18 @@ const PRODUCTS = {
     aboutBody: 'Our milk-based espresso blend. Rich, sweet and comforting.',
     aboutPhoto: 'candyman_photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
-    moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
+    moreAbout: 'Citrus fruit flavours balanced by delicate notes of white and red florals, a bright but rounded acidity, silky in body. … “I’ve got a golden twinkle in my eye. .. I’ve got a golden sun up in the sky ..” (“Willy Wonka & The Chocolate Factory” 1971) What happens when you put several stunning coffees together in a blend for filter brewing methods? Do you diminish each of them or do you create something greater than the sum of the parts? Well, when you’re Small Batch, resplendid with deep producer relationships and with more frequently arriving micro-lotes than you can poke a stick at, it’s the latter, we assure you! Small Batch has long championed the virtues of filter brewing, and this product was launched in 2017  with the realisation that a combination of several single origin coffees was a great way to go to produce maximum approachableness, a journey in flavour from hot to cool, the greatest balance of juiciness and sweetness, and – mostly importantly for a daily driver – consistent performance.',
     recommended: ['candyman', 'nolberto', 'beto', 'golden-filter']
   },
   jhoan: {
     id: 'jhoan',
     name: 'Jhoan Vergara-Filter',
     price: '$21.00',
+    prices: {
+    '250g': 21.00,
+    '500g': 36.00,
+    '1kg': 68.00
+  },
     image: 'JhoanFilter.png',
     flavours: '<strong>Flavours:</strong> Pink Bourbon, floral, sweet',
     sourcing: '<strong>Colombia</strong><br>ORIGIN: Pink Bourbon<br>VARIETAL: Pink Bourbon<br>PRODUCER: Jhoan Vergara',
@@ -108,13 +143,18 @@ const PRODUCTS = {
     aboutBody: 'Jhoan Vergara produces exceptional Pink Bourbon coffees in Colombia.',
     aboutPhoto: 'nolberto-photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
-    moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
+    moreAbout: 'Citrus fruit flavours balanced by delicate notes of white and red florals, a bright but rounded acidity, silky in body. … “I’ve got a golden twinkle in my eye. .. I’ve got a golden sun up in the sky ..” (“Willy Wonka & The Chocolate Factory” 1971) What happens when you put several stunning coffees together in a blend for filter brewing methods? Do you diminish each of them or do you create something greater than the sum of the parts? Well, when you’re Small Batch, resplendid with deep producer relationships and with more frequently arriving micro-lotes than you can poke a stick at, it’s the latter, we assure you! Small Batch has long championed the virtues of filter brewing, and this product was launched in 2017  with the realisation that a combination of several single origin coffees was a great way to go to produce maximum approachableness, a journey in flavour from hot to cool, the greatest balance of juiciness and sweetness, and – mostly importantly for a daily driver – consistent performance.',
     recommended: ['alirio', 'golden-filter', 'estrellas', 'nolberto']
   },
   estrellas: {
     id: 'estrellas',
     name: 'Las Estrellas de Ají-Filter',
     price: '$25.00',
+    prices: {
+    '250g': 25.00,
+    '500g': 36.00,
+    '1kg': 68.00
+  },
     image: 'EstrellasFilter.png',
     flavours: '<strong>Flavours:</strong> Tropical fruit, complex, bright',
     sourcing: '<strong>Colombia</strong><br>ORIGIN: Colombia<br>VARIETAL: Various<br>PRODUCER: Various',
@@ -124,13 +164,18 @@ const PRODUCTS = {
     aboutBody: 'A complex and vibrant filter coffee from Colombia.',
     aboutPhoto: 'candyman_photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
-    moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
+    moreAbout: 'Citrus fruit flavours balanced by delicate notes of white and red florals, a bright but rounded acidity, silky in body. … “I’ve got a golden twinkle in my eye. .. I’ve got a golden sun up in the sky ..” (“Willy Wonka & The Chocolate Factory” 1971) What happens when you put several stunning coffees together in a blend for filter brewing methods? Do you diminish each of them or do you create something greater than the sum of the parts? Well, when you’re Small Batch, resplendid with deep producer relationships and with more frequently arriving micro-lotes than you can poke a stick at, it’s the latter, we assure you! Small Batch has long championed the virtues of filter brewing, and this product was launched in 2017  with the realisation that a combination of several single origin coffees was a great way to go to produce maximum approachableness, a journey in flavour from hot to cool, the greatest balance of juiciness and sweetness, and – mostly importantly for a daily driver – consistent performance.',
     recommended: ['alirio', 'jhoan', 'golden-filter', 'nolberto']
   },
   'espresso-bundle': {
     id: 'espresso-bundle',
     name: 'Espresso-Bundle',
     price: '$21.00',
+    prices: {
+    '250g': 21.00,
+    '500g': 36.00,
+    '1kg': 68.00
+  },
     image: 'EspressoBundle.jpeg',
     flavours: '<strong>Flavours:</strong> Varied — includes our best espresso roasts',
     sourcing: '<strong>Colombia & Ethiopia</strong><br>ORIGIN: Various<br>VARIETAL: Mixed<br>PRODUCER: Various',
@@ -140,13 +185,18 @@ const PRODUCTS = {
     aboutBody: 'The perfect way to explore our espresso range. Includes a selection of our most popular espresso roasts.',
     aboutPhoto: 'nolberto-photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
-    moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
+    moreAbout: 'Citrus fruit flavours balanced by delicate notes of white and red florals, a bright but rounded acidity, silky in body. … “I’ve got a golden twinkle in my eye. .. I’ve got a golden sun up in the sky ..” (“Willy Wonka & The Chocolate Factory” 1971) What happens when you put several stunning coffees together in a blend for filter brewing methods? Do you diminish each of them or do you create something greater than the sum of the parts? Well, when you’re Small Batch, resplendid with deep producer relationships and with more frequently arriving micro-lotes than you can poke a stick at, it’s the latter, we assure you! Small Batch has long championed the virtues of filter brewing, and this product was launched in 2017  with the realisation that a combination of several single origin coffees was a great way to go to produce maximum approachableness, a journey in flavour from hot to cool, the greatest balance of juiciness and sweetness, and – mostly importantly for a daily driver – consistent performance.',
     recommended: ['candyman', 'nolberto', 'beto', 'white']
   },
   'filter-bundle': {
     id: 'filter-bundle',
     name: 'Filter-Bundle',
     price: '$25.00',
+    prices: {
+    '250g': 25.00,
+    '500g': 36.00,
+    '1kg': 68.00
+  },
     image: 'FilterBundle.jpeg',
     flavours: '<strong>Flavours:</strong> Varied — includes our best filter roasts',
     sourcing: '<strong>Colombia</strong><br>ORIGIN: Various<br>VARIETAL: Mixed<br>PRODUCER: Various',
@@ -156,7 +206,7 @@ const PRODUCTS = {
     aboutBody: 'The perfect way to explore our filter range. Includes a selection of our most popular filter roasts.',
     aboutPhoto: 'candyman_photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
-    moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
+    moreAbout: 'Citrus fruit flavours balanced by delicate notes of white and red florals, a bright but rounded acidity, silky in body. … “I’ve got a golden twinkle in my eye. .. I’ve got a golden sun up in the sky ..” (“Willy Wonka & The Chocolate Factory” 1971) What happens when you put several stunning coffees together in a blend for filter brewing methods? Do you diminish each of them or do you create something greater than the sum of the parts? Well, when you’re Small Batch, resplendid with deep producer relationships and with more frequently arriving micro-lotes than you can poke a stick at, it’s the latter, we assure you! Small Batch has long championed the virtues of filter brewing, and this product was launched in 2017  with the realisation that a combination of several single origin coffees was a great way to go to produce maximum approachableness, a journey in flavour from hot to cool, the greatest balance of juiciness and sweetness, and – mostly importantly for a daily driver – consistent performance.',
     recommended: ['golden-filter', 'alirio', 'jhoan', 'estrellas']
   },
   combo: {
@@ -172,13 +222,18 @@ const PRODUCTS = {
     aboutBody: 'Can\'t decide between filter and espresso? Get both. Our combo bundle includes top picks from each range.',
     aboutPhoto: 'nolberto-photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
-    moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
+    moreAbout: 'Citrus fruit flavours balanced by delicate notes of white and red florals, a bright but rounded acidity, silky in body. … “I’ve got a golden twinkle in my eye. .. I’ve got a golden sun up in the sky ..” (“Willy Wonka & The Chocolate Factory” 1971) What happens when you put several stunning coffees together in a blend for filter brewing methods? Do you diminish each of them or do you create something greater than the sum of the parts? Well, when you’re Small Batch, resplendid with deep producer relationships and with more frequently arriving micro-lotes than you can poke a stick at, it’s the latter, we assure you! Small Batch has long championed the virtues of filter brewing, and this product was launched in 2017  with the realisation that a combination of several single origin coffees was a great way to go to produce maximum approachableness, a journey in flavour from hot to cool, the greatest balance of juiciness and sweetness, and – mostly importantly for a daily driver – consistent performance.',
     recommended: ['espresso-bundle', 'filter-bundle', 'candyman', 'golden-filter']
   },
   'decaf-espresso': {
     id: 'decaf-espresso',
     name: 'Decaf-Espresso',
     price: '$20.00',
+    prices: {
+    '250g': 20.00,
+    '500g': 36.00,
+    '1kg': 68.00
+  },
     image: 'decaf_espresso.png',
     flavours: '<strong>Flavours:</strong> Chocolate, caramel, smooth',
     sourcing: '<strong>Colombia</strong><br>ORIGIN: Various<br>VARIETAL: Mixed<br>PRODUCER: Various',
@@ -188,13 +243,18 @@ const PRODUCTS = {
     aboutBody: 'All the flavour, none of the caffeine. Our decaf espresso is processed using the Swiss Water Method to retain its natural character.',
     aboutPhoto: 'candyman_photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
-    moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
+    moreAbout: 'Citrus fruit flavours balanced by delicate notes of white and red florals, a bright but rounded acidity, silky in body. … “I’ve got a golden twinkle in my eye. .. I’ve got a golden sun up in the sky ..” (“Willy Wonka & The Chocolate Factory” 1971) What happens when you put several stunning coffees together in a blend for filter brewing methods? Do you diminish each of them or do you create something greater than the sum of the parts? Well, when you’re Small Batch, resplendid with deep producer relationships and with more frequently arriving micro-lotes than you can poke a stick at, it’s the latter, we assure you! Small Batch has long championed the virtues of filter brewing, and this product was launched in 2017  with the realisation that a combination of several single origin coffees was a great way to go to produce maximum approachableness, a journey in flavour from hot to cool, the greatest balance of juiciness and sweetness, and – mostly importantly for a daily driver – consistent performance.',
     recommended: ['decaf-filter', 'candyman', 'white', 'nolberto']
   },
   'decaf-filter': {
     id: 'decaf-filter',
     name: 'Decaf-Filter',
     price: '$20.00',
+    prices: {
+    '250g': 20.00,
+    '500g': 36.00,
+    '1kg': 68.00
+  },
     image: 'decaf filter.jpeg',
     flavours: '<strong>Flavours:</strong> Stone fruit, gentle, sweet',
     sourcing: '<strong>Colombia</strong><br>ORIGIN: Various<br>VARIETAL: Mixed<br>PRODUCER: Various',
@@ -204,7 +264,7 @@ const PRODUCTS = {
     aboutBody: 'A gentle, flavourful decaf perfect for filter brewing. Processed using the Swiss Water Method.',
     aboutPhoto: 'nolberto-photo.png',
     transparency: 'We pay above Fair Trade prices and publish full pricing breakdowns for all our coffees.',
-    moreAbout: 'Small Batch Roasting Co. has been roasting in North Melbourne since 2008.',
+    moreAbout: 'Citrus fruit flavours balanced by delicate notes of white and red florals, a bright but rounded acidity, silky in body. … “I’ve got a golden twinkle in my eye. .. I’ve got a golden sun up in the sky ..” (“Willy Wonka & The Chocolate Factory” 1971) What happens when you put several stunning coffees together in a blend for filter brewing methods? Do you diminish each of them or do you create something greater than the sum of the parts? Well, when you’re Small Batch, resplendid with deep producer relationships and with more frequently arriving micro-lotes than you can poke a stick at, it’s the latter, we assure you! Small Batch has long championed the virtues of filter brewing, and this product was launched in 2017  with the realisation that a combination of several single origin coffees was a great way to go to produce maximum approachableness, a journey in flavour from hot to cool, the greatest balance of juiciness and sweetness, and – mostly importantly for a daily driver – consistent performance.',
     recommended: ['decaf-espresso', 'golden-filter', 'alirio', 'jhoan']
   }
 };
