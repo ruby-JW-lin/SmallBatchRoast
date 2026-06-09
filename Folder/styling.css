@@ -1015,7 +1015,8 @@ nav {
 
 .pdp-about__img {
   width: 100%;
-  height: 330px;
+  height: auto;
+  aspect-ratio: 4/3;
   object-fit: cover;
   display: block;
 }
@@ -1057,7 +1058,21 @@ nav {
   color: #000;
 }
 
-.pdp-accordion__btn:last-of-type {
+.pdp-accordion__body {
+  display: none;
+  padding: 0 0 20px;
+  font-family: 'Sinhala Sangam MN', 'Noto Sans', sans-serif;
+  font-size: 14px;
+  color: #000;
+  line-height: 1px;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+.pdp-accordion__body.open {
+  display: block;
+}
+
+.pdp-accordion__btn:last-of-type:not([aria-expanded="true"]) {
   border-bottom: 1px solid #c8c8c8;
 }
 
